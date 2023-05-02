@@ -13,7 +13,7 @@ test:
   script:
     - echo $CI_JOB_ID
     - echo $HUGO_BUILDVERSION
-    - env HUGO-BUILDVERSION=$CI_JOB_ID hugo -s ./site --minify && gzip -k -6 $(find public -type f)
+    - env HUGO-BUILDVERSION=$CI_JOB_ID hugo --minify && gzip -k -6 $(find public -type f)
   except:
     - master
 
@@ -22,7 +22,7 @@ pages:
   script:
     - echo $CI_JOB_ID
     - echo $HUGO_BUILDVERSION
-    - env HUGO-BUILDVERSION=$CI_JOB_ID hugo -s ./site --minify && gzip -k -6 $(find public -type f)
+    - env HUGO-BUILDVERSION=$CI_JOB_ID hugo --minify && gzip -k -6 $(find public -type f)
   artifacts:
     paths:
       - public
