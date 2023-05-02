@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = 'Hugo Catalog'
 theme = 'hugo-catalog'
 
+canonifyURLs = true
+
 [markup.goldmark.parser.attribute]
 block = true
 title = true
