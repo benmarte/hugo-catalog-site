@@ -7,8 +7,6 @@ Hugo Catalog is a conversion of [Catalog](https://catalog.style) to hugo, it als
 
 It also ships with [8 shortcodes]({{<relref "/shortcodes.md">}}) so your editors can make beautiful Style Guides for your brand without having to code.
 
-You can run it with  [Docker](https://docker.com) or [Hugo](https://gohugo.io) locally and it includes a CI/CD workflow to automatically publish your site to gitlab or github pages.
-
 > I made Hugo Catalog because Catalog is abandonware and I needed something my clients could use and edit themselves. - Ben Marte
 
 {{<divider-title text="How does Hugo Catalog help you?">}}
