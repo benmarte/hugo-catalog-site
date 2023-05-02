@@ -1,6 +1,7 @@
 ---
 title: Colors
 weight: 3
+draft: true
 ---
 
 ## **Overview**
