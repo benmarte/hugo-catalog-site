@@ -1,0 +1,12 @@
+{{$span := .Get "span"}}
+{{$src := .Get "src"}}
+{{$muted := .Get "muted"}}
+{{$autoplay := .Get "autoplay"}}
+{{$loop := .Get "loop"}}
+{{$poster := .Get "poster"}}
+
+<div class="span-{{$span}}">
+    <video {{with $poster}}poster="{{$poster}}"{{end}} {{if eq $loop "true"}}loop{{end}} {{if eq $autoplay "true"}}autoplay{{end}} {{if eq $muted "true"}}muted{{end}} controls>
+        <source src="{{$src}}"></source>
+    </video>
+</div>

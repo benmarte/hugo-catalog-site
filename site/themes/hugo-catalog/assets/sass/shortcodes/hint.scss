@@ -1,0 +1,26 @@
+.hint-shortcode {
+  margin: 24px 0 0 0;
+  padding: 20px;
+  width: 100%;
+
+  &.warning {
+    background: $warning-light;
+    border: 1px solid $warning-dark;
+    color: $warning-dark;
+  }
+  &.danger {
+    background: $danger-light;
+    border: 1px solid $danger;
+    color: $danger-dark;
+  }
+  &.success {
+    background: $success-light;
+    border: 1px solid $success;
+    color: $success-dark;
+  }
+  &.info {
+    background: $info-light;
+    border: 1px solid $info;
+    color: $info-dark;
+  }
+}

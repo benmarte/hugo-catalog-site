@@ -1,0 +1,12 @@
+{{$type := .Get "type" | default "check"}}
+{{$leadingText := .Get "leadingText"}}
+{{$text := .Get "text"}}
+
+<div class="bullet">
+    {{if eq $type "check"}}
+    <i class="fa-regular fa-circle-check success"></i>
+    {{else}}
+    <i class="far fa-window-close danger"></i>
+    {{end}}
+    <div>{{with $leadingText}}<b>{{.}}</b>{{end}} {{with $text}}{{.}}{{end}}</div>
+  </div>

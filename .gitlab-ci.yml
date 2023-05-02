@@ -1,0 +1,39 @@
+image: registry.gitlab.com/pages/hugo/hugo_extended:latest
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+stages:
+  - test
+  - deploy
+  - flushcache
+
+test:
+  stage: test
+  script:
+    - echo $CI_JOB_ID
+    - echo $HUGO_BUILDVERSION
+    - env HUGO-BUILDVERSION=$CI_JOB_ID hugo -s ./site --minify && gzip -k -6 $(find public -type f)
+  except:
+    - master
+
+pages:
+  stage: deploy
+  script:
+    - echo $CI_JOB_ID
+    - echo $HUGO_BUILDVERSION
+    - env HUGO-BUILDVERSION=$CI_JOB_ID hugo -s ./site --minify && gzip -k -6 $(find public -type f)
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
+flushcache:
+  image: docker:stable
+  stage: flushcache
+  before_script:
+    - apk add --update curl && rm -rf /var/cache/apk/*
+  script:
+    - |
+      curl --fail --output "/dev/null" --silent --show-error -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache" -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" --data '{"purge_everything":true}'

@@ -1,0 +1,13 @@
+$size: calc(100% / 6);
+
+@for $i from 1 through 6 {
+  .span-#{$i} {
+    width: calc(#{$size} * #{$i} - 10px);
+    margin: 24px 10px 0 0;
+    display: inline-block;
+  }
+}
+
+.span-6 {
+  margin: 24px 0 0 0;
+}

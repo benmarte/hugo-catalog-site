@@ -1,0 +1,95 @@
+body {
+  font-family: $user-default-font-family;
+}
+.layout {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+#content {
+  background-color: $content-bg;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  min-height: 100vh;
+  border-left: 1px solid $gray;
+  line-height: 1.5;
+
+  .content-body {
+    max-width: 1024px;
+    padding: 48px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      width: 100%;
+      margin: 48px 0 0 0;
+    }
+    h2 + h3,
+    h2 + h4,
+    h2 + h5,
+    h2 + h6 {
+      margin: 16px 0 0 0;
+    }
+
+    p {
+      color: $body-text;
+      margin: 16px 0 0 0;
+    }
+
+    ol {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $primary-color;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    ul {
+      li {
+        margin: 16px 0 0 0;
+      }
+    }
+
+    blockquote {
+      width: 100%;
+      border-left: 4px solid $secondary-color;
+      padding-left: 20px;
+      font-size: 1.5rem;
+      margin: 24px 0 0 0;
+      p {
+        color: $secondary-color;
+        margin: 0;
+      }
+    }
+
+    .highlight {
+      width: 100%;
+      pre {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.show-menu {
+  #content {
+    display: none;
+  }
+}

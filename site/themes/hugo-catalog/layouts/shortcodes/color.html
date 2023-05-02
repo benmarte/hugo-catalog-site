@@ -1,0 +1,18 @@
+{{$span := .Get "span"}} {{$name := .Get "name"}} {{$hexColor := .Get
+"hexColor"}} {{$pantone := .Get "pantone"}} {{$cmyk := .Get "cmyk"}} {{$mui :=
+.Get "mui"}}
+
+<div class="span-{{$span}}">
+  <div class="color-shortcode" style="background: {{$hexColor}}"></div>
+  {{with $name}}
+  <p><b>{{$name}}</b></p>
+  {{end}} {{with $pantone}}
+  <p>PANTONE: {{$pantone}}</p>
+  {{end}} {{with $hexColor}}
+  <p>HEX: {{$hexColor}}</p>
+  {{end}} {{with $cmyk}}
+  <p>CMYK: {{$cmyk}}</p>
+  {{end}} {{with $mui}}
+  <p>MUI: {{$mui}}</p>
+  {{end}}
+</div>

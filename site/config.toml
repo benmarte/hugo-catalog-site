@@ -1,0 +1,22 @@
+baseURL = 'http://localhost:1313'
+languageCode = 'en-us'
+title = 'Hugo Catalog'
+theme = 'hugo-catalog'
+
+[markup.goldmark.parser.attribute]
+block = true
+title = true
+
+[Params]
+    # the path to your site logo 
+    logo = '/images/hugo-catalog-icon.svg'
+    # enables displaying the site name in the header
+    disableSiteNameHeader = false    
+    # sets the sites primary color
+    primaryColor = "#003b5c"
+    # sets the sites secondary color
+    secondaryColor = "#C6007E"
+    # sets the sites font family
+    fontFamily = "Montserrat"
+    # enables subnav page links in nav
+    enableSubNav = true

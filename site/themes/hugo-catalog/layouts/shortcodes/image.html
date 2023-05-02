@@ -1,0 +1,22 @@
+{{$span := .Get "span"}} {{$src := .Get "src"}} {{$title := .Get "title"}}
+{{$description := .Get "description"}} {{$light := .Get "light"}} {{$dark :=
+.Get "dark"}} {{$plain := .Get "plain"}} {{$overlay := .Get "overlay"}} {{$scale
+:= .Get "scale"}}
+
+<div
+  class="span-{{$span}} image-shortcode {{with $plain}}plain{{end}} {{with $light}}light{{end}} {{with $dark}}dark{{end}} {{if eq $scale "false"}}no-scale{{end}}"
+>
+  <div {{with $overlay}}class="source"{{end}}>
+    <img src="{{$src}}" />
+  </div>
+  {{with $overlay}}
+  <div class="overlay">
+    <img src="{{$overlay}}" />
+  </div>
+  {{end}}
+  {{with $title}}
+  <h4>{{$title}}</h4>
+  {{end}} {{with $description}}
+  <p>{{$description}}</p>
+  {{end}}
+</div>

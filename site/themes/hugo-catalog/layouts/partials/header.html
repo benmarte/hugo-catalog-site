@@ -1,0 +1,34 @@
+{{$url := urls.Parse .Permalink}}
+{{$title := .Page.Title}}
+{{$subtitle := ""}}
+
+{{if eq .Site.Params.disableSiteNameHeader true}}
+
+  {{if isset .Page.Params "subtitle"}}
+      {{$subtitle = .Page.Params.subtitle }}
+  {{end}}
+    
+{{else}}
+
+  {{$subtitle = .Site.Title}}
+
+{{end}}
+
+
+
+{{if eq $url.Path "/"}}
+    {{with .Site.GetPage "/"}}
+        {{$title = .Title}}
+    {{end}}
+{{end}}
+
+<div class="page-header">
+  <button class="nav-toggle" onclick="toggleNav()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div>
+    {{with $subtitle}}<h2 class="section-title">{{$subtitle}}</h2>{{end}}
+
+    <h1 class="page-title">{{$title}}</h1>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{{$url := .Get "url"}}
+{{$title := .Get "title"}}
+{{$subtitle := .Get "subtitle"}}
+{{$bytes := float (os.Stat $url).Size }}
+{{$k := 1024}}
+{{$dm := 2}}
+{{$sizes := slice "Bytes" "KB" "MB" "GB" "TB" "PB" "EB" "ZB" "YB"}}
+{{$i := math.Floor (div (math.Log $bytes) (math.Log $k))}}
+{{$fileSize := div $bytes (math.Pow $k $i)}}
+{{$sizeType := index $sizes (int $i)}}
+
+
+<a class="download" href="{{replace $url "/static/" "/"}}" target="_blank" rel="no-follow no-referrer">
+    <div class="download-icon">
+        <i class="fa-regular fa-circle-down"></i>
+    </div>
+    <div class="download-details">
+        <div>{{$title}}</div>
+        <div>{{with $subtitle}}{{$subtitle}}{{else}}{{$fileSize | lang.FormatNumber 2}} {{$sizeType}}{{end}}</div>
+    </div>
+
+</a>
