@@ -5,11 +5,11 @@
   </button>
   <div class="brand">
     {{if isset .Site.Params "logo"}}
-    <a href="/">
+    <a href="{{.Site.BaseURL}}">
       <img src="{{.Site.Params.logo}}" alt="Logo" class="img-fluid" />
     </a>
     {{else}}
-    <a href="/">
+    <a href="{{.Site.BaseURL}}">
       <div class="logo-line-1">Hugo</div>
       <div class="logo-line-2">Catalog</div>
     </a>
