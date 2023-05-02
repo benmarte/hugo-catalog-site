@@ -23,11 +23,11 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify -s ./site --baseURL ${{secrets.BASE_URL}}
+        run: hugo --minify --baseURL ${{secrets.BASE_URL}}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site/public
+          publish_dir: ./public
