@@ -1,4 +1,4 @@
-baseURL = 'http://localhost:1313'
+baseURL = 'https://benmarte.github.io/hugo-catalog-site'
 languageCode = 'en-us'
 title = 'Hugo Catalog'
 theme = 'hugo-catalog'
