@@ -15,10 +15,10 @@ In order to customize your Hugo Catalog instance you need to copy the following 
 
 ```toml
 [Params]
-    # the path to your site logo 
+    # the path to your site logo
     logo = '/images/hugo-catalog-icon.svg'
     # enables displaying the site name in the header
-    disableSiteNameHeader = false    
+    disableSiteNameHeader = false
     # sets the sites primary color
     primaryColor = "#003b5c"
     # sets the sites secondary color
@@ -31,39 +31,39 @@ In order to customize your Hugo Catalog instance you need to copy the following 
 
 ## logo - string
 
-The path to your site logo can be relative to the site or hosted on a CDN.
+The path to your site logo can be a relative to the site or an image hosted on a CDN.
 
-{{<image span="6" src="/images/logo-image.png" scale="false" light="true">}}
+{{<image span="3" src="/images/logo-image.png" title="default hugo catalog logo">}}
+
+{{<image span="3" src="/images/site-name-image.png" title="default hugo catalog text logo">}}
 
 {{<hint type="info">}}
-If you delete this value the site title will be displayed as text in place of the logo.
+If you delete or comment out this value in your **`config.toml`** the sites title will be displayed as text in place of the logo.
 {{</hint>}}
-
-{{<image span="6" src="/images/site-name-image.png" scale="false" light="true">}}
 
 ## disableSiteNameHeader - boolean
 
 This controls the display of the site name above the header of the site.
 
-{{<image span="6" src="/images/subtitle-image.png" scale="false" light="true">}}
+{{<image span="3" src="/images/subtitle-image.png" >}}
+
+{{<image span="3" src="/images/custom-subtitle-image.png" >}}
 
 {{<hint type="info">}}
-If you set this value to true and you add a **`subtitle`** parameter to your pages front matter you can display a custom text.
+If you set this value to true and you add a **`subtitle`** parameter to your pages front matter you can display a custom text on each page.
 {{</hint>}}
-
-{{<image span="6" src="/images/custom-subtitle-image.png" scale="false" light="true">}}
 
 ## primaryColor - string
 
 Sets the primary color of the site, this color applies to the sites header, and main links color. If this value is not set the site will use the default fallback value: **`#003b5c`**
 
-{{<color span="6" name="primaryColor" hexColor="#003b5c">}}
+{{<color span="6" name="primaryColor" hex="#003b5c">}}
 
 ## secondaryColor - string
 
 Sets the secondary color of the site, this color applies to hover states of links in the content area and the sub-nav items on the navigation menu. If this value is not set the site will use the default fallback value: **`#C9177E`**
 
-{{<color span="6" name="secondaryColor" hexColor="#C9177E">}}
+{{<color span="6" name="secondaryColor" hex="#C9177E">}}
 
 ## fontFamily - string
 
@@ -73,7 +73,10 @@ Sets the font family for the site, if this value is not set the site will use th
 You can change the font to any [google font](https://fonts.google.com/), just change this value to the font name from google.
 {{</hint>}}
 
-
 ## enableSubNav - boolean
 
 This setting controls if the pages table of contents gets rendered as sub nav items for the page being displayed.
+
+{{<image span="3" src="/images/toc.png" title="enableSubNav = true">}}
+
+{{<image span="3" src="/images/toc-disabled.png" title="enableSubNav = false">}}

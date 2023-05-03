@@ -1,4 +1,4 @@
 {{$text := .Get "text"}}
 <div class="divider-title">
-    {{$text | markdownify}}
+    {{with $text}}{{$text | markdownify}}{{end}}
 </div>
