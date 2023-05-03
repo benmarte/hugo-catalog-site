@@ -11,7 +11,7 @@ title = true
 
 [Params]
     # the path to your site logo 
-    # logo = '/images/hugo-catalog-icon.svg'
+    logo = '/images/hugo-catalog-icon.svg'
     # enables displaying the site name in the header
     disableSiteNameHeader = false    
     # sets the sites primary color
