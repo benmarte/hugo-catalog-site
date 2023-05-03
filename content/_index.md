@@ -26,5 +26,5 @@ It ships with [8 shortcodes]({{<relref "/shortcodes.md">}}) so your editors can 
 
 This theme is under active development this means there be bugs and I can't make no guarantees things won't break.
 
-With that out of the way we do appreciate feedback, bug issues and PRs. Thanks.
+With that out of the way. We do appreciate feedback, bug issues and PRs. Thanks.
 {{</hint>}}
