@@ -66,7 +66,8 @@ body {
       margin: 16px 0 0 0; }
     #content .content-body p {
       color: #333333;
-      margin: 16px 0 0 0; }
+      margin: 16px 0 0 0;
+      width: 100%; }
     #content .content-body ol {
       margin-bottom: 0; }
     #content .content-body a {
@@ -90,7 +91,8 @@ body {
     #content .content-body .highlight {
       width: 100%; }
       #content .content-body .highlight pre {
-        padding: 20px; }
+        padding: 20px;
+        overflow: auto; }
 
 .show-menu #content {
   display: none; }
@@ -178,7 +180,8 @@ body {
   display: flex;
   align-items: flex-start;
   margin: 24px 0 0 0;
-  width: 100%; }
+  width: 100%;
+  align-items: center; }
   .bullet i {
     margin-right: 10px; }
   .bullet .success {
@@ -191,23 +194,29 @@ body {
 
 .image-shortcode.light {
   padding: 20px;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAF0lEQVQI12P4BAI/QICBFCaYBPNJYQIAkUZftTbC4sIAAAAASUVORK5CYII="); }
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAF0lEQVQI12P4BAI/QICBFCaYBPNJYQIAkUZftTbC4sIAAAAASUVORK5CYII=");
+  width: calc(calc(100% / 6) * 3 - 50px); }
+  .image-shortcode.light div > img {
+    width: calc(100% - 40px) !important; }
 
 .image-shortcode.dark {
   padding: 20px;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAFklEQVQI12NQBQF2EGAghQkmwXxSmADZJQiZ2ZZ46gAAAABJRU5ErkJggg=="); }
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAFklEQVQI12NQBQF2EGAghQkmwXxSmADZJQiZ2ZZ46gAAAABJRU5ErkJggg==");
+  width: calc(calc(100% / 6) * 3 - 50px); }
 
 .image-shortcode.plain.light {
   padding: 20px;
-  background: #f2f2f2; }
+  background: #f2f2f2;
+  width: calc(calc(100% / 6) * 3 - 50px); }
 
 .image-shortcode.plain.dark {
   padding: 20px;
-  background: #333333; }
+  background: #333333;
+  width: calc(calc(100% / 6) * 3 - 50px); }
 
-.image-shortcode.no-scale img {
-  width: auto !important;
-  height: auto !important; }
+.image-shortcode.no-scale div > img {
+  width: auto;
+  height: auto; }
 
 .image-shortcode .overlay {
   display: none; }
