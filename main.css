@@ -297,31 +297,43 @@ video {
   width: calc(calc(100% / 6) * 1 - 10px);
   margin: 24px 10px 0 0;
   display: inline-block; }
+  .span-1 *:first-child {
+    margin-top: 0 !important; }
 
 .span-2 {
   width: calc(calc(100% / 6) * 2 - 10px);
   margin: 24px 10px 0 0;
   display: inline-block; }
+  .span-2 *:first-child {
+    margin-top: 0 !important; }
 
 .span-3 {
   width: calc(calc(100% / 6) * 3 - 10px);
   margin: 24px 10px 0 0;
   display: inline-block; }
+  .span-3 *:first-child {
+    margin-top: 0 !important; }
 
 .span-4 {
   width: calc(calc(100% / 6) * 4 - 10px);
   margin: 24px 10px 0 0;
   display: inline-block; }
+  .span-4 *:first-child {
+    margin-top: 0 !important; }
 
 .span-5 {
   width: calc(calc(100% / 6) * 5 - 10px);
   margin: 24px 10px 0 0;
   display: inline-block; }
+  .span-5 *:first-child {
+    margin-top: 0 !important; }
 
 .span-6 {
   width: calc(calc(100% / 6) * 6 - 10px);
   margin: 24px 10px 0 0;
   display: inline-block; }
+  .span-6 *:first-child {
+    margin-top: 0 !important; }
 
 .span-6 {
   margin: 24px 0 0 0; }
