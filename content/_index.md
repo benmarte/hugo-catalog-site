@@ -19,3 +19,12 @@ It ships with [8 shortcodes]({{<relref "/shortcodes.md">}}) so your editors can 
 {{<bullet type="check" leadingText="Onboarding:" text="Helps provide an overview of your brand and the expectations of anyone representing it">}}
 
 {{<bullet type="check" leadingText="Culture:" text="Promotes and encourages value in design, internally across all teams">}}
+
+{{<hint type="danger" span="6">}}
+**USE AT YOUR OWN RISK**
+---
+
+This theme is under active development this means there be bugs and I can't make no guarantees things won't break.
+
+With that out of the way we do appreciate feedback and bugs. Thanks.
+{{</hint>}}
