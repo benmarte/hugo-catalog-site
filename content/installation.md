@@ -3,6 +3,10 @@ title: Installation
 weight: 2
 ---
 
+## Prerequisites
+
+- [Hugo](https://gohugo.io)
+
 Installing Hugo Catalog is very easy, simply run the following command inside your themes folder:
 
 ```bash
