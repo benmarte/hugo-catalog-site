@@ -1,6 +1,6 @@
-$user-primary-color: {{.Site.Params.primaryColor}};
-$user-secondary-color: {{.Site.Params.secondaryColor}};
-$user-default-font-family: {{.Site.Params.FontFamily }};
+$user-primary-color: {{.Site.Params.primary_color}};
+$user-secondary-color: {{.Site.Params.secondary_color}};
+$user-default-font-family: {{.Site.Params.font_family }};
 @import "colors.scss";
 @import "header.scss";
 @import "layout.scss";

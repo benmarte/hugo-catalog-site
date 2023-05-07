@@ -6,6 +6,7 @@ body {
   justify-content: space-between;
   position: relative;
 }
+
 #content {
   background-color: $content-bg;
   width: calc(100% - 250px);
@@ -15,11 +16,15 @@ body {
   line-height: 1.5;
 
   .content-body {
-    max-width: 1024px;
+    max-width: 960px;
     padding: 48px 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: $spacing;
+
+    * {
+      grid-column: span 6;
+    }
 
     h2:first-child {
       margin-top: 0;
@@ -31,18 +36,18 @@ body {
     h5,
     h6 {
       width: 100%;
-      margin: 48px 0 0 0;
+      margin: 32px 0 0 0;
     }
     h2 + h3,
     h2 + h4,
     h2 + h5,
     h2 + h6 {
-      margin: 16px 0 0 0;
+      margin: 0;
     }
 
     p {
       color: $body-text;
-      margin: 16px 0 0 0;
+      margin: 0;
       width: 100%;
     }
 
@@ -63,8 +68,9 @@ body {
     }
 
     ul {
+      margin: 0;
       li {
-        margin: 16px 0 0 0;
+        margin: 0;
       }
     }
 
@@ -73,7 +79,7 @@ body {
       border-left: 4px solid $secondary-color;
       padding-left: 20px;
       font-size: 1.5rem;
-      margin: 24px 0 0 0;
+      margin: 8px 0 0 0;
       p {
         color: $secondary-color;
         margin: 0;

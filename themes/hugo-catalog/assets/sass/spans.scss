@@ -1,16 +1,10 @@
-$size: calc(100% / 6);
+// $size: calc(100% / 6);
 
-@for $i from 1 through 6 {
-  .span-#{$i} {
-    width: calc(#{$size} * #{$i} - 10px);
-    margin: 24px 10px 0 0;
-    display: inline-block;
-    *:first-child{
-    margin-top: 0 !important;
+#content .content-body {
+  @for $i from 1 through 6 {
+    .span-#{$i} {
+      grid-column: span $i;
+      margin: 24px 0 0 0;
     }
   }
-}
-
-.span-6 {
-  margin: 24px 0 0 0;
 }

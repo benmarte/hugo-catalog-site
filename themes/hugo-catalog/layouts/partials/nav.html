@@ -1,4 +1,5 @@
 {{$page := .Page}}
+{{$enable_subnav := site.Params.enable_subnav}}
 <div class="navigation">
   <button class="nav-close" onclick="toggleNav()">
     <i class="fa-regular fa-circle-xmark"></i>
@@ -32,11 +33,13 @@
         aria-current="page"
         href="{{.Permalink}}"
         >
-        {{.Title}}
+       {{.Title}}
       </a>
 
-      {{if eq .Site.Params.enableSubNav true}}
-        {{ if eq $page.Permalink .Permalink }}{{.TableOfContents}}{{end}}
+      {{if eq .Site.Params.enable_subnav true}}
+        {{ if eq $page.Permalink .Permalink }}
+        {{.TableOfContents}}
+        {{end}}
       {{end}}
     </li>
     {{end}}
