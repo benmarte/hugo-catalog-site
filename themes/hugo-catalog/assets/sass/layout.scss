@@ -6,6 +6,7 @@ body {
   justify-content: space-between;
   position: relative;
 }
+
 #content {
   background-color: $content-bg;
   width: calc(100% - 250px);
@@ -15,11 +16,16 @@ body {
   line-height: 1.5;
 
   .content-body {
-    max-width: 1024px;
+    max-width: 960px;
     padding: 48px 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: $spacing;
+
+    * {
+      grid-column: span 6;
+      margin: 0 !important;
+    }
 
     h2:first-child {
       margin-top: 0;

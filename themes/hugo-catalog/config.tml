@@ -19,7 +19,7 @@ title = true
     # sets the sites font family
     fontFamily = "Montserrat"
     # enables subnav page links in nav
-    enableSubNav = true
+    enableSubNav = false
 
 [module]
   [module.hugoVersion]

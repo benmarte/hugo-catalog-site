@@ -1,0 +1,55 @@
+$user-primary-color: {{.Site.Params.primaryColor}};
+$user-secondary-color: {{.Site.Params.secondaryColor}};
+$user-default-font-family: {{.Site.Params.fontFamily }};
+
+@import "colors.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $user-default-font-family;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px calc(100vw - 300px);
+  grid-template-rows: 100vh;
+  grid-template-areas: "navigation content";
+}
+
+.navigation {
+  grid-area: "navigation";
+  background: $white;
+}
+
+.content {
+  grid-area: "content";
+  background-color: $gray;
+  display: grid;
+  grid-template-rows: 200px calc(100vh - 200px);
+  grid-area: "header content-body";
+
+  .header {
+    grid-area: "header";
+    background: $primary-color;
+    border: 1px solid red;
+    padding: $padding;
+    color: $white;
+    display: flex;
+    align-items: center;
+  }
+
+  .content-body {
+    grid-area: "content-body";
+    padding: $padding;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    // grid-auto-rows: auto;
+    max-width: calc(960px - 80px);
+
+    * {
+      margin: 0 0 $spacing 0;
+      grid-column: 1 / -1;
+    }
+  }
+}
