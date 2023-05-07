@@ -11,15 +11,15 @@ title = true
     # the path to your site logo 
     logo = '/images/hugo-catalog-icon.svg'
     # enables displaying the site name in the header
-    disableSiteNameHeader = false    
+    disable_site_name_header = false    
     # sets the sites primary color
-    primaryColor = "#003b5c"
+    primary_color = "#003b5c"
     # sets the sites secondary color
-    secondaryColor = "#C6007E"
+    secondary_color = "#C6007E"
     # sets the sites font family
-    fontFamily = "Montserrat"
+    font_family = "Montserrat"
     # enables subnav page links in nav
-    enableSubNav = false
+    enable_subnav = false
 
 [module]
   [module.hugoVersion]
