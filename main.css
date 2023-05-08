@@ -69,7 +69,8 @@ body {
     #content .content-body p {
       color: #333333;
       margin: 0;
-      width: 100%; }
+      width: 100%;
+      line-height: 1.5rem; }
     #content .content-body ol {
       margin-bottom: 0; }
     #content .content-body a {
@@ -198,29 +199,25 @@ body {
 
 .image-shortcode.light {
   padding: 20px;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAF0lEQVQI12P4BAI/QICBFCaYBPNJYQIAkUZftTbC4sIAAAAASUVORK5CYII=");
-  width: calc(calc(100% / 6) * 3 - 50px); }
-  .image-shortcode.light div > img {
-    width: calc(100% - 40px) !important; }
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAF0lEQVQI12P4BAI/QICBFCaYBPNJYQIAkUZftTbC4sIAAAAASUVORK5CYII="); }
 
 .image-shortcode.dark {
   padding: 20px;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAFklEQVQI12NQBQF2EGAghQkmwXxSmADZJQiZ2ZZ46gAAAABJRU5ErkJggg==");
-  width: calc(calc(100% / 6) * 3 - 50px); }
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAFklEQVQI12NQBQF2EGAghQkmwXxSmADZJQiZ2ZZ46gAAAABJRU5ErkJggg=="); }
+  .image-shortcode.dark p {
+    color: white !important; }
 
 .image-shortcode.plain.light {
   padding: 20px;
-  background: #f2f2f2;
-  width: calc(calc(100% / 6) * 3 - 50px); }
+  background: #f2f2f2; }
 
 .image-shortcode.plain.dark {
   padding: 20px;
-  background: #333333;
-  width: calc(calc(100% / 6) * 3 - 50px); }
+  background: #333333; }
 
 .image-shortcode.no-scale div > img {
-  width: auto;
-  height: auto; }
+  width: auto !important;
+  height: auto !important; }
 
 .image-shortcode .overlay {
   display: none; }
@@ -263,7 +260,7 @@ body {
   color: #546e7a;
   border-bottom: 1px solid #546e7a;
   text-transform: uppercase;
-  margin: 8px 0 0 0; }
+  margin: 24px 0 0 0; }
 
 .color-shortcode {
   min-height: 120px;
@@ -297,28 +294,22 @@ video {
   height: auto; }
 
 #content .content-body .span-1 {
-  grid-column: span 1;
-  margin: 24px 0 0 0; }
+  grid-column: span 1; }
 
 #content .content-body .span-2 {
-  grid-column: span 2;
-  margin: 24px 0 0 0; }
+  grid-column: span 2; }
 
 #content .content-body .span-3 {
-  grid-column: span 3;
-  margin: 24px 0 0 0; }
+  grid-column: span 3; }
 
 #content .content-body .span-4 {
-  grid-column: span 4;
-  margin: 24px 0 0 0; }
+  grid-column: span 4; }
 
 #content .content-body .span-5 {
-  grid-column: span 5;
-  margin: 24px 0 0 0; }
+  grid-column: span 5; }
 
 #content .content-body .span-6 {
-  grid-column: span 6;
-  margin: 24px 0 0 0; }
+  grid-column: span 6; }
 
 @media (max-width: 1023px) {
   .layout {
