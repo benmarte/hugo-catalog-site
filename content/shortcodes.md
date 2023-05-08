@@ -132,9 +132,9 @@ The column shortcode is basically a container which you can use to display markd
 {{<column span="3">}}This is content in a **column** shortcode with a **span = 3** value{{</column>}}
 
 ```html
-{{</*column span="3" color="#999" align="center">}}This is content in a **column** shortcode with a **span = 3** value{{</column*/>}}
+{{</*column span="3">}}This is content in a **column** shortcode with a **span = 3** value{{</column*/>}}
 
-{{</*column span="3" color="#999" align="center">}}This is content in a **column** shortcode with a **span = 3** value{{</column*/>}}
+{{</*column span="3">}}This is content in a **column** shortcode with a **span = 3** value{{</column*/>}}
 ```
 
 {{<hint type="info">}}
