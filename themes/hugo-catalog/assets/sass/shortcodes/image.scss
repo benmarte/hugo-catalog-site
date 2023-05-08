@@ -5,39 +5,27 @@
   &.light {
     padding: 20px;
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAF0lEQVQI12P4BAI/QICBFCaYBPNJYQIAkUZftTbC4sIAAAAASUVORK5CYII=");
-    width: calc(calc(100% / 6) * 3 - 50px);
-    div > img {
-      width: calc(100% - 40px) !important;
-    }
   }
   &.dark {
     padding: 20px;
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAAAAACoWZBhAAAAFklEQVQI12NQBQF2EGAghQkmwXxSmADZJQiZ2ZZ46gAAAABJRU5ErkJggg==");
-    width: calc(calc(100% / 6) * 3 - 50px);
-    // div > img {
-    //   width: calc(100% - 40px) !important;
-    // }
+    p {
+      color: $white !important;
+    }
+
   }
   &.plain.light {
     padding: 20px;
     background: $image-light-bg;
-    width: calc(calc(100% / 6) * 3 - 50px);
-    // div > img {
-    //   width: calc(100% - 40px) !important;
-    // }
   }
   &.plain.dark {
     padding: 20px;
     background: $image-dark-bg;
-    width: calc(calc(100% / 6) * 3 - 50px);
-    // div > img {
-    //   width: calc(100% - 40px) !important;
-    // }
   }
   &.no-scale {
     div > img {
-      width: auto;
-      height: auto;
+      width: auto !important;
+      height: auto !important;
     }
   }
   .overlay {
