@@ -10,6 +10,12 @@ block = true
 title = true
 
 [Params]
+    # title to display when sharing your site
+    title = "Hugo Catalog"
+    # thumbnail image to display when sharing your site
+    thumbnail = "/images/thumbnail.jpg"
+    # description text to display when sharing your site
+    description = "Design beautiful styleguides by using markdown."
     # the path to your site logo 
     logo = '/images/hugo-catalog-icon.svg'
     # enables displaying the site name in the header
