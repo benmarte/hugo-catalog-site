@@ -3,6 +3,87 @@ title: Shortcodes
 weight: 3
 ---
 
+## Grid Layout
+
+Hugo Catalog uses a css grid based layout for the content area, the content area has a **max-width** of 960px wide. We use a css grid based layout composed of 6 column grid.
+
+{{<column span="1" color="#999" align="center">}}
+span = 1
+{{</column>}}
+
+{{<column span="1" color="#999" align="center">}}
+span = 1
+{{</column>}}
+
+{{<column span="1" color="#999" align="center">}}
+span = 1
+{{</column>}}
+
+{{<column span="1" color="#999" align="center">}}
+span = 1
+{{</column>}}
+
+{{<column span="1" color="#999" align="center">}}
+span = 1
+{{</column>}}
+
+{{<column span="1" color="#999" align="center">}}
+span = 1
+{{</column>}}
+
+You can compose rows of columns based on their **span** values. You can put any combination of span values as long as they add to 6, the grid is smart enough to accomadate them, here are some examples.
+
+{{<column span="3" color="#999" align="center">}}
+span = 3
+{{</column>}}
+
+{{<column span="3" color="#999" align="center">}}
+span = 3
+{{</column>}}
+
+{{<column span="2" color="#999" align="center">}}
+span = 2
+{{</column>}}
+
+{{<column span="4" color="#999" align="center">}}
+span = 4
+{{</column>}}
+
+
+{{<column span="2" color="#999" align="center">}}
+span = 2
+{{</column>}}
+
+{{<column span="2" color="#999" align="center">}}
+span = 2
+{{</column>}}
+
+{{<column span="2" color="#999" align="center">}}
+span = 2
+{{</column>}}
+
+{{<column span="6" color="#999" align="center">}}
+span = 6
+{{</column>}}
+
+{{<column span="5" color="#999" align="center">}}
+span = 5
+{{</column>}}
+
+{{<column span="1" color="#999" align="center">}}
+span = 1
+{{</column>}}
+## Column Shortcode
+
+The column shortcode is basically a container which you can use to display markdown content based on the [Grid Layout](#grid-layout) we discussed above.
+
+{{<column span="3">}}This is content in a **column** shortcode with a **span = 3** value{{</column>}}
+
+{{<column span="3">}}This is content in a **column** shortcode with a **span = 3** value{{</column>}}
+
+{{<hint type="info">}}
+The same rules from the [Grid Layout](#grid-layout) apply to the **column** shortcode, as long as the columns add up to 6 you can control how they display.
+{{</hint>}}
 ## Audio Shortcode
 
 The Audio shortcode can be used to document the audible aspects, for example background music, sound effects or jingles in the browser-provided interface.

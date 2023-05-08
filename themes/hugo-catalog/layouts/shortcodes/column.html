@@ -1,0 +1,9 @@
+{{$span := .Get "span"}}
+{{$color := .Get "color"}}
+{{$align := .Get "align"}}
+<div
+  class="span-{{$span}}"
+  style="{{with $color}}background: {{$color}};{{end}} {{with $align}}text-align: {{$align}};{{end}}"
+>
+  {{.Inner | markdownify}}
+</div>
