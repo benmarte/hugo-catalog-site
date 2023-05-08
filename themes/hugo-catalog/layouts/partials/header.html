@@ -1,8 +1,20 @@
-{{$url := urls.Parse .Permalink}} {{$title := .Page.Title}} {{$subtitle := ""}}
-{{if eq .Site.Params.disable_site_name_header true}} {{if isset .Page.Params
-"subtitle"}} {{$subtitle = .Page.Params.subtitle }} {{end}} {{else}} {{$subtitle
-= .Site.Title}} {{end}} {{if eq $url.Path "/"}} {{with .Site.GetPage "/"}}
-{{$title = .Title}} {{end}} {{end}}
+{{$url := urls.Parse .Permalink}}
+{{$title := .Page.Title}}
+{{$subtitle := ""}}
+
+{{if eq .Site.Params.disable_site_name_header true}}
+  {{if isset .Page.Params "subtitle"}}
+    {{$subtitle = .Page.Params.subtitle }}
+  {{end}}
+{{else}}
+  {{$subtitle = .Site.Title}}
+{{end}}
+
+{{if eq $url.Path "/"}}
+  {{with .Site.GetPage "/"}}
+    {{$title = .Title}}
+  {{end}}
+{{end}}
 
 <div class="page-header">
   <button class="nav-toggle" onclick="toggleNav()">
