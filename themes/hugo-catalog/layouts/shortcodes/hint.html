@@ -1,4 +1,5 @@
-{{$type := .Get "type"}} {{$span := .Get "span"}}
+{{$type := .Get "type"}}
+{{$span := .Get "span"}}
 
 <div class="span-{{$span}} hint-shortcode {{with $type}}{{$type}}{{end}}">
   {{.Inner | markdownify}}
