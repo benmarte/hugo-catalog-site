@@ -183,7 +183,7 @@ body {
 .bullet {
   display: flex;
   align-items: flex-start;
-  margin: 24px 0 0 0;
+  margin: 8px 0 0 0;
   width: 100%;
   align-items: center; }
   .bullet i {
@@ -237,7 +237,7 @@ body {
   justify-content: flex-start;
   width: 100%;
   color: #003b5c;
-  margin: 24px 0 0 0; }
+  margin: 8px 0 0 0; }
   .download:hover .download-icon,
   .download:hover .download-details {
     color: #C6007E; }
@@ -263,19 +263,18 @@ body {
   color: #546e7a;
   border-bottom: 1px solid #546e7a;
   text-transform: uppercase;
-  margin: 24px 0 0 0; }
+  margin: 8px 0 0 0; }
 
 .color-shortcode {
-  height: 120px;
+  min-height: 120px;
   margin: 0 0 15px 0; }
 
 audio {
   width: 100%; }
 
 .hint-shortcode {
-  margin: 24px 0 0 0;
-  padding: 20px;
-  width: 100%; }
+  margin: 8px 0 0 0;
+  padding: 20px; }
   .hint-shortcode.warning {
     background: #fff6dd;
     border: 1px solid #966900;
