@@ -4,12 +4,11 @@
 {{$description := .Get "description"}}
 {{$light := .Get "light"}}
 {{$dark := .Get "dark"}}
-{{$plain := .Get "plain"}}
 {{$overlay := .Get "overlay"}}
 {{$scale := .Get "scale"}}
 
 <div
-  class="span-{{$span}} image-shortcode {{with $plain}}plain{{end}} {{with $light}}light{{end}} {{with $dark}}dark{{end}} {{if eq $scale "false"}}no-scale{{end}}"
+  class="span-{{$span}} image-shortcode {{with $light}}light{{end}} {{with $dark}}dark{{end}} {{if eq $scale "false"}}no-scale{{end}}"
 >
   <div {{with $overlay}}class="source"{{end}}>
     <img src="{{$src}}" />
