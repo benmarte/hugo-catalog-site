@@ -13,11 +13,19 @@ Installing Hugo Catalog is very easy, simply run the following command inside yo
 git clone git@github.com:benmarte/hugo-catalog.git && rm -rf ./hugo-catalog/.git
 ```
 
+Or simply [download](https://github.com/benmarte/hugo-catalog/archive/refs/heads/main.zip) the theme and place it in your hugo theme directory.
+
 ## How to customize and configure Hugo Catalog
 
 In order to customize your Hugo Catalog instance you need to copy the following code to your sites **`config.toml`** file:
 
 ```toml
+theme = 'hugo-catalog'
+
+[markup.goldmark.parser.attribute]
+block = true
+title = true
+
 [Params]
     # the path to your site logo
     logo = '/images/hugo-catalog-icon.svg'
@@ -30,7 +38,11 @@ In order to customize your Hugo Catalog instance you need to copy the following 
     # sets the sites font family
     font_family = "Montserrat"
     # enables subnav page links in nav
-    enable_subnav = true
+    enable_subnav = false
+
+[module]
+  [module.hugoVersion]
+    extended = true
 ```
 
 ## logo

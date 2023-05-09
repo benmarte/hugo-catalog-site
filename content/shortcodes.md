@@ -144,6 +144,7 @@ span = 1
 {{<hint type="info">}}
 All shortcodes span properties will display at **100% width** at devices with resolutions smaller than **1024 x 768** regardless of the **span** value specified.
 {{</hint>}}
+
 ## Column Shortcode
 
 The column shortcode is basically a container which you can use to display markdown content based on the [Grid Layout](#grid-layout) we discussed above.
@@ -171,6 +172,7 @@ The column shortcode is basically a container which you can use to display markd
 {{<hint type="info">}}
 The same rules from the [Grid Layout](#grid-layout) apply to the **column** shortcode, as long as the columns add up to 6 you can control how they display.
 {{</hint>}}
+
 ## Audio Shortcode
 
 The Audio shortcode can be used to document the audible aspects, for example background music, sound effects or jingles in the browser-provided interface.
@@ -378,7 +380,7 @@ The Video shortcode can be used to display videos.
 - **autoplay:** optional boolean - if this value is set to true the player will begin playing automatically
 - **poster:** optional string - the url path of the image path to use as the cover image
 
-{{<hint type="info">}}If you want to enable a video to autoplay you must also have muted set to true otherwise the video will not autoplay.{{</hint>}}
+{{<hint type="info">}}If you want to enable a video to **autoplay** you must also have **muted** set to **true** otherwise the video will not autoplay.{{</hint>}}
 
 {{<divider-title text="Example Usage">}}
 
