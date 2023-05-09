@@ -6,7 +6,7 @@ backend:
   # optional, defaults to master
   branch: main
   # your netlify site name ex: netlify-site-name.netlify.app
-  site_domain: hugo-catalog.netlify.app
+  site_domain: "{{ secrets.NETLIFY_SITE_NAME }}"
 
 # directory where your images are stored
 media_folder: /static/images
