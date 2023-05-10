@@ -86,6 +86,12 @@ body {
       }
     }
 
+    hr {
+      border: none;
+      height: 1px;
+      background: $body-text;
+    }
+
     .highlight {
       width: 100%;
       pre {

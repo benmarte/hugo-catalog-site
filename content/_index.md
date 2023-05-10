@@ -21,8 +21,8 @@ It ships with [10 shortcodes]({{<relref "/shortcodes.md">}}) so your editors can
 
 {{<bullet type="check" leadingText="Culture:" text="Promotes and encourages value in design, internally across all teams">}}
 
-{{<hint type="danger" span="6">}}
-**USE AT YOUR OWN RISK**
+{{<hint type="warning" span="6">}}
+**Warning**
 
 ---
 
