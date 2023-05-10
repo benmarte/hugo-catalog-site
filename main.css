@@ -92,6 +92,10 @@ body {
       #content .content-body blockquote p {
         color: #C6007E;
         margin: 0; }
+    #content .content-body hr {
+      border: none;
+      height: 1px;
+      background: #333333; }
     #content .content-body .highlight {
       width: 100%; }
       #content .content-body .highlight pre {
@@ -272,21 +276,49 @@ audio {
   margin: 8px 0 0 0;
   padding: 20px; }
   .hint-shortcode.warning {
-    background: #fff6dd;
-    border: 1px solid #966900;
-    color: #966900 !important; }
+    background: #fff6dd !important;
+    border: 1px solid #966900; }
+    .hint-shortcode.warning p {
+      margin: 0 0 16px 0 !important;
+      color: #966900 !important; }
+      .hint-shortcode.warning p:first-of-type, .hint-shortcode.warning p:last-child {
+        margin: 0 !important; }
+    .hint-shortcode.warning hr {
+      margin: 0 0 16px 0 !important;
+      background: #966900 !important; }
   .hint-shortcode.danger {
-    background: #fff5f5;
-    border: 1px solid #ffdddd;
-    color: #ce3737 !important; }
+    background: #fff5f5 !important;
+    border: 1px solid #ffdddd; }
+    .hint-shortcode.danger p {
+      margin: 0 0 16px 0 !important;
+      color: #ce3737 !important; }
+      .hint-shortcode.danger p:first-of-type, .hint-shortcode.danger p:last-child {
+        margin: 0 !important; }
+    .hint-shortcode.danger hr {
+      margin: 0 0 16px 0 !important;
+      background: #ce3737 !important; }
   .hint-shortcode.success {
-    background: #eafaea;
-    border: 1px solid #8bc34a;
-    color: #1d7d3f !important; }
+    background: #eafaea !important;
+    border: 1px solid #8bc34a; }
+    .hint-shortcode.success p {
+      margin: 0 0 16px 0 !important;
+      color: #1d7d3f !important; }
+      .hint-shortcode.success p:first-of-type, .hint-shortcode.success p:last-child {
+        margin: 0 !important; }
+    .hint-shortcode.success hr {
+      margin: 0 0 16px 0 !important;
+      background: #1d7d3f !important; }
   .hint-shortcode.info {
-    background: #cff4fc;
-    border: 1px solid #b6effb;
-    color: #055160 !important; }
+    background: #cff4fc !important;
+    border: 1px solid #b6effb; }
+    .hint-shortcode.info p {
+      margin: 0 0 16px 0 !important;
+      color: #055160 !important; }
+      .hint-shortcode.info p:first-of-type, .hint-shortcode.info p:last-child {
+        margin: 0 !important; }
+    .hint-shortcode.info hr {
+      margin: 0 0 16px 0 !important;
+      background: #055160 !important; }
 
 video {
   width: 100%;
