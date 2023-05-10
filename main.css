@@ -274,19 +274,19 @@ audio {
   .hint-shortcode.warning {
     background: #fff6dd;
     border: 1px solid #966900;
-    color: #966900; }
+    color: #966900 !important; }
   .hint-shortcode.danger {
     background: #fff5f5;
     border: 1px solid #ffdddd;
-    color: #ce3737; }
+    color: #ce3737 !important; }
   .hint-shortcode.success {
     background: #eafaea;
     border: 1px solid #8bc34a;
-    color: #1d7d3f; }
+    color: #1d7d3f !important; }
   .hint-shortcode.info {
     background: #cff4fc;
     border: 1px solid #b6effb;
-    color: #055160; }
+    color: #055160 !important; }
 
 video {
   width: 100%;
