@@ -5,21 +5,21 @@
   &.warning {
     background: $warning-light;
     border: 1px solid $warning-dark;
-    color: $warning-dark;
+    color: $warning-dark !important;
   }
   &.danger {
     background: $danger-light;
     border: 1px solid $danger;
-    color: $danger-dark;
+    color: $danger-dark !important;
   }
   &.success {
     background: $success-light;
     border: 1px solid $success;
-    color: $success-dark;
+    color: $success-dark !important;
   }
   &.info {
     background: $info-light;
     border: 1px solid $info;
-    color: $info-dark;
+    color: $info-dark !important;
   }
 }
