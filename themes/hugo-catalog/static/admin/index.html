@@ -429,7 +429,8 @@
         // (component gives better render performance)
         toPreview: function (data) {
           console.log({data})
-          return `<div class="span-${data.span}">
+          return `{{<download span="${data.span}" title="${data.title}" url="${data.url}" subtitle="${data.subtitle}">}}`;
+          {{/*  return `<div class="span-${data.span}">
             <a class="download" href="${data.url}" target="_blank" rel="no-follow no-referrer">
                 <div class="download-icon">
                     <i class="fa-regular fa-circle-down"></i>
@@ -439,7 +440,7 @@
                     ${data.subtitle !== "undefined" && `<div>${data.subtitle}</div>`}
                 </div>
             </a>
-        </div>`;
+        </div>`;  */}}
         },
       };
 
