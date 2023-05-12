@@ -1,6 +1,6 @@
 {{$url := .Get "url"}}
 {{$title := .Get "title"}}
-{{$subtitle := .Get "subtitle"}}
+{{$subtitle := .Get "subtitle" | default "undefined"}}
 {{$span := .Get "span"}}
 {{$bytes := float (os.Stat $url).Size }}
 {{$k := 1024}}
@@ -12,7 +12,7 @@
 
 
 <div class="span-{{$span}}">
-    <a class="download" href="{{replace $url "/static/" "/"}}" target="_blank" rel="no-follow no-referrer">
+    <a class="download" href="{{if eq (strings.Contains $url "/static") true}}{{replace $url "/static/" "/"}}{{else}}{{$url}}{{end}}" target="_blank" rel="no-follow no-referrer">
         <div class="download-icon">
             <i class="fa-regular fa-circle-down"></i>
         </div>
