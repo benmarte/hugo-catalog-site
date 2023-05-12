@@ -15,8 +15,6 @@
 {{$sizeType := index $sizes (int $i)}}
 {{$fileURL := replace $url "/static/" "/" }}
 
-<div>File URL ={{$fileURL}}</div>
-<div>URL = {{$url}}</div>
 <div class="span-{{$span}}">
     <a class="download" href="{{$fileURL}}" target="_blank" rel="no-follow no-referrer">
         <div class="download-icon">
@@ -27,9 +25,7 @@
             {{if ne $subtitle "undefined"}}
                 <div>{{$subtitle}}</div>
             {{else}}
-                {{if eq $containsStatic true}}
-                    <div>{{$fileSize | lang.FormatNumber 2}} {{$sizeType}}</div>
-                {{end}}
+                <div>{{$fileSize | lang.FormatNumber 2}} {{$sizeType}}</div>
             {{end}}
         </div>
     </a>
