@@ -23,4 +23,4 @@ title: Prueba
 
 {{<color span="3" name="blue test" hex="#00afff" rgb="rgb goes here" pantone="pantone goes here" cmyk="cmyk goes here" mui="mui goes here" >}}
 
-{{<download span="3" title="Test" url="/images/netlify-upload.png" subtitle="test">}}
+{{<download span="6" title="test" url="/images/favicon.png" subtitle="test">}}
