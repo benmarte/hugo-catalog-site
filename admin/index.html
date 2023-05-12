@@ -94,12 +94,16 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `<div class="span-${data.span}" style="${data.color && `background: ${data.color};`} ${data.align && `text-align: ${data.align};`}">${data.content}</div>`;
+          return `{{<column span="${data.span}" color="${data.color}" align="${data.align}">${data.content}</column>}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="span-${data.span}" style="${data.color && `background:${data.color};`}; ${data.align && `text-align: ${data.align};`};">${data.content}</div>`;
+          return `<div class="span-${data.span}" style="${
+            data.color && `background:${data.color};`
+          }; ${data.align && `text-align: ${data.align};`};">${
+            data.content
+          }</div>`;
         },
       };
 
@@ -156,11 +160,15 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `<div class="span-${span}"><div class="audio-shortcode">${data.title && `<p>${data.title}</p>`}<audio src="${data.src}" controls></audio></div></div>`;},
+          // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
+          return `{{<audio span="${data.span}" title="${data.title}" autoplay="${data.autoplay}" loop="${data.loop}">}}`;
+        },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="span-${span}"><div class="audio-shortcode">${data.title && `<p>${data.title}</p>`}<audio src="${data.src}" controls></audio></div></div>`;
+          return `<div class="span-${span}"><div class="audio-shortcode">${
+            data.title && `<p>${data.title}</p>`
+          }<audio src="${data.src}" controls></audio></div></div>`;
         },
       };
 
