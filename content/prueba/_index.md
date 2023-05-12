@@ -16,3 +16,9 @@ title: Prueba
 {{<bullet type="dont" leadingText="No text" text="undefined">}}
 
 {{<bullet type="do" leadingText="undefined" text="No leading text">}}
+
+{{<color span="6" name="Test" hex="#184dd2" rgb="undefined" pantone="undefined" cmyk="undefined" mui="undefined" >}}
+
+{{<color span="3" name="red test" hex="#ff0000" rgb="123, 123, 123" pantone="pantone goes ehre" cmyk="cmyk goes ehre" mui="mui goes here" >}}
+
+{{<color span="3" name="blue test" hex="#00afff" rgb="rgb goes here" pantone="pantone goes here" cmyk="cmyk goes here" mui="mui goes here" >}}
