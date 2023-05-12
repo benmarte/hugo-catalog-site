@@ -242,7 +242,7 @@
 
       //  End Bullet Widget ------------------------------------------------------------------- /
 
-      //  Start Bullet Widget ------------------------------------------------------------------- /
+      //  Start Color Widget ------------------------------------------------------------------- /
 
       const ColorWidget = {
         // Internal id of the component
@@ -361,7 +361,76 @@
         },
       };
 
-      //  End Bullet Widget ------------------------------------------------------------------- /
+      //  End Color Widget ------------------------------------------------------------------- /
+
+      //  Start Divider Title Widget ------------------------------------------------------------------- /
+
+      const DownloadWidget = {
+        // Internal id of the component
+        id: "download-widget",
+        // Visible label
+        label: "Download",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "title",
+            label: "Title",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "span",
+            label: "Span",
+            widget: "string",
+            required: true,
+          },
+          {
+            name: "url",
+            label: "File",
+            widget: "file",
+            required: true,
+            allow_multiple: false,
+            media_folder: "/static/downloads"
+          },
+          {
+            name: "subtitle",
+            label: "Subtitle",
+            widget: "string",
+            required: false,
+          },
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          return {
+            text: match[1],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          return `{{<download span="${data.span}" title="${data.title}" url="${data.url}" subtitle="${data.subtitle}">}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `<div class="span-${data.span}">
+            <a class="download" href="${data.url}" target="_blank" rel="no-follow no-referrer">
+                <div class="download-icon">
+                    <i class="fa-regular fa-circle-down"></i>
+                </div>
+                <div class="download-details">
+                    <div><b>${data.title}</b></div>
+                    ${data.subtitle !== "undefined" && <div>${data.subtitle}</div>}
+                </div>
+            </a>
+        </div>`;
+        },
+      };
+
+      //  End Divider Title Widget ------------------------------------------------------------------- /
 
       CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(ColumnWidget);
