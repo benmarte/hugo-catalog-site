@@ -38,3 +38,15 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "Prueba"
+    # label displayed in decap under collections
+    label: "Prueba"
+    # directory with markdow files
+    folder: "/content/prueba"
+    create: true
+    # the filename will be used to generate the url to the page
+    slug: "{{slug}}"
+    # fields accessible in decap when creating or editing a page
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
