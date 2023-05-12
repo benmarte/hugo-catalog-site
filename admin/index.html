@@ -100,7 +100,9 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<column span="${data.span}" color="${data.color}" align="${data.align}">}}${data.content}{{</column>}}`;
+          return `{{<column span="${data.span}" ${
+            data.color !== "undefined" && `color="${data.color}"`
+          } align="${data.align}">}}${data.content}{{</column>}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
@@ -158,7 +160,9 @@
         // markdown document
         toBlock: function (data) {
           // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
-          return `{{<audio src="${data.src}" span="${data.span}" title="${data.title}">}}`;
+          return `{{<audio src="${data.src}" span="${data.span}" ${
+            data.title !== "undefined" && `title="${data.title}"`
+          }>}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
@@ -215,7 +219,10 @@
         // markdown document
         toBlock: function (data) {
           // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
-          return `{{<bullet type="${data.type}" leadingText="${data.leadingText}" text="${data.text}">}}`;
+          return `{{<bullet type="${data.type}" ${
+            data.leadingText !== "undefined" &&
+            `leadingText="${data.leadingText}"`
+          } ${data.text !== "undefined" && `text="${data.text}"`}>}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
