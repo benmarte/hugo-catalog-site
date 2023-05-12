@@ -322,46 +322,40 @@
           return `<div class="span-${span}">
           <div class="color-shortcode" style="background: ${data.hex}"></div>
             ${
-              data.name !== "undefined" && (
-                <p>
+              data.name !== "undefined" &&
+              `<p>
                   <b>${data.name}</b>
-                </p>
-              )
+                </p>`
             }
             ${
-              data.hex !== "undefined" && (
-                <p>
+              data.hex !== "undefined" &&
+              `<p>
                   <b>HEX:</b> ${data.hex}
-                </p>
-              )
+                </p>`
             }
             ${
-              data.rgb !== "undefined" && (
-                <p>
+              data.rgb !== "undefined" &&
+              `<p>
                   <b>RGB:</b> ${data.rgb}
-                </p>
-              )
+                </p>`
             }
             ${
-              data.pantone !== "undefined" && (
-                <p>
+              data.pantone !== "undefined" &&
+              `<p>
                   <b>Pantone:</b> ${data.pantone}
-                </p>
-              )
+                </p>`
             }
             ${
-              data.cmyk !== "undefined" && (
-                <p>
+              data.cmyk !== "undefined" &&
+              `<p>
                   <b>CMYK:</b> ${data.cmyk}
-                </p>
-              )
+                </p>`
             }
             ${
-              data.mui !== "undefined" && (
-                <p>
+              data.mui !== "undefined" &&
+              `<p>
                   <b>MUI:</b> ${data.mui}
-                </p>
-              )
+                </p>`
             }  
             </div>`;
         },
