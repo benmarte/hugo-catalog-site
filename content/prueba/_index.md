@@ -10,3 +10,9 @@ title: Prueba
 {{<divider-title text="This is a Divider Title">}}
 
 {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="Audio Title">}}
+
+{{<bullet type="do" leadingText="Test" text="Text">}}
+
+{{<bullet type="dont" leadingText="No text" text="undefined">}}
+
+{{<bullet type="do" leadingText="undefined" text="No leading text">}}
