@@ -70,5 +70,3 @@ Our secondary palette allows us to be more flexible and dynamic. We use this pal
 {{<color span="2" name="Rewst Yellow" hex="#FFCA28" pantone="1225 C" cmyk="0 20 93 0" mui="Amber 400">}}
 
 {{<color span="2" name="Rewst Light Yellow" hex="#FFECB3" pantone="7401 C" cmyk="0 5 36 0" mui="Amber 100">}}
-
-{{<divider-title text="Test">}}
