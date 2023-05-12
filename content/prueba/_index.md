@@ -9,4 +9,4 @@ title: Prueba
 
 {{<divider-title text="This is a Divider Title">}}
 
-{{<audio span="3" title="Test title" autoplay="true" loop="true">}}
+{{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="Audio Title">}}
