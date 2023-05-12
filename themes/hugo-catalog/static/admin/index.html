@@ -129,16 +129,6 @@
             widget: "string",
           },
           {
-            name: "autoplay",
-            label: "Auto Play",
-            widget: "boolean",
-          },
-          {
-            name: "loop",
-            label: "Loop",
-            widget: "boolean",
-          },
-          {
             name: "span",
             label: "Span",
             widget: "string",
@@ -149,9 +139,7 @@
           return {
             src: match[1],
             title: match[2],
-            autoplay: match[3],
-            loop: match[4],
-            span: match[5],
+            span: match[3],
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -161,7 +149,7 @@
         // markdown document
         toBlock: function (data) {
           // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
-          return `{{<audio span="${data.span}" title="${data.title}" autoplay="${data.autoplay}" loop="${data.loop}">}}`;
+          return `{{<audio src="${data.src}" span="${data.span}" title="${data.title}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
