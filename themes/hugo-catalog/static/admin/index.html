@@ -399,7 +399,7 @@
             media_library: {
               config: {
                 multiple: false,
-                media_folder: "/static/downloads"
+                media_folder: "/static/images"
               }
             }
     
@@ -428,7 +428,6 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          console.log(data.url.prepend('/static'));
           return `<div class="span-${data.span}">
             <a class="download" href="${data.url.prepend('/static')}" target="_blank" rel="no-follow no-referrer">
                 <div class="download-icon">
