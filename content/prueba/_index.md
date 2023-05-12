@@ -23,6 +23,4 @@ title: Prueba
 
 {{<color span="3" name="blue test" hex="#00afff" rgb="rgb goes here" pantone="pantone goes here" cmyk="cmyk goes here" mui="mui goes here" >}}
 
-{{<download span="3" title="Test" url="/images/client-secret.png" subtitle="Test">}}
-
-{{<download span="3" title="Test 2" url="/images/decap-logo.svg" subtitle="undefined">}}
+{{<download span="6" title="Test File" url="/images/screenshot-2023-05-09-at-8.50.58-pm.png" subtitle="undefined">}}
