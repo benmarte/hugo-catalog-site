@@ -7,7 +7,7 @@ weight: 1
 
 Hugo Catalog is a conversion of the [Catalog](https://catalog.style) framework to a hugo theme, it also includes the ability to use ~~[Decap](https://decapcms.org)~~ (coming soon) to edit your content via a user friendly interface.
 
-It ships with \[10 shortcodes]({{<relref "/shortcodes.md">}}) so your editors can make beautiful Style Guides for your brand without having to code.
+It ships with [10 shortcodes](/shortcodes) so your editors can make beautiful Style Guides for your brand without having to code.
 
 > I made Hugo Catalog because Catalog is abandonware and I needed something my clients could use and edit themselves. - Ben Marte
 
