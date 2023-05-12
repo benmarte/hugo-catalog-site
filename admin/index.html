@@ -28,7 +28,17 @@
         },
       });
 
-      CMS.registerEditorComponent("divider-title", DividerTitle);
+      var DividerTitlePreview = createClass({
+        render: function () {
+          return h(<div class="divider-title">this.props.value</div>);
+        },
+      });
+
+      CMS.registerEditorComponent(
+        "divider-title",
+        DividerTitle,
+        DividerTitlePreview
+      );
     </script>
   </body>
 </html>
