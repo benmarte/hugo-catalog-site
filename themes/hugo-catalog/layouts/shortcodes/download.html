@@ -1,21 +1,21 @@
 {{$url := .Get "url"}}
-{{$title := .Get "title"}}
+{{if ne (strings.Contains $url "/static") true}}
+{{$url = "/static%"}}
+{{end}}
+{{/*  {{$title := .Get "title"}}
 {{$subtitle := .Get "subtitle" | default "undefined"}}
 {{$span := .Get "span"}}
-
-{{if eq (strings.Contains $url "/static") true}}
 {{$bytes := float (os.Stat $url).Size }}
 {{$k := 1024}}
 {{$dm := 2}}
 {{$sizes := slice "Bytes" "KB" "MB" "GB" "TB" "PB" "EB" "ZB" "YB"}}
 {{$i := math.Floor (div (math.Log $bytes) (math.Log $k))}}
 {{$fileSize := div $bytes (math.Pow $k $i)}}
-{{$sizeType := index $sizes (int $i)}}
-{{end}}
+{{$sizeType := index $sizes (int $i)}}  */}}
 
-
-<div class="span-{{$span}}">
-    <a class="download" href="{{if eq (strings.Contains $url "/static") true}}{{replace $url "/static/" "/"}}{{else}}{{$url}}{{end}}" target="_blank" rel="no-follow no-referrer">
+URL = {{$url}}
+{{/*  <div class="span-{{$span}}">
+    <a class="download" href="{{$url}}" target="_blank" rel="no-follow no-referrer">
         <div class="download-icon">
             <i class="fa-regular fa-circle-down"></i>
         </div>
@@ -30,4 +30,4 @@
             {{end}}
         </div>
     </a>
-</div>
+</div>  */}}
