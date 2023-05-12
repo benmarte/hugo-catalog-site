@@ -8,3 +8,5 @@ title: Prueba
 {{<column span="6" color="#00ecff" align="center">}}Column with a span of 6 a blue background and aligned to the center{{</column>}}
 
 {{<divider-title text="This is a Divider Title">}}
+
+{{<audio span="3" title="Test title" autoplay="true" loop="true">}}
