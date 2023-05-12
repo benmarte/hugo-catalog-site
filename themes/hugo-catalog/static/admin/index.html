@@ -82,10 +82,10 @@
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
-            text: match[1],
-            text: match[2],
-            text: match[3],
-            text: match[4],
+            span: match[1],
+            color: match[2],
+            align: match[3],
+            content: match[4],
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -105,11 +105,70 @@
 
       //  End Column Widget ------------------------------------------------------------------- /
 
-      
+      //  Start Column Widget ------------------------------------------------------------------- /
+
+      const AudioWidget = {
+        // Internal id of the component
+        id: "audio-widget",
+        // Visible label
+        label: "Audio",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "src",
+            label: "Source",
+            widget: "string",
+          },
+          {
+            name: "title",
+            label: "Title",
+            widget: "string",
+          },
+          {
+            name: "autoplay",
+            label: "Auto Play",
+            widget: "boolean",
+          },
+          {
+            name: "loop",
+            label: "Loop",
+            widget: "boolean",
+          },
+          {
+            name: "span",
+            label: "Span",
+            widget: "string",
+          },
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          return {
+            src: match[1],
+            title: match[2],
+            autoplay: match[3],
+            loop: match[4],
+            span: match[5],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          return `<div class="span-${span}"><div class="audio-shortcode">${data.title && `<p>${data.title}</p>`}<audio src="${data.src}" controls></audio></div></div>`;},
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `<div class="span-${span}"><div class="audio-shortcode">${data.title && `<p>${data.title}</p>`}<audio src="${data.src}" controls></audio></div></div>`;
+        },
+      };
+
+      //  End Column Widget ------------------------------------------------------------------- /
 
       CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(ColumnWidget);
-      //CMS.registerEditorComponent(AudioWidget);
+      CMS.registerEditorComponent(AudioWidget);
     </script>
   </body>
 </html>
