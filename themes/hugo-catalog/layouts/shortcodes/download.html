@@ -2,6 +2,8 @@
 {{$title := .Get "title"}}
 {{$subtitle := .Get "subtitle" | default "undefined"}}
 {{$span := .Get "span"}}
+
+{{if eq (strings.Contains $url "/static") true}}
 {{$bytes := float (os.Stat $url).Size }}
 {{$k := 1024}}
 {{$dm := 2}}
@@ -9,6 +11,7 @@
 {{$i := math.Floor (div (math.Log $bytes) (math.Log $k))}}
 {{$fileSize := div $bytes (math.Pow $k $i)}}
 {{$sizeType := index $sizes (int $i)}}
+{{end}}
 
 
 <div class="span-{{$span}}">
