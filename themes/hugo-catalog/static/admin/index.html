@@ -396,13 +396,8 @@
             label: "File",
             widget: "file",
             required: true,
-            media_library: {
-              config: {
-                multiple: false,
-                media_folder: "/static/images"
-              }
-            }
-    
+            allow_multiple: false,
+            media_folder: "/static/images",   
           },
           {
             name: "subtitle",
