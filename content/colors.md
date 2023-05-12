@@ -3,7 +3,6 @@ title: Colors
 weight: 3
 draft: true
 ---
-
 ## **Overview**
 
 Color is an instantly recognizable and important element of any brand. Applying our color palette will help create strong visual communication in everything from product UI to illustration and iconography.
@@ -71,3 +70,8 @@ Our secondary palette allows us to be more flexible and dynamic. We use this pal
 {{<color span="2" name="Rewst Yellow" hex="#FFCA28" pantone="1225 C" cmyk="0 20 93 0" mui="Amber 400">}}
 
 {{<color span="2" name="Rewst Light Yellow" hex="#FFECB3" pantone="7401 C" cmyk="0 5 36 0" mui="Amber 100">}}
+
+
+          <div class="divider-title">
+              test
+          </div>
