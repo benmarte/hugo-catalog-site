@@ -22,5 +22,3 @@ title: Prueba
 {{<color span="3" name="red test" hex="#ff0000" rgb="123, 123, 123" pantone="pantone goes ehre" cmyk="cmyk goes ehre" mui="mui goes here" >}}
 
 {{<color span="3" name="blue test" hex="#00afff" rgb="rgb goes here" pantone="pantone goes here" cmyk="cmyk goes here" mui="mui goes here" >}}
-
-{{<download span="6" title="fdsafdsafdsaf" url="/images/client-secret.png" subtitle="fdsafdsfadsfdas">}}
