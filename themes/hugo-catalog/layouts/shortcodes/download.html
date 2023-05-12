@@ -18,7 +18,13 @@
         </div>
         <div class="download-details">
             <div><b>{{$title}}</b></div>
-            {{if ne $subtitle "undefined"}}<div>{{$subtitle}}</div>{{else}}<div>{{$fileSize | lang.FormatNumber 2}} {{$sizeType}}</div>{{end}}
+            {{if ne $subtitle "undefined"}}
+                <div>{{$subtitle}}</div>
+            {{else}}
+                {{if eq (strings.Contains $url "/static") true}}
+                    <div>{{$fileSize | lang.FormatNumber 2}} {{$sizeType}}</div>
+                {{end}}
+            {{end}}
         </div>
     </a>
 </div>
