@@ -1,8 +1,8 @@
 ---
 title: Prueba
 ---
-<div class="span-3" style="background: #ff0000; text-align: left;">This is a column with a span of 3 and aligned to the left</div>
+{{<column span="3" color="#ff0000" align="undefined">T﻿his is a sample column with a span of 3 and a red background with default alignment</column>}}
 
-<div class="span-3" style="background: #00bbff; text-align: right;">T﻿his is a column with a span of 3 and aligned to the right</div>
+{{<column span="3" color="#00ffff" align="right">T﻿his is a sample column with a span of 3 and blue background aligned to the right</column>}}
 
 {{<divider-title text="This is a Divider Title">}}
