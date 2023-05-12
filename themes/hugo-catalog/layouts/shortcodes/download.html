@@ -15,7 +15,7 @@
 {{$sizeType := index $sizes (int $i)}}
 
 <div class="span-{{$span}}">
-    <a class="download" href="{{$url}}" target="_blank" rel="no-follow no-referrer">
+    <a class="download" href="{{strings.TrimLeft $url "/static"}}" target="_blank" rel="no-follow no-referrer">
         <div class="download-icon">
             <i class="fa-regular fa-circle-down"></i>
         </div>
@@ -24,7 +24,7 @@
             {{if ne $subtitle "undefined"}}
                 <div>{{$subtitle}}</div>
             {{else}}
-                {{if eq (strings.Contains $url "/static") true}}
+                {{if eq $containsStatic true}}
                     <div>{{$fileSize | lang.FormatNumber 2}} {{$sizeType}}</div>
                 {{end}}
             {{end}}
