@@ -4,7 +4,7 @@
 
 <div class="span-{{$span}}">
   <div class="audio-shortcode">
-    {{with $title}}
+    {{if ne $title "undefined"}}
     <p>{{$title}}</p>
     {{end}}
     <audio src="{{$src}}" controls></audio>

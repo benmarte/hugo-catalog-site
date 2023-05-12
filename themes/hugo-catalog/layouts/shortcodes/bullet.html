@@ -5,9 +5,11 @@
 <div class="bullet">
   {{if eq $type "do"}}
   <i class="fa-regular fa-circle-check success"></i>
-  {{end}}
-  {{if eq $type "dont"}}
+  {{else}}
   <i class="far fa-window-close danger"></i>
   {{end}}
-  <div>{{with $leadingText}}<b>{{.}}</b>{{end}} {{with $text}}{{.}}{{end}}</div>
+  <div>
+    {{if ne $leadingText "undefined"}}<b>{{$leadingText}}</b>{{end}}
+    {{if ne $text "undefined"}}{{$text}}{{end}}
+  </div>
 </div>
