@@ -94,7 +94,7 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<column span="${data.span}" color="${data.color}" align="${data.align}">${data.content}</column>}}`;
+          return `{{<column span="${data.span}" color="${data.color}" align="${data.align}">}}${data.content}{{</column>}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
