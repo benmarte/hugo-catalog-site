@@ -94,12 +94,12 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `<div class="span-${data.span}" style="${data.color && `background: ${data.color}`} ${data.align && `text-align: ${data.align}`}">${data.content}</div>`;
+          return `<div class="span-${data.span}" style="${data.color && `background: ${data.color};`} ${data.align && `text-align: ${data.align};`}">${data.content}</div>`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="span-${data.span}" style="${data.color && `background:${data.color}`}; ${data.align && `text-align: ${data.align}`};">${data.content}</div>`;
+          return `<div class="span-${data.span}" style="${data.color && `background:${data.color};`}; ${data.align && `text-align: ${data.align};`};">${data.content}</div>`;
         },
       };
 
@@ -109,7 +109,7 @@
 
       CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(ColumnWidget);
-      
+      //CMS.registerEditorComponent(AudioWidget);
     </script>
   </body>
 </html>
