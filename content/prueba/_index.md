@@ -13,6 +13,6 @@ title: Prueba
 
 {{<bullet type="do" leadingText="Test" text="Text">}}
 
-{{<bullet type="do" leadingText="undefined" text="No leading text">}}
+{{<bullet type="do" leadingText="undefined" text="No leading text and no type should default to do">}}
 
-{{<bullet type="do" leadingText="Didn't set type" text="Should default to true">}}
+{{<bullet type="do" leadingText="Test" text="without type">}}
