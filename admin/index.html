@@ -18,24 +18,26 @@
 
         render: function () {
           var value = this.props.value;
-          return h("input", {
-            id: this.props.forID,
-            className: this.props.classNameWrapper,
-            type: "text",
-            value: value,
-            onChange: this.handleChange,
-          });
+          return h(
+            <input
+              id={this.props.forID}
+              className={this.props.classNameWrapper}
+              type="text"
+              value={value}
+              onChange={this.handleChange}
+            />
+          );
         },
       });
 
       var DividerTitlePreview = createClass({
         render: function () {
-          return h(<div class="divider-title">this.props.value</div>);
+          return h(<div class="divider-title">{this.props.value}</div>);
         },
       });
 
       CMS.registerEditorComponent(
-        "divider-title",
+        "Divider Title",
         DividerTitle,
         DividerTitlePreview
       );
