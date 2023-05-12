@@ -242,10 +242,138 @@
 
       //  End Bullet Widget ------------------------------------------------------------------- /
 
+      //  Start Bullet Widget ------------------------------------------------------------------- /
+
+      const ColorWidget = {
+        // Internal id of the component
+        id: "color-widget",
+        // Visible label
+        label: "Color",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "name",
+            label: "Name",
+            widget: "string",
+            required: true,
+          },
+          {
+            name: "span",
+            label: "Span",
+            widget: "string",
+            required: true,
+          },
+          {
+            name: "hex",
+            label: "Hex",
+            widget: "color",
+            allowInput: true,
+            required: true,
+          },
+          {
+            name: "rgb",
+            label: "RGB",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "pantone",
+            label: "Pantone",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "cmyk",
+            label: "CMYK",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "mui",
+            label: "MUI",
+            widget: "string",
+            required: false,
+          },
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          return {
+            name: match[1],
+            span: match[2],
+            hex: match[3],
+            rgb: match[4],
+            pantone: match[5],
+            cmyk: match[6],
+            mui: match[7],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
+          return `{{<color span="${data.span}" name="${data.name}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}" >}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `<div class="span-${span}">
+          <div class="color-shortcode" style="background: ${data.hex}"></div>
+            ${
+              data.name !== "undefined" && (
+                <p>
+                  <b>${data.name}</b>
+                </p>
+              )
+            }
+            ${
+              data.hex !== "undefined" && (
+                <p>
+                  <b>HEX:</b> ${data.hex}
+                </p>
+              )
+            }
+            ${
+              data.rgb !== "undefined" && (
+                <p>
+                  <b>RGB:</b> ${data.rgb}
+                </p>
+              )
+            }
+            ${
+              data.pantone !== "undefined" && (
+                <p>
+                  <b>Pantone:</b> ${data.pantone}
+                </p>
+              )
+            }
+            ${
+              data.cmyk !== "undefined" && (
+                <p>
+                  <b>CMYK:</b> ${data.cmyk}
+                </p>
+              )
+            }
+            ${
+              data.mui !== "undefined" && (
+                <p>
+                  <b>MUI:</b> ${data.mui}
+                </p>
+              )
+            }  
+            </div>`;
+        },
+      };
+
+      //  End Bullet Widget ------------------------------------------------------------------- /
+
       CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(ColumnWidget);
       CMS.registerEditorComponent(AudioWidget);
       CMS.registerEditorComponent(BulletWidget);
+      CMS.registerEditorComponent(ColorWidget);
     </script>
   </body>
 </html>

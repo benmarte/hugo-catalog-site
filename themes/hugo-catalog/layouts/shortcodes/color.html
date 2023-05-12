@@ -8,10 +8,10 @@
 
 <div class="span-{{$span}}">
   <div class="color-shortcode" style="background: {{$hex}}"></div>
-  {{with $name}}<p><b>{{$name}}</b></p>{{end}}
-  {{with $hex}}<p><b>HEX:</b> {{$hex}}</p>{{end}}
-  {{with $rgb}}<p><b>RGB:</b> {{$rgb}}</p>{{end}}
-  {{with $pantone}}<p><b>PANTONE:</b> {{$pantone}}</p>{{end}}
-  {{with $cmyk}}<p><b>CMYK:</b> {{$cmyk}}</p>{{end}}
-  {{with $mui}}<p><b>MUI:</b> {{$mui}}</p>{{end}}
+  {{if ne $name "undefined"}}<p><b>{{$name}}</b></p>{{end}}
+  {{if ne $hex "undefined"}}<p><b>HEX:</b> {{$hex}}</p>{{end}}
+  {{if ne $rgb "undefined"}}<p><b>RGB:</b> {{$rgb}}</p>{{end}}
+  {{if ne $pantone "undefined"}}<p><b>PANTONE:</b> {{$pantone}}</p>{{end}}
+  {{if ne $cmyk "undefined"}}<p><b>CMYK:</b> {{$cmyk}}</p>{{end}}
+  {{if ne $mui "undefined"}}<p><b>MUI:</b> {{$mui}}</p>{{end}}
 </div>
