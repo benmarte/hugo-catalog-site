@@ -38,14 +38,3 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: posts
-    label: Posts
-    folder: content/posts
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: categories
-        label: Categories
-        widget: categories
-        separator: __
