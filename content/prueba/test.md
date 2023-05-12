@@ -1,8 +1,4 @@
 ---
-title: test
+title: Test
 ---
-```
-
-```
-
-![](/images/decap-logo.svg)
+{{<divider-title text="Test title">}}
