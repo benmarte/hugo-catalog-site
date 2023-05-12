@@ -18,7 +18,7 @@
         </div>
         <div class="download-details">
             <div><b>{{$title}}</b></div>
-            <div>{{with $subtitle}}{{$subtitle}}{{else}}{{$fileSize | lang.FormatNumber 2}} {{$sizeType}}{{end}}</div>
+            {{if ne $subtitle "undefined"}}<div>{{$subtitle}}</div>{{else}}<div>{{$fileSize | lang.FormatNumber 2}} {{$sizeType}}</div>{{end}}
         </div>
     </a>
 </div>
