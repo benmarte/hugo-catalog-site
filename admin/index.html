@@ -423,13 +423,13 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<download span="${data.span}" title="${data.title}" url="${data.url}" subtitle="${data.subtitle}">}}`;
+          return `{{<download span="${data.span}" title="${data.title}" url="${data.url.prepend('/static')}" subtitle="${data.subtitle}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
           return `<div class="span-${data.span}">
-            <a class="download" href="${data.url}" target="_blank" rel="no-follow no-referrer">
+            <a class="download" href="${data.url.prepend('/static')}" target="_blank" rel="no-follow no-referrer">
                 <div class="download-icon">
                     <i class="fa-regular fa-circle-down"></i>
                 </div>
