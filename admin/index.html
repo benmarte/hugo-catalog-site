@@ -396,8 +396,7 @@
             label: "File",
             widget: "file",
             required: true,
-            allow_multiple: false,
-            media_folder: "/static/images",   
+            allow_multiple: false,  
           },
           {
             name: "subtitle",
@@ -418,11 +417,13 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
+          console.log({data});
           return `{{<download span="${data.span}" title="${data.title}" url="${data.url}" subtitle="${data.subtitle}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          console.log({data})
           return `<div class="span-${data.span}">
             <a class="download" href="${data.url}" target="_blank" rel="no-follow no-referrer">
                 <div class="download-icon">
