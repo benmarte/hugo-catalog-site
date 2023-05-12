@@ -71,7 +71,9 @@
           {
             name: "align",
             label: "Align",
-            widget: "string",
+            widget: "select",
+            options: ["left", "center", "right"],
+            default: ["left"],
           },
           {
             name: "content",
@@ -109,7 +111,7 @@
 
       //  End Column Widget ------------------------------------------------------------------- /
 
-      //  Start Column Widget ------------------------------------------------------------------- /
+      //  Start Audio Widget ------------------------------------------------------------------- /
 
       const AudioWidget = {
         // Internal id of the component
@@ -160,11 +162,72 @@
         },
       };
 
-      //  End Column Widget ------------------------------------------------------------------- /
+      //  End Audio Widget ------------------------------------------------------------------- /
+
+      //  Start Bullet Widget ------------------------------------------------------------------- /
+
+      const BulletWidget = {
+        // Internal id of the component
+        id: "bullet-widget",
+        // Visible label
+        label: "Bullet",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "leadingText",
+            label: "Leading Text",
+            widget: "string",
+          },
+          {
+            name: "text",
+            label: "Text",
+            widget: "string",
+          },
+          {
+            name: "type",
+            label: "Type",
+            widget: "select",
+            options: ["do", "dont"],
+            default: ["do"],
+          },
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          return {
+            leadingText: match[1],
+            text: match[2],
+            type: match[3],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
+          return `{{<bullet type="${data.type}" leadingText="${data.leadingText}" text="${data.text}">}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `<div class="bullet">${
+            data.type === "do"
+              ? `<i class="fa-regular fa-circle-check success"></i>`
+              : `<i class="far fa-window-close danger"></i>`
+          }
+            <div>${data.leadingText && `<b>${data.leadingText}</b>`}
+            ${data.text && data.text}
+            </div></div>`;
+        },
+      };
+
+      //  End Bullet Widget ------------------------------------------------------------------- /
 
       CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(ColumnWidget);
       CMS.registerEditorComponent(AudioWidget);
+      CMS.registerEditorComponent(BulletWidget);
     </script>
   </body>
 </html>
