@@ -26,7 +26,7 @@ It ships with [10 shortcodes](/shortcodes) so your editors can make beautiful St
 
 ---
 
-This theme is under active development this means you will encounter bugs.
+This theme is under active development this means you may encounter bugs.
 
 With that out of the way. We do appreciate feedback, bug issues and PRs. Thanks.
 {{</hint>}}
