@@ -1,12 +1,7 @@
 ---
 title: Decap
 ---
-
 ## What is Decap?
-
-{{<column span="1">}}
-![Decap Logo](/images/decap-logo.svg)
-{{</column>}}
 
 Decap is an open source **W**hat **Y**ou **S**ee **I**s **W**hat **Y**ou **G**et (**WYSIWYG**) that can be used with static site generators in order to provide an easy to use editor view while still taking advantage of using your CI/CD pipeline for deploying your site.
 

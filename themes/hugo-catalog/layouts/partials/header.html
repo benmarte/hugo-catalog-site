@@ -2,10 +2,8 @@
 {{$title := .Page.Title}}
 {{$subtitle := ""}}
 
-{{if eq .Site.Params.disable_site_name_header true}}
-  {{if isset .Page.Params "subtitle"}}
+{{if or (eq .Site.Params.disable_site_name_header true) (isset .Page.Params "subtitle")}}
     {{$subtitle = .Page.Params.subtitle }}
-  {{end}}
 {{else}}
   {{$subtitle = .Site.Title}}
 {{end}}

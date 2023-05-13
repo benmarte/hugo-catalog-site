@@ -70,7 +70,7 @@ This controls the display of the site name above the header of the site.
 {{<image span="3" src="/images/custom-subtitle-image.png" >}}
 
 {{<hint type="info">}}
-If you set this value to true and you add a **`subtitle`** parameter to your pages front matter you can display a custom text on each page.
+If you set this value to true you will disable displaying the site name in the header, if you add a **subtitle** property to your pages front matter it will display regardless of this settings value.
 {{</hint>}}
 
 ## primary_color
