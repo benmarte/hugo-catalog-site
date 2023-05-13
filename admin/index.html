@@ -66,14 +66,14 @@
         toBlock: function (data) {
           // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
           return `{{<audio src="${data.src}" span="${data.span}" ${
-            data.title !== "undefined" && `title="${data.title}"`
+            data.title !== "" && `title="${data.title}"`
           }>}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
           return `{{<audio src="${data.src}" span="${data.span}" ${
-            data.title !== "undefined" && `title="${data.title}"`
+            data.title !== "" && `title="${data.title}"`
           }>}}`;
         },
       };
@@ -127,17 +127,17 @@
         toBlock: function (data) {
           // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
           return `{{<bullet type="${data.type}" ${
-            data.leadingText !== "undefined" &&
+            data.leadingText !== "" &&
             `leadingText="${data.leadingText}"`
-          } ${data.text !== "undefined" && `text="${data.text}"`}>}}`;
+          } ${data.text !== "" && `text="${data.text}"`}>}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
           return `{{<bullet type="${data.type}" ${
-            data.leadingText !== "undefined" &&
+            data.leadingText !== "" &&
             `leadingText="${data.leadingText}"`
-          } ${data.text !== "undefined" && `text="${data.text}"`}>}}`;
+          } ${data.text !== "" && `text="${data.text}"`}>}}`;
         },
       };
 
@@ -286,14 +286,14 @@
         // markdown document
         toBlock: function (data) {
           return `{{<column span="${data.span}" ${
-            data.color !== "undefined" && `color="${data.color}"`
+            data.color !== "" && `color="${data.color}"`
           } align="${data.align}">}}${data.content}{{</column>}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
           return `{{<column span="${data.span}" ${
-            data.color !== "undefined" && `color="${data.color}"`
+            data.color !== "" && `color="${data.color}"`
           } align="${data.align}">}}${data.content}{{</column>}}`;
         },
       };
@@ -380,7 +380,7 @@
             media_library: {
               config: {
                 allow_multiple: false,
-                media_folder: "/static/downloads",
+                media_folder: "/static/images",
               },
             },
           },
@@ -492,7 +492,7 @@
             media_library: {
               config: {
                 allow_multiple: false,
-                media_folder: "/static/downloads",
+                media_folder: "/static/images",
               },
             },
           },
@@ -504,7 +504,7 @@
             media_library: {
               config: {
                 allow_multiple: false,
-                media_folder: "/static/downloads",
+                media_folder: "/static/images",
               },
             },
           },
@@ -574,9 +574,9 @@
         toBlock: function (data) {
           return `{{<image src="${data.src}"
           span="${data.span}"
-          ${data.title !== "undefined" && `title="${data.title}"`}
-          ${data.description !== "undefined" && `description="${data.description}"`}
-          ${data.overlay !== "undefined" && `overlay="${data.overlay}"`}
+          ${data.title !== "" && `title="${data.title}"`}
+          ${data.description !== "" && `description="${data.description}"`}
+          ${data.overlay !== "" && `overlay="${data.overlay}"`}
           ${data.light !== "false" && `light="${data.light}"`}
           ${data.dark !== "false" && `dark="${data.dark}"`}
           ${data.scale !== "false" && `scale="${data.scale}"`}
@@ -587,9 +587,9 @@
         toPreview: function (data) {
           return `{{<image src="${data.src}"
           span="${data.span}"
-          ${data.title !== "undefined" && `title="${data.title}"`}
-          ${data.description !== "undefined" && `description="${data.description}"`}
-          ${data.overlay !== "undefined" && `overlay="${data.overlay}"`}
+          ${data.title !== "" && `title="${data.title}"`}
+          ${data.description !== "" && `description="${data.description}"`}
+          ${data.overlay !== "" && `overlay="${data.overlay}"`}
           ${data.light !== "false" && `light="${data.light}"`}
           ${data.dark !== "false" && `dark="${data.dark}"`}
           ${data.scale !== "false" && `scale="${data.scale}"`}
@@ -651,11 +651,9 @@
             label: "Poster",
             widget: "image",
             required: false,
-            media_folder: "/static/images",
             media_library: {
-              media_folder: "/static/images",
               config: {
-                media_folder: "/static/images",
+                media_folder: "/images",
                 allow_multiple: false,
               },
             },
