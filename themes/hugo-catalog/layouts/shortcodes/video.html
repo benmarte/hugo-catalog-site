@@ -4,6 +4,14 @@
 {{$autoplay := .Get "autoplay"}}
 {{$loop := .Get "loop"}}
 {{$poster := .Get "poster"}}
+{{$srcContainsStatic := strings.Contains $src "/static"}}
+{{$posterContainsStatic := strings.Contains $poster "/static"}}
+{{if eq $srcContainsStatic true}}
+{{$src = replace $src "/static/" "/"}}
+{{end}}
+{{if eq $posterContainsStatic true}}
+{{$poster = replace $poster "/static/" "/"}}
+{{end}}
 
 <div class="span-{{$span}}">
     <video {{if ne $poster "undefined"}}poster="{{$poster}}"{{end}} {{if eq $loop "true"}}loop{{end}} {{if eq $autoplay "true"}}autoplay{{end}} {{if eq $muted "true"}}muted{{end}} controls>
