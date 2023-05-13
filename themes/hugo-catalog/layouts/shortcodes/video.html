@@ -14,7 +14,7 @@
 {{end}}
 
 <div class="span-{{$span}}">
-    <video {{if ne $poster "undefined"}}poster="{{site.BaseURL}}{{$poster}}"{{end}} {{if eq $loop "true"}}loop{{end}} {{if eq $autoplay "true"}}autoplay{{end}} {{if eq $muted "true"}}muted{{end}} controls>
+    <video {{if ne $poster "undefined"}}poster="{{$poster}}"{{end}} {{if eq $loop "true"}}loop{{end}} {{if eq $autoplay "true"}}autoplay{{end}} {{if eq $muted "true"}}muted{{end}} controls>
         <source src="{{$src}}"></source>
     </video>
 </div>
