@@ -6,128 +6,17 @@
     <title>Content Manager</title>
     <!-- Include the script that enables Netlify Identity on this page. -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <link rel="stylesheet" href="../main.css" />
+    
+    <style>
+      [data-slate-editor] { 
+        -webkit-user-modify: read-write !important; 
+    }
+    </style>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <script>
-      //  Start Divider Title Widget ------------------------------------------------------------------- /
-
-      const DividerTitleWidget = {
-        // Internal id of the component
-        id: "divider-title-widget",
-        // Visible label
-        label: "Divider Title",
-        // Fields the user need to fill out when adding an instance of the component
-        fields: [
-          {
-            name: "text",
-            label: "Text",
-            widget: "string",
-            required: true,
-          },
-          {
-            name: "align",
-            label: "Align",
-            widget: "select",
-            options: ["left", "center", "right"],
-            default: ["left"],
-          },
-        ],
-        // This is used to populate the custom widget in the markdown editor in the CMS.
-        fromBlock: function (match) {
-          return {
-            text: match[1],
-            align: match[2],
-          };
-        },
-        // Given an object with one property for each field defined in `fields`,
-        // return the string you wish to be inserted into your markdown.
-        //
-        // This is used to serialize the data from the custom widget to the
-        // markdown document
-        toBlock: function (data) {
-          return `{{<divider-title text="${data.text}" align="${data.align}">}}`;
-        },
-        // Preview output for this component. Can either be a string or a React component
-        // (component gives better render performance)
-        toPreview: function (data) {
-          return `<div class="divider-title" style="text-align: ${data.align}">${data.text}</div>`;
-        },
-      };
-
-      //  End Divider Title Widget ------------------------------------------------------------------- /
-
-      //  Start Column Widget ------------------------------------------------------------------- /
-
-      const ColumnWidget = {
-        // Internal id of the component
-        id: "column-widget",
-        // Visible label
-        label: "Column",
-        // Fields the user need to fill out when adding an instance of the component
-        fields: [
-          {
-            name: "span",
-            label: "Span",
-            widget: "select",
-            required: true,
-            options: ["1", "2", "3", "4", "5", "6"],
-            default: ["6"]
-          },
-          {
-            name: "color",
-            label: "Color",
-            widget: "color",
-            default: "undefined",
-            required: false,
-          },
-          {
-            name: "align",
-            label: "Align",
-            widget: "select",
-            options: ["left", "center", "right"],
-            default: ["left"],
-          },
-          {
-            name: "content",
-            label: "Content",
-            widget: "markdown",
-            required: true,
-          },
-        ],
-        // This is used to populate the custom widget in the markdown editor in the CMS.
-        fromBlock: function (match) {
-          return {
-            span: match[1],
-            color: match[2],
-            align: match[3],
-            content: match[4],
-          };
-        },
-        // Given an object with one property for each field defined in `fields`,
-        // return the string you wish to be inserted into your markdown.
-        //
-        // This is used to serialize the data from the custom widget to the
-        // markdown document
-        toBlock: function (data) {
-          return `{{<column span="${data.span}" ${
-            data.color !== "undefined" && `color="${data.color}"`
-          } align="${data.align}">}}${data.content}{{</column>}}`;
-        },
-        // Preview output for this component. Can either be a string or a React component
-        // (component gives better render performance)
-        toPreview: function (data) {
-          return `<div class="span-${data.span}" style="${
-            data.color && `background:${data.color};`
-          }; ${data.align && `text-align: ${data.align};`};">${
-            data.content
-          }</div>`;
-        },
-      };
-
-      //  End Column Widget ------------------------------------------------------------------- /
 
       //  Start Audio Widget ------------------------------------------------------------------- /
 
@@ -148,7 +37,6 @@
             name: "title",
             label: "Title",
             widget: "string",
-            default: "undefined",
             required: false,
           },
           {
@@ -203,14 +91,12 @@
             name: "leadingText",
             label: "Leading Text",
             widget: "string",
-            default: "undefined",
             required: false,
           },
           {
             name: "text",
             label: "Text",
             widget: "string",
-            default: "undefined",
             required: true,
           },
           {
@@ -272,7 +158,6 @@
             name: "name",
             label: "Name",
             widget: "string",
-            default: "undefined",
             required: true,
           },
           {
@@ -295,28 +180,24 @@
             name: "rgb",
             label: "RGB",
             widget: "string",
-            default: "undefined",
             required: false,
           },
           {
             name: "pantone",
             label: "Pantone",
             widget: "string",
-            default: "undefined",
             required: false,
           },
           {
             name: "cmyk",
             label: "CMYK",
             widget: "string",
-            default: "undefined",
             required: false,
           },
           {
             name: "mui",
             label: "MUI",
             widget: "string",
-            default: "undefined",
             required: false,
           },
         ],
@@ -388,6 +269,122 @@
 
       //  End Color Widget ------------------------------------------------------------------- /
 
+      //  Start Column Widget ------------------------------------------------------------------- /
+
+      const ColumnWidget = {
+        // Internal id of the component
+        id: "column-widget",
+        // Visible label
+        label: "Column",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "span",
+            label: "Span",
+            widget: "select",
+            required: true,
+            options: ["1", "2", "3", "4", "5", "6"],
+            default: ["6"]
+          },
+          {
+            name: "color",
+            label: "Color",
+            widget: "color",
+            required: false,
+          },
+          {
+            name: "align",
+            label: "Align",
+            widget: "select",
+            options: ["left", "center", "right"],
+            default: ["left"],
+          },
+          {
+            name: "content",
+            label: "Content",
+            widget: "markdown",
+            required: true,
+          },
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          return {
+            span: match[1],
+            color: match[2],
+            align: match[3],
+            content: match[4],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          return `{{<column span="${data.span}" ${
+            data.color !== "undefined" && `color="${data.color}"`
+          } align="${data.align}">}}${data.content}{{</column>}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `<div class="span-${data.span}" style="${
+            data.color && `background:${data.color};`
+          }; ${data.align && `text-align: ${data.align};`};">${
+            data.content
+          }</div>`;
+        },
+      };
+
+      //  End Column Widget ------------------------------------------------------------------- /
+
+      //  Start Divider Title Widget ------------------------------------------------------------------- /
+
+      const DividerTitleWidget = {
+        // Internal id of the component
+        id: "divider-title-widget",
+        // Visible label
+        label: "Divider Title",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "text",
+            label: "Text",
+            widget: "string",
+            required: true,
+          },
+          {
+            name: "align",
+            label: "Align",
+            widget: "select",
+            options: ["left", "center", "right"],
+            default: ["left"],
+          },
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          return {
+            text: match[1],
+            align: match[2],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          return `{{<divider-title text="${data.text}" align="${data.align}">}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `<div class="divider-title" style="text-align: ${data.align}">${data.text}</div>`;
+        },
+      };
+
+      //  End Divider Title Widget ------------------------------------------------------------------- /
+
       //  Start Download Widget ------------------------------------------------------------------- /
 
       const DownloadWidget = {
@@ -401,7 +398,7 @@
             name: "title",
             label: "Title",
             widget: "string",
-            required: false,
+            required: true,
           },
           {
             name: "span",
@@ -427,7 +424,6 @@
             name: "subtitle",
             label: "Subtitle",
             widget: "string",
-            default: "undefined",
             required: false,
           },
         ],
@@ -526,6 +522,133 @@
 
       //  End Hint Widget ------------------------------------------------------------------- /
 
+      //  Start Image Widget ------------------------------------------------------------------- /
+
+      const ImageWidget = {
+        // Internal id of the component
+        id: "image-widget",
+        // Visible label
+        label: "Catalog Image",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "src",
+            label: "File",
+            widget: "file",
+            required: true,
+            media_library: {
+              config: {
+                allow_multiple: false,
+                media_folder: "/static/downloads",
+              },
+            },
+          },
+          {
+            name: "overlay",
+            label: "Overlay",
+            widget: "file",
+            required: false,
+            media_library: {
+              config: {
+                allow_multiple: false,
+                media_folder: "/static/downloads",
+              },
+            },
+          },
+          {
+            name: "span",
+            label: "Span",
+            widget: "select",
+            required: true,
+            options: ["1", "2", "3", "4", "5", "6"],
+            default: ["6"],
+          },
+          {
+            name: "title",
+            label: "Title",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "description",
+            label: "Description",
+            widget: "string",
+            required: false,
+          },
+          {
+            name: "light",
+            label: "Light",
+            widget: "boolean",
+            default: false,
+            required: false,
+          },
+          {
+            name: "dark",
+            label: "Dark",
+            widget: "boolean",
+            default: false,
+            required: false,
+          },
+          {
+            name: "scale",
+            label: "Scale",
+            widget: "boolean",
+            default: false,
+            required: false,
+          },
+
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          console.log({match});
+          return {
+            src: match[1],
+            overlay: match[2],
+            span: match[3],
+            title: match[4],
+            description: match[5],
+            light: match[6],
+            dark: match[7],
+            scale: match[8],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          return `{{<image src="${data.src}"
+          span="${data.span}"
+          ${data.title !== "undefined" && `title="${data.title}"`}
+          ${data.description !== "undefined" && `description="${data.description}"`}
+          ${data.overlay !== "undefined" && `overlay="${data.overlay}"`}
+          ${data.light !== "false" && `light="${data.light}"`}
+          ${data.dark !== "false" && `dark="${data.dark}"`}
+          ${data.scale !== "false" && `scale="${data.scale}"`}
+          >}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `<div
+          class="span-{{$span}} image-shortcode
+          ${data.light !== "false" && "light"}
+          ${data.dark !== "false" && "dark"}
+          ${data.scale !== "false" && "no-scale"}
+        >
+          <div ${data.overlay !== "undefined" && `class="source"`}>
+            <img src="${data.src}" />
+          </div>
+          ${data.overlay !== "undefined" && `<div class="overlay"><img src="${data.overlay}" /></div>`}
+          ${data.title !== "undefined" && `<p><b>${data.title}</b></p>`}
+          ${data.description !== "undefined" && `<p>${data.description}</p>`}
+        </div>`;
+        },
+      };
+
+      //  End Image Widget ------------------------------------------------------------------- /
+
       //  Start Video Widget ------------------------------------------------------------------- /
 
       const VideoWidget = {
@@ -577,7 +700,6 @@
             name: "poster",
             label: "Poster",
             widget: "image",
-            default: "undefined",
             required: false,
             media_library: {
               config: {
@@ -605,141 +727,34 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}" poster="${data.poster}">}}`;
+          {{/*  return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}" poster="${data.poster}">}}`;  */}}
+            return `
+          <div class="span-${data.span}">
+            <video
+            ${data.poster !== "undefined" && `poster="${data.poster}"`}}
+            ${data.loop !== "false" && `loop`}}
+            ${data.autoplay !== "false" && `autoplay`}}
+            ${data.muted !== "false" && `muted`}}
+            controls>
+                <source src="${data.src}"></source>
+            </video>
+          </div>`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
           return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}" poster="${data.poster}">}}`;
-        },
-      };
-
-      //  End Video Widget ------------------------------------------------------------------- /
-
-      //  Start Video Widget ------------------------------------------------------------------- /
-
-      const ImageWidget = {
-        // Internal id of the component
-        id: "image-widget",
-        // Visible label
-        label: "Catalog Image",
-        // Fields the user need to fill out when adding an instance of the component
-        fields: [
-          {
-            name: "src",
-            label: "File",
-            widget: "file",
-            required: true,
-            media_library: {
-              config: {
-                allow_multiple: false,
-                media_folder: "/static/downloads",
-              },
-            },
-          },
-          {
-            name: "overlay",
-            label: "Overlay",
-            widget: "file",
-            required: true,
-            media_library: {
-              config: {
-                allow_multiple: false,
-                media_folder: "/static/downloads",
-              },
-            },
-          },
-          {
-            name: "span",
-            label: "Span",
-            widget: "select",
-            required: true,
-            options: ["1", "2", "3", "4", "5", "6"],
-            default: ["6"],
-          },
-          {
-            name: "title",
-            label: "Title",
-            widget: "string",
-            default: "undefined",
-            required: false,
-          },
-          {
-            name: "description",
-            label: "Description",
-            widget: "string",
-            default: "undefined",
-            required: false,
-          },
-          {
-            name: "light",
-            label: "Light",
-            widget: "boolean",
-            default: "false",
-            required: false,
-          },
-          {
-            name: "dark",
-            label: "Dark",
-            widget: "boolean",
-            default: "false",
-            required: false,
-          },
-          {
-            name: "scale",
-            label: "Scale",
-            widget: "boolean",
-            default: "false",
-            required: false,
-          },
-
-        ],
-        // This is used to populate the custom widget in the markdown editor in the CMS.
-        fromBlock: function (match) {
-          console.log({match});
-          return {
-            src: match[1],
-            overlay: match[2],
-            span: match[3],
-            title: match[4],
-            description: match[5],
-            light: match[6],
-            dark: match[7],
-            scale: match[8],
-          };
-        },
-        // Given an object with one property for each field defined in `fields`,
-        // return the string you wish to be inserted into your markdown.
-        //
-        // This is used to serialize the data from the custom widget to the
-        // markdown document
-        toBlock: function (data) {
-          return `{{<image src="${data.src}"
-          span="${data.span}"
-          ${data.title !== "undefined" && `title="${data.title}"`}
-          ${data.description !== "undefined" && `description="${data.description}"`}
-          ${data.overlay !== "undefined" && `overlay="${data.overlay}"`}
-          ${data.light !== "false" && `light="${data.light}"`}
-          ${data.dark !== "false" && `dark="${data.dark}"`}
-          ${data.scale !== "false" && `scale="${data.scale}"`}
-          >}}`;
-        },
-        // Preview output for this component. Can either be a string or a React component
-        // (component gives better render performance)
-        toPreview: function (data) {
-          return `<div
-          class="span-{{$span}} image-shortcode
-          ${data.light !== "false" && "light"}
-          ${data.dark !== "false" && "dark"}
-          ${data.scale !== "false" && "no-scale"}
-        >
-          <div ${data.overlay !== "undefined" && `class="source"`}>
-            <img src="${data.src}" />
-          </div>
-          ${data.overlay !== "undefined" && `<div class="overlay"><img src="${data.overlay}" /></div>`}
-          ${data.title !== "undefined" && `<p><b>${data.title}</b></p>`}
-          ${data.description !== "undefined" && `<p>${data.description}</p>`}
-        </div>`;
+          {{/*  return `
+          <div class="span-${data.span}">
+            <video
+            ${data.poster !== "undefined" && `poster="${data.poster}"`}}
+            ${data.loop !== "false" && `loop`}}
+            ${data.autoplay !== "false" && `autoplay`}}
+            ${data.muted !== "false" && `muted`}}
+            controls>
+                <source src="${data.src}"></source>
+            </video>
+          </div>`;  */}}
         },
       };
 
