@@ -1,26 +1,27 @@
-{{$span := .Get "span"}}
+{{$span := .Get "span" | default 6}}
 {{$src := .Get "src"}}
-{{$title := .Get "title"}}
-{{$description := .Get "description"}}
-{{$light := .Get "light"}}
-{{$dark := .Get "dark"}}
+{{$title := .Get "title" | default "undefined"}}
+{{$description := .Get "description" | default "undefined"}}
+{{$light := .Get "light" | default false}}
+{{$dark := .Get "dark" | default false}}
 {{$overlay := .Get "overlay"}}
-{{$scale := .Get "scale"}}
+{{$scale := .Get "scale" | default false}}
 
 <div
-  class="span-{{$span}} image-shortcode {{with $light}}light{{end}} {{with $dark}}dark{{end}} {{if eq $scale "false"}}no-scale{{end}}"
+  class="span-{{$span}} image-shortcode {{if eq $light true}}light{{end}} {{if eq $dark true}}dark{{end}} {{if eq $scale false}}no-scale{{end}}"
 >
-  <div {{with $overlay}}class="source"{{end}}>
+  <div {{if eq $overlay "undefined"}}class="source"{{end}}>
     <img src="{{$src}}" />
   </div>
-  {{with $overlay}}
+  {{if ne $overlay "undefined"}}
   <div class="overlay">
     <img src="{{$overlay}}" />
   </div>
   {{end}}
-  {{with $title}}
+  {{if ne $title "undefined"}}
   <p><b>{{$title}}</b></p>
-  {{end}} {{with $description}}
+  {{end}}
+  {{if ne $description "undefined"}}
   <p>{{$description}}</p>
   {{end}}
 </div>

@@ -1,9 +1,9 @@
 ---
 title: Prueba
 ---
-{{<column span="3" color="undefined" align="undefined">}}C﻿olumn with a span of 3 no color and default alignment{{</column>}}
+{{<column span="3">}}Column with a span of 3 no color and default alignment{{</column>}}
 
-{{<column span="3" color="#ff0000" align="right">}}C﻿olumn with a span of 3 with a red background and aligned to the right{{</column>}}
+{{<column span="3" color="#ff0000" align="right">}}Column with a span of 3 with a red background and aligned to the right{{</column>}}
 
 {{<column span="6" color="#00ecff" align="center">}}Column with a span of 6 a blue background and aligned to the center{{</column>}}
 
@@ -29,10 +29,10 @@ title: Prueba
 
 {{<hint type="info" span="3">}}Info{{</hint>}}
 
-{{<hint type="success" span="3">}}S﻿uccess{{</hint>}}
+{{<hint type="success" span="3">}}Success{{</hint>}}
 
-{{<hint type="warning" span="6">}}W﻿arning{{</hint>}}
+{{<hint type="warning" span="6">}}Warning{{</hint>}}
 
-{{<hint type="danger" span="6">}}D﻿anger{{</hint>}}
+{{<hint type="danger" span="6">}}Danger{{</hint>}}
 
 {{<video src="/images/kapture-2023-05-12-at-19.27.42.mp4" span="6" autoplay="false" muted="true" loop="true" poster="/images/gitlab-decap-login.png">}}

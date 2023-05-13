@@ -399,15 +399,20 @@ The Divider Title shortcode can be used as a divider.
 **Shortcode Parameters**
 
 - **text:** required string - the text to display above the divider
+- **align:** optional string - controls the text alignment, defaults to **left**
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title text="No alignment set defaults to left">}}
 
-{{<divider-title text="Divider Title">}}
+{{<divider-title text="Aligned to center" align="center">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title text="Aligned to right" align="right">}}
 
 ```html
-{{</* divider-title text="info" */>}}
+{{</*divider-title text="No alignment set defaults to left"*/>}}
+
+{{</*divider-title text="Aligned to center" align="center"*/>}}
+
+{{</*divider-title text="Aligned to right" align="right"*/>}}
 ```
 
 ## Bullet Shortcode

@@ -1,6 +1,6 @@
 {{$type := .Get "type" | default "do"}}
-{{$leadingText := .Get "leadingText"}}
-{{$text := .Get "text"}}
+{{$leadingText := .Get "leadingText" | default "undefined"}}
+{{$text := .Get "text" | default "undefined"}}
 
 <div class="bullet">
   {{if eq $type "do"}}

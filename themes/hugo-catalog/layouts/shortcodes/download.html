@@ -5,7 +5,7 @@
 {{end}}
 {{$title := .Get "title"}}
 {{$subtitle := .Get "subtitle" | default "undefined"}}
-{{$span := .Get "span"}}
+{{$span := .Get "span" | default 6}}
 {{$bytes := float (os.Stat $url).Size }}
 {{$k := 1024}}
 {{$dm := 2}}

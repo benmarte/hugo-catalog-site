@@ -1,9 +1,10 @@
-{{$span := .Get "span"}}
-{{$color := .Get "color"}}
-{{$align := .Get "align"}}
+{{$span := .Get "span" | default 6}}
+{{$color := .Get "color" | default "undefined"}}
+{{$align := .Get "align" | default "left"}}
+
 <div
   class="span-{{$span}}"
-  style="{{if ne $color "undefined"}}background: {{$color}};{{end}} {{with $align}}text-align: {{$align}};{{end}}"
+  style="{{if ne $color "undefined"}}background: {{$color}};{{end}} text-align: {{$align}};"
 >
   {{.Inner | markdownify}}
 </div>
