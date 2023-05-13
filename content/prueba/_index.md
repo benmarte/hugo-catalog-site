@@ -54,7 +54,7 @@ title: Prueba
           overlay="undefined"
           light="true"
           dark="false"
-          scale="false"
+          scale="true"
           >}}
 
 {{<image src="/images/add-new-site.png"
@@ -64,5 +64,5 @@ title: Prueba
           overlay="undefined"
           light="false"
           dark="true"
-          scale="false"
+          scale="true"
           >}}
