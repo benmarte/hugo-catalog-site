@@ -163,15 +163,14 @@
             default: ["6"]
           },
           {
-            name: "hex",
-            label: "Hex",
+            name: "rgb",
+            label: "RGB",
             widget: "color",
-            default: "transparent",
             required: true,
           },
           {
-            name: "rgb",
-            label: "RGB",
+            name: "hex",
+            label: "Hex",
             widget: "string",
             required: false,
           },
@@ -199,8 +198,8 @@
           return {
             name: match[1],
             span: match[2],
-            hex: match[3],
-            rgb: match[4],
+            rgb: match[3],
+            hex: match[4],
             pantone: match[5],
             cmyk: match[6],
             mui: match[7],
@@ -212,7 +211,6 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
           return `{{<color span="${data.span}" name="${data.name}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}" >}}`;
         },
         // Preview output for this component. Can either be a string or a React component
