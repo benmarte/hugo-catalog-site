@@ -1,13 +1,13 @@
 {{$name := .Get "name" | default "undefined"}}
 {{$span := .Get "span" | default 6}}
-{{$hex := .Get "hex" | default "undefined"}}
+{{$hex := .Get "hex" | default "#000000"}}
 {{$rgb := .Get "rgb" | default "undefined"}}
 {{$pantone := .Get "pantone" | default "undefined"}}
 {{$cmyk := .Get "cmyk" | default "undefined"}}
 {{$mui := .Get "mui" | default "undefined"}}
 
 <div class="span-{{$span}}">
-  <div class="color-shortcode" {{if ne $rgb "undefined"}}style="background: {{$rgb}}"{{end}}></div>
+  <div class="color-shortcode" style="background: {{$hex}}"></div>
   {{if ne $name "undefined"}}<p><b>{{$name}}</b></p>{{end}}
   {{if ne $rgb "undefined"}}<p><b>RGB:</b> {{$rgb}}</p>{{end}}
   {{if ne $hex "undefined"}}<p><b>HEX:</b> {{$hex}}</p>{{end}}

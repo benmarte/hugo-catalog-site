@@ -292,8 +292,8 @@ The Color shortcode is used to document colors, it supports the following color 
 
 - **name:** optional string - defines the color name
 - **span:** required number - [1–6] width of the shortcode
-- **RGB** required string - defines the RGB color value and sets the color of the example
-- **hex:** optional string - defines the hex color value
+- **hex:** required string - defines the hex color value and sets the color of the example
+- **RGB** optional string - defines the RGB color value
 - **Pantone** optional string - defines the pantone color value
 - **CMYK** optional string - defines the CMYK color value
 - **MUI** optional string - defines MUI color value

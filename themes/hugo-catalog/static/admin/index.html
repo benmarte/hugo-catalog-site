@@ -163,14 +163,15 @@
             default: ["6"]
           },
           {
-            name: "rgb",
-            label: "RGB",
+            name: "hex",
+            label: "Hex",
             widget: "color",
+            default: "#000000",
             required: true,
           },
           {
-            name: "hex",
-            label: "Hex",
+            name: "rgb",
+            label: "RGB",
             widget: "string",
             required: false,
           },
@@ -198,8 +199,8 @@
           return {
             name: match[1],
             span: match[2],
-            rgb: match[3],
-            hex: match[4],
+            hex: match[3],
+            rgb: match[4],
             pantone: match[5],
             cmyk: match[6],
             mui: match[7],
