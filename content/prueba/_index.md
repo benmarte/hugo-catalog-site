@@ -34,3 +34,5 @@ title: Prueba
 {{<hint type="warning" span="6">}}W﻿arning{{</hint>}}
 
 {{<hint type="danger" span="6">}}D﻿anger{{</hint>}}
+
+{{<video src="/images/kapture-2023-05-12-at-19.27.42.mp4" span="6" autoplay="true" muted="true" loop="true" poster="undefined">}}
