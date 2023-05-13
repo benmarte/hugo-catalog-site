@@ -67,7 +67,19 @@ In the modal windows select **Github** as your provider and insert the **Client 
 
 ![Install Provider](/images/oauth-provider.png)
 
-Next, click on **Site settings**, **Domain management** and click on **Add a domain** insert your sites domain name. If you are using Github pages to host your site you need to insert: `you_repo_name.github.io` and click **Verify**.
+Next, click on **Site settings**, **Domain management** and click on **Add a domain**.
+
+![Github Domain](/images/netlify-add-domain.png)
+
+If you are using Github pages to host your site you need to insert: **`your_github_user_name.github.io`** and click **Verify**.
+
+![Github Domain](/images/netlify-github-domain.png)
+
+If you are using Gitlab pages to host your site you need to insert: **`your_gitlab_user_name.github.io`** and click **Verify**.
+
+![Gitlab Domain](/images/netlify-gitlab-domain.png)
+
+{{<hint type="info">}}If you get a domain is already registered message simply click **Add Domain** to continue.{{</hint>}}
 
 ## Configure Decap for Github Pages
 
