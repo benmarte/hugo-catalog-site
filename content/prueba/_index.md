@@ -36,3 +36,33 @@ title: Prueba
 {{<hint type="danger" span="6">}}Danger{{</hint>}}
 
 {{<video src="/images/kapture-2023-05-12-at-19.27.42.mp4" span="6" autoplay="false" muted="true" loop="true" poster="/images/gitlab-decap-login.png">}}
+
+{{<image src="/images/subtitle-image.png"
+          span="6"
+          title="undefined"
+          description="undefined"
+          overlay="/images/subtitle-image-hover.png"
+          light="false"
+          dark="false"
+          scale="false"
+          >}}
+
+{{<image src="/images/client-secret.png"
+          span="3"
+          title="undefined"
+          description="undefined"
+          overlay="undefined"
+          light="true"
+          dark="false"
+          scale="false"
+          >}}
+
+{{<image src="/images/add-new-site.png"
+          span="3"
+          title="undefined"
+          description="undefined"
+          overlay="undefined"
+          light="false"
+          dark="true"
+          scale="false"
+          >}}
