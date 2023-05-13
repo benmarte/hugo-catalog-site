@@ -4,7 +4,7 @@
 {{$url = printf "/static%s" $url}}
 {{end}}
 {{$title := .Get "title"}}
-{{$subtitle := .Get "subtitle" | default "undefined"}}
+{{$subtitle := .Get "subtitle" | default ""}}
 {{$span := .Get "span" | default 6}}
 {{$bytes := float (os.Stat $url).Size }}
 {{$k := 1024}}
@@ -22,7 +22,7 @@
         </div>
         <div class="download-details">
             <div><b>{{$title}}</b></div>
-            {{if ne $subtitle "undefined"}}
+            {{if ne $subtitle ""}}
                 <div>{{$subtitle}}</div>
             {{else}}
                 <div>{{$fileSize | lang.FormatNumber 2}} {{$sizeType}}</div>

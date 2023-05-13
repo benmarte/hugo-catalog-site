@@ -13,19 +13,19 @@ title: Prueba
 
 {{<bullet type="do" leadingText="Test" text="Text">}}
 
-{{<bullet type="dont" leadingText="No text" text="undefined">}}
+{{<bullet type="dont" leadingText="No text" text="">}}
 
-{{<bullet type="do" leadingText="undefined" text="No leading text">}}
+{{<bullet type="do" leadingText="" text="No leading text">}}
 
-{{<color span="6" name="Test" hex="#184dd2" rgb="undefined" pantone="undefined" cmyk="undefined" mui="undefined" >}}
+{{<color span="6" name="Test" hex="#184dd2" rgb="" pantone="" cmyk="" mui="" >}}
 
 {{<color span="3" name="red test" hex="#ff0000" rgb="123, 123, 123" pantone="pantone goes ehre" cmyk="cmyk goes ehre" mui="mui goes here" >}}
 
 {{<color span="3" name="blue test" hex="#00afff" rgb="rgb goes here" pantone="pantone goes here" cmyk="cmyk goes here" mui="mui goes here" >}}
 
-{{<download span="6" title="Test File" url="/images/netlify-upload.png" >}}
+{{<download span="3" title="Test File" url="/images/netlify-upload.png" >}}
 
-{{<download span="6" title="Video" url="/images/kapture-2023-05-12-at-19.27.42.mp4" subtitle="undefined">}}
+{{<download span="3" title="Video" url="/images/kapture-2023-05-12-at-19.27.42.mp4" subtitle="">}}
 
 {{<hint type="info" span="3">}}Info{{</hint>}}
 
@@ -39,19 +39,19 @@ title: Prueba
 
 {{<image src="/images/subtitle-image.png"
           span="6"
-          title="undefined"
-          description="undefined"
+          title=""
+          description=""
           overlay="/images/subtitle-image-hover.png"
           light="false"
           dark="false"
-          scale="false"
+          scale="true"
           >}}
 
 {{<image src="/images/client-secret.png"
           span="3"
-          title="undefined"
-          description="undefined"
-          overlay="undefined"
+          title=""
+          description=""
+          overlay=""
           light="true"
           dark="false"
           scale="true"
@@ -59,9 +59,9 @@ title: Prueba
 
 {{<image src="/images/add-new-site.png"
           span="3"
-          title="undefined"
-          description="undefined"
-          overlay="undefined"
+          title=""
+          description=""
+          overlay=""
           light="false"
           dark="true"
           scale="true"

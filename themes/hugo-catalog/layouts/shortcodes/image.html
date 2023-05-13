@@ -1,27 +1,27 @@
 {{$span := .Get "span" | default 6}}
 {{$src := .Get "src"}}
-{{$title := .Get "title" | default "undefined"}}
-{{$description := .Get "description" | default "undefined"}}
+{{$title := .Get "title" | default ""}}
+{{$description := .Get "description" | default ""}}
 {{$light := .Get "light" | default "false"}}
 {{$dark := .Get "dark" | default "false"}}
-{{$overlay := .Get "overlay" | default "undefined"}}
+{{$overlay := .Get "overlay" | default ""}}
 {{$scale := .Get "scale" | default "true"}}
 
 <div
   class="span-{{$span}} image-shortcode {{if eq $light "true"}}light{{end}} {{if eq $dark "true"}}dark{{end}} {{if eq $scale "false"}}no-scale{{end}}"
 >
-  <div {{if ne $overlay "undefined"}}class="source"{{end}}>
+  <div {{if ne $overlay ""}}class="source"{{end}}>
     <img src="{{$src}}" />
   </div>
-  {{if ne $overlay "undefined"}}
+  {{if ne $overlay ""}}
   <div class="overlay">
     <img src="{{$overlay}}" />
   </div>
   {{end}}
-  {{if ne $title "undefined"}}
+  {{if ne $title ""}}
   <p><b>{{$title}}</b></p>
   {{end}}
-  {{if ne $description "undefined"}}
+  {{if ne $description ""}}
   <p>{{$description}}</p>
   {{end}}
 </div>

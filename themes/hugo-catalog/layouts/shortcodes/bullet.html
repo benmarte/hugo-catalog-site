@@ -1,6 +1,6 @@
 {{$type := .Get "type" | default "do"}}
-{{$leadingText := .Get "leadingText" | default "undefined"}}
-{{$text := .Get "text" | default "undefined"}}
+{{$leadingText := .Get "leadingText" | default ""}}
+{{$text := .Get "text" | default ""}}
 
 <div class="bullet">
   {{if eq $type "do"}}
@@ -9,7 +9,7 @@
   <i class="far fa-window-close danger"></i>
   {{end}}
   <div>
-    {{if ne $leadingText "undefined"}}<b>{{$leadingText}}</b>{{end}}
-    {{if ne $text "undefined"}}{{$text}}{{end}}
+    {{if ne $leadingText ""}}<b>{{$leadingText}}</b>{{end}}
+    {{if ne $text ""}}{{$text}}{{end}}
   </div>
 </div>
