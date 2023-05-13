@@ -1,10 +1,10 @@
 {{$src := .Get "src"}}
-{{$title := .Get "title" | default "undefined"}}
+{{$title := .Get "title" | default ""}}
 {{$span := .Get "span" | default 6}}
 
 <div class="span-{{$span}}">
   <div class="audio-shortcode">
-    {{if ne $title "undefined"}}
+    {{if ne $title ""}}
     <p>{{$title}}</p>
     {{end}}
     <audio src="{{$src}}" controls></audio>
