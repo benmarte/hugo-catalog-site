@@ -449,7 +449,7 @@
 
       //  End Download Widget ------------------------------------------------------------------- /
 
-      //  Start Divider Title Widget ------------------------------------------------------------------- /
+      //  Start Hint Widget ------------------------------------------------------------------- /
 
       const HintWidget = {
         // Internal id of the component
@@ -504,7 +504,95 @@
         },
       };
 
-      //  End Divider Title Widget ------------------------------------------------------------------- /
+      //  End Hint Widget ------------------------------------------------------------------- /
+
+      //  Start Hint Widget ------------------------------------------------------------------- /
+
+      const VideoWidget = {
+        // Internal id of the component
+        id: "video-widget",
+        // Visible label
+        label: "Video",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "src",
+            label: "File",
+            widget: "file",
+            required: true,
+            media_library: {
+              config: {
+                allow_multiple: false,
+                media_folder: "/static/downloads",
+              },
+            },
+          },
+          {
+            name: "span",
+            label: "Span",
+            widget: "select",
+            required: true,
+            options: ["1", "2", "3", "4", "5", "6"],
+            default: ["6"],
+          },
+          {
+            name: "muted",
+            label: "Muted",
+            widget: "boolean",
+            default: true,
+          },
+          {
+            name: "autoplay",
+            label: "Auto Play",
+            widget: "boolean",
+            default: false,
+          },
+          {
+            name: "loop",
+            label: "Loop",
+            widget: "boolean",
+            default: false,
+          },
+          {
+            name: "poster",
+            label: "Poster",
+            widget: "image",
+            required: false,
+            media_library: {
+              config: {
+                allow_multiple: false,
+                media_folder: "/static/downloads",
+              },
+            },
+          },
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          return {
+            src: match[1],
+            span: match[2],
+            muted: match[3],
+            autoplay: match[4],
+            loop: match[5],
+            poster: match[6],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}">}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}">}}`;
+        },
+      };
+
+      //  End Hint Widget ------------------------------------------------------------------- /
 
       CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(ColumnWidget);
@@ -513,6 +601,7 @@
       CMS.registerEditorComponent(ColorWidget);
       CMS.registerEditorComponent(DownloadWidget);
       CMS.registerEditorComponent(HintWidget);
+      CMS.registerEditorComponent(VideoWidget);
     </script>
   </body>
 </html>
