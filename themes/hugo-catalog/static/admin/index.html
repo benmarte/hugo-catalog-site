@@ -70,9 +70,9 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="span-${span}"><div class="audio-shortcode">${
-            data.title !== "undefined" && `<p>${data.title}</p>`
-          }<audio src="${data.src}" controls></audio></div></div>`;
+          return `{{<audio src="${data.src}" span="${data.span}" ${
+            data.title !== "undefined" && `title="${data.title}"`
+          }>}}`;
         },
       };
 
@@ -130,16 +130,10 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="bullet">${
-            data.type === "do"
-              ? `<i class="fa-regular fa-circle-check success"></i>`
-              : `<i class="far fa-window-close danger"></i>`
-          }
-            <div>${
-              data.leadingText !== "undefined" && `<b>${data.leadingText}</b>`
-            }
-            ${data.text !== "undefined" && data.text}
-            </div></div>`;
+          return `{{<bullet type="${data.type}" ${
+            data.leadingText !== "undefined" &&
+            `leadingText="${data.leadingText}"`
+          } ${data.text !== "undefined" && `text="${data.text}"`}>}}`;
         },
       };
 
@@ -225,45 +219,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="span-${span}">
-          <div class="color-shortcode" style="background: ${data.hex}"></div>
-            ${
-              data.name !== "undefined" &&
-              `<p>
-                  <b>${data.name}</b>
-                </p>`
-            }
-            ${
-              data.hex !== "undefined" &&
-              `<p>
-                  <b>HEX:</b> ${data.hex}
-                </p>`
-            }
-            ${
-              data.rgb !== "undefined" &&
-              `<p>
-                  <b>RGB:</b> ${data.rgb}
-                </p>`
-            }
-            ${
-              data.pantone !== "undefined" &&
-              `<p>
-                  <b>Pantone:</b> ${data.pantone}
-                </p>`
-            }
-            ${
-              data.cmyk !== "undefined" &&
-              `<p>
-                  <b>CMYK:</b> ${data.cmyk}
-                </p>`
-            }
-            ${
-              data.mui !== "undefined" &&
-              `<p>
-                  <b>MUI:</b> ${data.mui}
-                </p>`
-            }  
-            </div>`;
+          return `{{<color span="${data.span}" name="${data.name}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}" >}}`;
         },
       };
 
@@ -328,11 +284,9 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="span-${data.span}" style="${
-            data.color && `background:${data.color};`
-          }; ${data.align && `text-align: ${data.align};`};">${
-            data.content
-          }</div>`;
+          return `{{<column span="${data.span}" ${
+            data.color !== "undefined" && `color="${data.color}"`
+          } align="${data.align}">}}${data.content}{{</column>}}`;
         },
       };
 
@@ -379,7 +333,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="divider-title" style="text-align: ${data.align}">${data.text}</div>`;
+          return `{{<divider-title text="${data.text}" align="${data.align}">}}`;
         },
       };
 
@@ -447,17 +401,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="span-${data.span}">
-            <a class="download" href="${data.url}" target="_blank" rel="no-follow no-referrer">
-                <div class="download-icon">
-                    <i class="fa-regular fa-circle-down"></i>
-                </div>
-                <div class="download-details">
-                    <div><b>${data.title}</b></div>
-                    ${data.subtitle !== "undefined" && `<div>${data.subtitle}</div>`}
-                </div>
-            </a>
-        </div>`;
+          return `{{<download span="${data.span}" title="${data.title}" url="${data.url}" subtitle="${data.subtitle}">}}`;
         },
       };
 
@@ -514,7 +458,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="span-${data.span} hint-shortcode ${data.type}">${data.content}</div>`;
+          return `{{<hint type="${data.type}" span="${data.span}">}}${data.content}{{</hint>}}`;
         },
       };
 
@@ -591,7 +535,7 @@
             name: "scale",
             label: "Scale",
             widget: "boolean",
-            default: false,
+            default: true,
             required: false,
           },
 
@@ -628,19 +572,15 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div
-          class="span-{{$span}} image-shortcode
-          ${data.light !== "false" && "light"}
-          ${data.dark !== "false" && "dark"}
-          ${data.scale !== "false" && "no-scale"}
-        >
-          <div ${data.overlay !== "undefined" && `class="source"`}>
-            <img src="${data.src}" />
-          </div>
-          ${data.overlay !== "undefined" && `<div class="overlay"><img src="${data.overlay}" /></div>`}
-          ${data.title !== "undefined" && `<p><b>${data.title}</b></p>`}
-          ${data.description !== "undefined" && `<p>${data.description}</p>`}
-        </div>`;
+          return `{{<image src="${data.src}"
+          span="${data.span}"
+          ${data.title !== "undefined" && `title="${data.title}"`}
+          ${data.description !== "undefined" && `description="${data.description}"`}
+          ${data.overlay !== "undefined" && `overlay="${data.overlay}"`}
+          ${data.light !== "false" && `light="${data.light}"`}
+          ${data.dark !== "false" && `dark="${data.dark}"`}
+          ${data.scale !== "false" && `scale="${data.scale}"`}
+          >}}`;
         },
       };
 

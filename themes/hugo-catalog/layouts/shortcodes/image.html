@@ -2,13 +2,13 @@
 {{$src := .Get "src"}}
 {{$title := .Get "title" | default "undefined"}}
 {{$description := .Get "description" | default "undefined"}}
-{{$light := .Get "light" | default false}}
-{{$dark := .Get "dark" | default false}}
+{{$light := .Get "light" | default "false"}}
+{{$dark := .Get "dark" | default "false"}}
 {{$overlay := .Get "overlay" | default "undefined"}}
-{{$scale := .Get "scale" | default true}}
+{{$scale := .Get "scale" | default "true"}}
 
 <div
-  class="span-{{$span}} image-shortcode {{if eq $light true}}light{{end}} {{if eq $dark true}}dark{{end}} {{if eq $scale false}}no-scale{{end}}"
+  class="span-{{$span}} image-shortcode {{if eq $light "true"}}light{{end}} {{if eq $dark "true"}}dark{{end}} {{if eq $scale "false"}}no-scale{{end}}"
 >
   <div {{if ne $overlay "undefined"}}class="source"{{end}}>
     <img src="{{$src}}" />
