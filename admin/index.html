@@ -15,7 +15,7 @@
 
       const DividerTitleWidget = {
         // Internal id of the component
-        id: "divider-title",
+        id: "divider-title-widget",
         // Visible label
         label: "Divider Title",
         // Fields the user need to fill out when adding an instance of the component
@@ -368,7 +368,7 @@
 
       //  End Color Widget ------------------------------------------------------------------- /
 
-      //  Start Divider Title Widget ------------------------------------------------------------------- /
+      //  Start Download Widget ------------------------------------------------------------------- /
 
       const DownloadWidget = {
         // Internal id of the component
@@ -413,7 +413,10 @@
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
-            text: match[1],
+            title: match[1],
+            span: match[2],
+            url: match[3],
+            subtitle: match[4],
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -444,6 +447,63 @@
         },
       };
 
+      //  End Download Widget ------------------------------------------------------------------- /
+
+      //  Start Divider Title Widget ------------------------------------------------------------------- /
+
+      const HintWidget = {
+        // Internal id of the component
+        id: "hint-widget",
+        // Visible label
+        label: "Hint",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "type",
+            label: "Type",
+            widget: "select",
+            options: ["info", "success", "warning", "danger"],
+            default: ["info"],
+            required: true,
+          },
+          {
+            name: "span",
+            label: "Span",
+            widget: "select",
+            required: true,
+            options: ["1", "2", "3", "4", "5", "6"],
+            default: ["6"],
+          },
+          {
+          name: "content",
+          label: "Content",
+          widget: "markdown",
+          required: true,
+        }
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          return {
+            type: match[1],
+            span: match[1],
+            content: match[1],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          return `{{<hint type="${data.type}" span="${data.span}">}}${data.content}{{</hint>}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `{{<hint type="${data.type}" span="${data.span}">}}${data.content}{{</hint>}}`;
+        },
+      };
+
       //  End Divider Title Widget ------------------------------------------------------------------- /
 
       CMS.registerEditorComponent(DividerTitleWidget);
@@ -452,6 +512,7 @@
       CMS.registerEditorComponent(BulletWidget);
       CMS.registerEditorComponent(ColorWidget);
       CMS.registerEditorComponent(DownloadWidget);
+      CMS.registerEditorComponent(HintWidget);
     </script>
   </body>
 </html>
