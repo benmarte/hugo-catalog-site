@@ -66,3 +66,7 @@ title: Prueba
           dark="true"
           scale="true"
           >}}
+
+{{<video src="/images/kapture-2023-05-12-at-19.27.42.mp4" span="3" autoplay="true" muted="true" loop="true" poster="undefined">}}
+
+{{<video src="/images/kapture-2023-05-12-at-19.27.42.mp4" span="3" autoplay="false" muted="false" loop="false" poster="/images/gitlab-decap-login.png">}}
