@@ -188,10 +188,9 @@ body {
   display: flex;
   align-items: flex-start;
   margin: 8px 0 0 0;
-  width: 100%;
-  align-items: center; }
+  width: 100%; }
   .bullet i {
-    margin-right: 10px; }
+    margin: 4px 10px 0 0; }
   .bullet .success {
     color: #8bc34a; }
   .bullet .danger {
