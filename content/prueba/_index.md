@@ -35,4 +35,4 @@ title: Prueba
 
 {{<hint type="danger" span="6">}}D﻿anger{{</hint>}}
 
-{{<video src="/images/kapture-2023-05-12-at-19.27.42.mp4" span="6" autoplay="false" muted="true" loop="false" poster="/images/github-decap-login.png">}}
+{{<video src="/images/kapture-2023-05-12-at-19.27.42.mp4" span="6" autoplay="true" muted="true" loop="true" poster="/images/gitlab-decap-login.png">}}
