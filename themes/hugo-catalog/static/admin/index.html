@@ -651,13 +651,12 @@
             label: "Poster",
             widget: "image",
             required: false,
-            media_folder: "/static/images",
-            //media_library: {
-              //config: {
-                //allow_multiple: false,
-                
-              //},
-            //},
+            media_library: {
+              media_folder: "/static/images",
+              config: {
+                allow_multiple: false,
+              },
+            },
           },
         ],
         // This is used to populate the custom widget in the markdown editor in the CMS.
