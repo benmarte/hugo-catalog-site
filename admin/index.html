@@ -6,6 +6,7 @@
     <title>Content Manager</title>
     <!-- Include the script that enables Netlify Identity on this page. -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link rel="stylesheet" href="../main.css" />
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
@@ -26,11 +27,19 @@
             widget: "string",
             required: true,
           },
+          {
+            name: "align",
+            label: "Align",
+            widget: "select",
+            options: ["left", "center", "right"],
+            default: ["left"],
+          },
         ],
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
             text: match[1],
+            align: match[2],
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -39,12 +48,12 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<divider-title text="${data.text}">}}`;
+          return `{{<divider-title text="${data.text}" align="${data.align}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `<div class="divider-title">${data.text}</div>`;
+          return `<div class="divider-title" style="text-align: ${data.align}">${data.text}</div>`;
         },
       };
 
@@ -71,6 +80,7 @@
             name: "color",
             label: "Color",
             widget: "color",
+            default: "undefined",
             required: false,
           },
           {
@@ -138,6 +148,7 @@
             name: "title",
             label: "Title",
             widget: "string",
+            default: "undefined",
             required: false,
           },
           {
@@ -145,7 +156,8 @@
             label: "Span",
             widget: "select",
             required: true,
-            options: ["1", "2", "3", "4", "5", "6"]
+            options: ["1", "2", "3", "4", "5", "6"],
+            default: ["6"]
           },
         ],
         // This is used to populate the custom widget in the markdown editor in the CMS.
@@ -191,12 +203,14 @@
             name: "leadingText",
             label: "Leading Text",
             widget: "string",
+            default: "undefined",
             required: false,
           },
           {
             name: "text",
             label: "Text",
             widget: "string",
+            default: "undefined",
             required: true,
           },
           {
@@ -258,6 +272,7 @@
             name: "name",
             label: "Name",
             widget: "string",
+            default: "undefined",
             required: true,
           },
           {
@@ -273,30 +288,35 @@
             label: "Hex",
             widget: "color",
             allowInput: true,
+            default: "transparent",
             required: true,
           },
           {
             name: "rgb",
             label: "RGB",
             widget: "string",
+            default: "undefined",
             required: false,
           },
           {
             name: "pantone",
             label: "Pantone",
             widget: "string",
+            default: "undefined",
             required: false,
           },
           {
             name: "cmyk",
             label: "CMYK",
             widget: "string",
+            default: "undefined",
             required: false,
           },
           {
             name: "mui",
             label: "MUI",
             widget: "string",
+            default: "undefined",
             required: false,
           },
         ],
@@ -407,6 +427,7 @@
             name: "subtitle",
             label: "Subtitle",
             widget: "string",
+            default: "undefined",
             required: false,
           },
         ],
@@ -432,8 +453,7 @@
         // (component gives better render performance)
         toPreview: function (data) {
           console.log({data})
-          return `{{<download span="${data.span}" title="${data.title}" url="${data.url}" subtitle="${data.subtitle}">}}`;
-          {{/*  return `<div class="span-${data.span}">
+          return `<div class="span-${data.span}">
             <a class="download" href="${data.url}" target="_blank" rel="no-follow no-referrer">
                 <div class="download-icon">
                     <i class="fa-regular fa-circle-down"></i>
@@ -443,7 +463,7 @@
                     ${data.subtitle !== "undefined" && `<div>${data.subtitle}</div>`}
                 </div>
             </a>
-        </div>`;  */}}
+        </div>`;
         },
       };
 
@@ -500,13 +520,13 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<hint type="${data.type}" span="${data.span}">}}${data.content}{{</hint>}}`;
+          return `<div class="span-${data.span} hint-shortcode ${data.type}">${data.content}</div>`;
         },
       };
 
       //  End Hint Widget ------------------------------------------------------------------- /
 
-      //  Start Hint Widget ------------------------------------------------------------------- /
+      //  Start Video Widget ------------------------------------------------------------------- /
 
       const VideoWidget = {
         // Internal id of the component
@@ -539,7 +559,7 @@
             name: "muted",
             label: "Muted",
             widget: "boolean",
-            default: true,
+            default: false,
           },
           {
             name: "autoplay",
@@ -557,6 +577,7 @@
             name: "poster",
             label: "Poster",
             widget: "image",
+            default: "undefined",
             required: false,
             media_library: {
               config: {
@@ -593,7 +614,136 @@
         },
       };
 
-      //  End Hint Widget ------------------------------------------------------------------- /
+      //  End Video Widget ------------------------------------------------------------------- /
+
+      //  Start Video Widget ------------------------------------------------------------------- /
+
+      const ImageWidget = {
+        // Internal id of the component
+        id: "image-widget",
+        // Visible label
+        label: "Catalog Image",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "src",
+            label: "File",
+            widget: "file",
+            required: true,
+            media_library: {
+              config: {
+                allow_multiple: false,
+                media_folder: "/static/downloads",
+              },
+            },
+          },
+          {
+            name: "overlay",
+            label: "Overlay",
+            widget: "file",
+            required: true,
+            media_library: {
+              config: {
+                allow_multiple: false,
+                media_folder: "/static/downloads",
+              },
+            },
+          },
+          {
+            name: "span",
+            label: "Span",
+            widget: "select",
+            required: true,
+            options: ["1", "2", "3", "4", "5", "6"],
+            default: ["6"],
+          },
+          {
+            name: "title",
+            label: "Title",
+            widget: "string",
+            default: "undefined",
+            required: false,
+          },
+          {
+            name: "description",
+            label: "Description",
+            widget: "string",
+            default: "undefined",
+            required: false,
+          },
+          {
+            name: "light",
+            label: "Light",
+            widget: "boolean",
+            default: "false",
+            required: false,
+          },
+          {
+            name: "dark",
+            label: "Dark",
+            widget: "boolean",
+            default: "false",
+            required: false,
+          },
+          {
+            name: "scale",
+            label: "Scale",
+            widget: "boolean",
+            default: "false",
+            required: false,
+          },
+
+        ],
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          console.log({match});
+          return {
+            src: match[1],
+            overlay: match[2],
+            span: match[3],
+            title: match[4],
+            description: match[5],
+            light: match[6],
+            dark: match[7],
+            scale: match[8],
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          return `{{<image src="${data.src}"
+          span="${data.span}"
+          ${data.title !== "undefined" && `title="${data.title}"`}
+          ${data.description !== "undefined" && `description="${data.description}"`}
+          ${data.overlay !== "undefined" && `overlay="${data.overlay}"`}
+          ${data.light !== "false" && `light="${data.light}"`}
+          ${data.dark !== "false" && `dark="${data.dark}"`}
+          ${data.scale !== "false" && `scale="${data.scale}"`}
+          >}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `<div
+          class="span-{{$span}} image-shortcode
+          ${data.light !== "false" && "light"}
+          ${data.dark !== "false" && "dark"}
+          ${data.scale !== "false" && "no-scale"}
+        >
+          <div ${data.overlay !== "undefined" && `class="source"`}>
+            <img src="${data.src}" />
+          </div>
+          ${data.overlay !== "undefined" && `<div class="overlay"><img src="${data.overlay}" /></div>`}
+          ${data.title !== "undefined" && `<p><b>${data.title}</b></p>`}
+          ${data.description !== "undefined" && `<p>${data.description}</p>`}
+        </div>`;
+        },
+      };
+
+      //  End Video Widget ------------------------------------------------------------------- /
 
       CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(ColumnWidget);
@@ -603,6 +753,7 @@
       CMS.registerEditorComponent(DownloadWidget);
       CMS.registerEditorComponent(HintWidget);
       CMS.registerEditorComponent(VideoWidget);
+      CMS.registerEditorComponent(ImageWidget);
     </script>
   </body>
 </html>
