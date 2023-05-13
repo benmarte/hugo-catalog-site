@@ -605,12 +605,34 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}" poster="${data.poster}">}}`;
+          {{/*  return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}" poster="${data.poster}">}}`;  */}}
+            return `
+          <div class="span-${data.span}">
+            <video
+            ${data.poster !== "undefined" && `poster="${data.poster}"`}}
+            ${data.loop !== "false" && `loop`}}
+            ${data.autoplay !== "false" && `autoplay`}}
+            ${data.muted !== "false" && `muted`}}
+            controls>
+                <source src="${data.src}"></source>
+            </video>
+          </div>`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
           return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}" poster="${data.poster}">}}`;
+          {{/*  return `
+          <div class="span-${data.span}">
+            <video
+            ${data.poster !== "undefined" && `poster="${data.poster}"`}}
+            ${data.loop !== "false" && `loop`}}
+            ${data.autoplay !== "false" && `autoplay`}}
+            ${data.muted !== "false" && `muted`}}
+            controls>
+                <source src="${data.src}"></source>
+            </video>
+          </div>`;  */}}
         },
       };
 
@@ -675,21 +697,21 @@
             name: "light",
             label: "Light",
             widget: "boolean",
-            default: "false",
+            default: false,
             required: false,
           },
           {
             name: "dark",
             label: "Dark",
             widget: "boolean",
-            default: "false",
+            default: false,
             required: false,
           },
           {
             name: "scale",
             label: "Scale",
             widget: "boolean",
-            default: "false",
+            default: false,
             required: false,
           },
 
