@@ -26,3 +26,11 @@ title: Prueba
 {{<download span="6" title="Test File" url="/images/netlify-upload.png" >}}
 
 {{<download span="6" title="Video" url="/images/kapture-2023-05-12-at-19.27.42.mp4" subtitle="undefined">}}
+
+{{<hint type="info" span="3">}}Info{{</hint>}}
+
+{{<hint type="success" span="3">}}S﻿uccess{{</hint>}}
+
+{{<hint type="warning" span="6">}}W﻿arning{{</hint>}}
+
+{{<hint type="danger" span="6">}}D﻿anger{{</hint>}}
