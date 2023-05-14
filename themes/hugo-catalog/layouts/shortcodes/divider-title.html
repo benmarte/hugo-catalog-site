@@ -1,5 +1,5 @@
-{{$text := .Get "text"}}
+{{$title := .Get "text"}}
 {{$align := .Get "align" | default "left"}}
 <div class="divider-title" style="text-align: {{$align}}">
-    {{with $text}}{{$text | markdownify}}{{end}}
+    {{with $title}}{{$title | markdownify}}{{end}}
 </div>

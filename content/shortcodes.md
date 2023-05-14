@@ -7,7 +7,7 @@ weight: 3
 
 Hugo Catalog uses a css grid based layout for the content area, the content area has a **max-width** of 960px wide. We use a css grid based layout composed of 6 column grid.
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 {{<column span="1" color="#999" align="center">}}
 span = 1
@@ -33,7 +33,7 @@ span = 1
 span = 1
 {{</column>}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*column span="1" color="#999" align="center">}}span = 1{{</column*/>}}
@@ -51,7 +51,7 @@ span = 1
 
 You can compose rows of columns based on their **span** values. You can put any combination of span values as long as they add to 6, the grid is smart enough to accomadate them, here are some examples.
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 {{<column span="3" color="#999" align="center">}}
 span = 3
@@ -61,7 +61,7 @@ span = 3
 span = 3
 {{</column>}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*column span="3" color="#999" align="center">}}span = 3{{</column*/>}}
@@ -69,7 +69,7 @@ span = 3
 {{</*column span="3" color="#999" align="center">}}span = 3{{</column*/>}}
 ```
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 {{<column span="2" color="#999" align="center">}}
 span = 2
@@ -79,7 +79,7 @@ span = 2
 span = 4
 {{</column>}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*column span="2" color="#999" align="center">}}span = 2{{</column*/>}}
@@ -87,7 +87,7 @@ span = 4
 {{</*column span="4" color="#999" align="center">}}span = 4{{</column*/>}}
 ```
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 {{<column span="2" color="#999" align="center">}}
 span = 2
@@ -101,7 +101,7 @@ span = 2
 span = 2
 {{</column>}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*column span="2" color="#999" align="center">}}span = 2{{</column*/>}}
@@ -111,19 +111,19 @@ span = 2
 {{</*column span="2" color="#999" align="center">}}span = 2{{</column*/>}}
 ```
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 {{<column span="6" color="#999" align="center">}}
 span = 6
 {{</column>}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*column span="6" color="#999" align="center">}}span = 6{{</column*/>}}
 ```
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 {{<column span="5" color="#999" align="center">}}
 span = 5
@@ -133,7 +133,7 @@ span = 5
 span = 1
 {{</column>}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*column span="5" color="#999" align="center">}}span = 5{{</column*/>}}
@@ -141,7 +141,7 @@ span = 1
 {{</*column span="1" color="#999" align="center">}}span = 1{{</column*/>}}
 ```
 
-{{<hint type="info">}}
+{{<hint type="info" span="6">}}
 All shortcodes span properties will display at **100% width** at devices with resolutions smaller than **1024 x 768** regardless of the **span** value specified.
 {{</hint>}}
 
@@ -155,13 +155,13 @@ The column shortcode is basically a container which you can use to display markd
 - **color:** optional rgba, rgb or hex color value - used to set the background color of the shortcode
 - **alignment:** optional string - can be either **left**, **center** or **right** to align the content of the shortcode. Defaults to **left**.
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 {{<column span="3">}}This is content in a **column** shortcode with a **span = 3** value{{</column>}}
 
 {{<column span="3">}}This is content in a **column** shortcode with a **span = 3** value{{</column>}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*column span="3">}}This is content in a **column** shortcode with a **span = 3** value{{</column*/>}}
@@ -169,7 +169,7 @@ The column shortcode is basically a container which you can use to display markd
 {{</*column span="3">}}This is content in a **column** shortcode with a **span = 3** value{{</column*/>}}
 ```
 
-{{<hint type="info">}}
+{{<hint type="info" span="6">}}
 The same rules from the [Grid Layout](#grid-layout) apply to the **column** shortcode, as long as the columns add up to 6 you can control how they display.
 {{</hint>}}
 
@@ -185,17 +185,17 @@ The Audio shortcode can be used to document the audible aspects, for example bac
 - **loop:** optional boolean - if true, the audio clip plays repeatedly
 - **span:** required number - [1–6] width of the shortcode
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
-{{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
+{{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" title="6-second synth melody" span="3">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody"*/>}}
 ```
 
-{{<hint type="info">}}Sample mp3 provided by: https://samplelib.com/sample-mp3.html{{</hint>}}
+{{<hint type="info" span="6">}}Sample mp3 provided by: https://samplelib.com/sample-mp3.html{{</hint>}}
 
 ## Image Shortcode
 
@@ -213,43 +213,43 @@ Images can be used as graphical elements, to document implementation details wit
 - **span:** number required - [1–6] width of the shortcode
 - **text_position:** string optional - can either be **top** to place the title and description above it or **bottom** to place it below it
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 Image shortcode with a **span** value of 3.
 
 {{<image src="/images/hugo-catalog-logo.svg" span="3" text_position="top" title="" description="" overlay="" light="false" dark="false" scale="true">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*image src="/images/hugo-catalog-logo.svg" span="3" text_position="top" title="enable_subnav = false" description="" overlay="" light="false" dark="false" scale="true"*/>}}
 ```
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 Image shortcode with a **span** value of 6 and **light** = **true** to enable a transparent background.
 
 {{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="" description="" overlay="" light="true" dark="false" scale="true">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="" description="" overlay="" light="true" dark="false" scale="true"*/>}}
 ```
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 Image shortcode with a **span** value of 6 and **dark** = **true** to enable a translucent black background.
 
 {{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="" description="" overlay="" light="false" dark="true" scale="true">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="" description="" overlay="" light="false" dark="true" scale="true"*/>}}
 ```
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 All images will display as responsive images, if you want to display an image at its native size simply set the **scale** property to **false** and the image will render at it's native size.
 
@@ -257,7 +257,7 @@ This example uses an image shortcode with a **span** value of 6, **title**, **de
 
 {{<image src="/images/logo-image.png" span="6" text_position="top" title="Title" description="This is a sample description" overlay="" light="false" dark="false" scale="false">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*image src="/images/logo-image.png" span="6" text_position="top" title="Title" description="This is a sample description" overlay="" light="false" dark="false" scale="false"*/>}}
@@ -267,23 +267,23 @@ You can control the positioning of the **title** and **description** with the **
 
 {{<image src="/images/logo-image.png" span="6" text_position="bottom" title="Title" description="This is a sample description" overlay="" light="false" dark="false" scale="true">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*image src="/images/logo-image.png" span="6" text_position="bottom" title="Title" description="This is a sample description" overlay="" light="false" dark="false" scale="true"*/>}}
 ```
 
-{{<hint type="info">}}
+{{<hint type="info" span="6">}}
 In order for the **scale** property to work properly the image needs to be smaller than **960px** width
 {{</hint>}}
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 The **overlay** property allows you to set an image that you can display on mouse over of the initial image.
 
 {{<image src="/images/subtitle-image.png" span="6" text_position="top" title="" description="" overlay="/images/subtitle-image-hover.png" light="false" dark="false" scale="true">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*image src="/images/subtitle-image.png" span="6" text_position="top" title="" description="" overlay="/images/subtitle-image-hover.png" light="false" dark="false" scale="true"*/>}}
@@ -311,18 +311,16 @@ The Color shortcode is used to document colors, it supports the following color 
 
 **Example**
 
-{{<color span="3" name="Theme Primary Color" hex="#003b5c" rgb="0, 59, 92" pantone="302 C" cmyk="100%, 36%, 0%, 64%" >}}
+{{<color name="Theme Primary Color" span="3" hex="#003b5c" rgb="0, 59, 92" pantone="302 C" cmyk="100%, 36%, 0%, 64%" mui="">}}
 
-{{<color span="3" name="Theme Secondary Color" hex="#C6007E" rgb="198, 0, 126" pantone="233 C" cmyk="0%, 100%, 36%, 22%" >}}
+{{<color name="Theme Secondary Color" span="3" hex="#C6007E" rgb="198, 0, 126" pantone="233 C" cmyk="0%, 100%, 36%, 22%" mui="">}}
 
-{{<divider-title text="Markdown Example">}}
-
-```html
-{{</*color span="3" name="Theme Primary Color" hex="#003b5c" rgb="0, 59, 92" pantone="302 C" cmyk="100%, 36%, 0%, 64%" */>}}
-```
+{{<divider-title title="Markdown Example">}}
 
 ```html
-{{</*color span="3" name="Theme Secondary Color" hex="#C6007E" rgb="198, 0, 126" pantone="233 C" cmyk="0%, 100%, 36%, 22%" */>}}
+{{</*color name="Theme Primary Color" span="3" hex="#003b5c" rgb="0, 59, 92" pantone="302 C" cmyk="100%, 36%, 0%, 64%" mui=""*/>}}
+
+{{</*color name="Theme Secondary Color" span="3" hex="#C6007E" rgb="198, 0, 126" pantone="233 C" cmyk="0%, 100%, 36%, 22%" mui=""*/>}}
 ```
 
 ## Donwload Shortcode
@@ -337,14 +335,14 @@ To link downloadable style guide resources, use the Download shortcode
 - **filename:** required string - Changes the file name under which it will be saved
 - **subtitle:** optional string - Other text you may want to display if no value is provided it will display the file size.
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
-{{<download span="3" title="Hugo Catalog Logos" url="/static/downloads/hugo-catalog-logos.zip">}}
+{{<download title="Hugo Catalog Logos" span="3" url="/static/downloads/hugo-catalog-logos.zip" subtitle="">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
-{{</*download span="3" title="Hugo Catalog Logos" url="/static/downloads/hugo-catalog-logos.zip" */>}}
+{{</*download title="Hugo Catalog Logos" span="3" url="/static/downloads/hugo-catalog-logos.zip" subtitle=""*/>}}
 ```
 
 ## Hint Shortcode
@@ -356,17 +354,17 @@ The Hint shortcode highlights important aspects.
 - **span:** required number -[1–6] width of the shortcode
 - **type:** required string - can be one of 4 types: Info, Danger, Warning and Success
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
-{{<hint type="info">}}This is an info hint{{</hint>}}
+{{<hint type="info" span="6">}}This is an info hint{{</hint>}}
 
-{{<hint type="danger">}}This is an danger hint{{</hint>}}
+{{<hint type="danger" span="6">}}This is an danger hint{{</hint>}}
 
-{{<hint type="warning">}}This is an warning hint{{</hint>}}
+{{<hint type="warning" span="6">}}This is an warning hint{{</hint>}}
 
-{{<hint type="success">}}This is an success hint{{</hint>}}
+{{<hint type="success" span="6">}}This is an success hint{{</hint>}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*hint type="info">}}This is an info hint{{</hint*/>}}
@@ -391,13 +389,13 @@ The Video shortcode can be used to display videos.
 - **autoplay:** optional boolean - if this value is set to true the player will begin playing automatically
 - **poster:** optional string - the url path of the image path to use as the cover image
 
-{{<hint type="info">}}If you want to enable a video to **autoplay** you must also have **muted** set to **true** otherwise the video will not autoplay.{{</hint>}}
+{{<hint type="info" span="6">}}If you want to enable a video to **autoplay** you must also have **muted** set to **true** otherwise the video will not autoplay.{{</hint>}}
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
 {{<video src="/static/images/download-demo.mp4" span="6" autoplay="true" muted="true" poster="">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
 {{</*video src="/static/images/download-demo.mp4" span="6" autoplay="true" muted="true"*/>}}
@@ -409,14 +407,14 @@ The Divider Title shortcode can be used as a divider.
 
 **Shortcode Parameters**
 
-- **text:** required string - the text to display above the divider
+- **title:** required string - the text to display above the divider
 - **align:** optional string - controls the text alignment, defaults to **left**
 
-{{<divider-title text="No alignment set defaults to left">}}
+{{<divider-title title="No alignment set defaults to left">}}
 
-{{<divider-title text="Aligned to center" align="center">}}
+{{<divider-title title="Aligned to center" align="center">}}
 
-{{<divider-title text="Aligned to right" align="right">}}
+{{<divider-title title="Aligned to right" align="right">}}
 
 ```html
 {{</*divider-title text="No alignment set defaults to left"*/>}}
@@ -436,16 +434,16 @@ The Bullet shortcode can be used to display do's and dont's.
 - **leadingText:** optional string - the text to display at the beginning of the text, displays in bold
 - **text** - required string - text to display with the bullet line
 
-{{<divider-title text="Example Usage">}}
+{{<divider-title title="Example Usage">}}
 
-{{<bullet type="do" leadingText="Do:" text="example bullet text">}}
+{{<bullet leadingText="Do:" text="example bullet text" type="do">}}
 
-{{<bullet type="dont" leadingText="Dont:" text="example bullet text">}}
+{{<bullet leadingText="Dont:" text="example bullet text" type="dont">}}
 
-{{<divider-title text="Markdown Example">}}
+{{<divider-title title="Markdown Example">}}
 
 ```html
-{{</*bullet type="do" leadingText="Do:" text="example bullet text"*/>}}
+{{</*bullet leadingText="Do:" text="example bullet text" type="do"*/>}}
 
-{{</*bullet type="dont" leadingText="Dont:" text="example bullet text"*/>}}
+{{</*bullet leadingText="Dont:" text="example bullet text" type="dont"*/>}}
 ```

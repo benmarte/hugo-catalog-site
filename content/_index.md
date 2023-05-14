@@ -11,15 +11,15 @@ It ships with [10 shortcodes](/shortcodes) so your editors can make beautiful St
 
 > I made Hugo Catalog because Catalog is abandonware and I needed something my clients could use and edit themselves. - Ben Marte
 
-{{<divider-title text="How does Hugo Catalog help you?">}}
+{{<divider-title title="How does Hugo Catalog help you?">}}
 
-{{<bullet type="do" leadingText="Consistency:" text="Provides a cohesive experience across all of your brand touchpoints by providing a single source of truth">}}
+{{<bullet leadingText="Consistency:" text="Provides a cohesive experience across all of your brand touchpoints by providing a single source of truth" type="do">}}
 
-{{<bullet type="do" leadingText="Efficiency:" text="Less time concentrating on details that the design system already accounts for. More time focussing on user experience, flows, iterating, building valuable new features, and improving your products">}}
+{{<bullet leadingText="Efficiency:" text="Less time concentrating on details that the design system already accounts for. More time focussing on user experience, flows, iterating, building valuable new features, and improving your products" type="do">}}
 
-{{<bullet type="do" leadingText="Onboarding:" text="Helps provide an overview of your brand and the expectations of anyone representing it">}}
+{{<bullet leadingText="Onboarding:" text="Helps provide an overview of your brand and the expectations of anyone representing it" type="do">}}
 
-{{<bullet type="do" leadingText="Culture:" text="Promotes and encourages value in design, internally across all teams">}}
+{{<bullet leadingText="Culture:" text="Promotes and encourages value in design, internally across all teams" type="do">}}
 
 {{<hint type="warning" span="6">}}
 **Warning**

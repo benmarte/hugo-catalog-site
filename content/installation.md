@@ -55,7 +55,7 @@ The path to your site logo can be a relative to the site or an image hosted on a
 
 {{<image src="/images/site-name-image.png" span="3" text_position="top" title="Default hugo catalog text logo" description="" overlay="" light="false" dark="false" scale="true">}}
 
-{{<hint type="info">}}
+{{<hint type="info" span="6">}}
 If you delete or comment out this value in your **`config.toml`** the sites title will be displayed as text in place of the logo.
 {{</hint>}}
 
@@ -69,7 +69,7 @@ This controls the display of the site name above the header of the site.
 
 {{<image src="/images/custom-subtitle-image.png" span="3" text_position="top" title="" description="" overlay="" light="false" dark="false" scale="true">}}
 
-{{<hint type="info">}}
+{{<hint type="info" span="6">}}
 If you set this value to true you will disable displaying the site name in the header, if you add a **subtitle** property to your pages front matter it will display regardless of this settings value.
 {{</hint>}}
 
@@ -79,7 +79,7 @@ If you set this value to true you will disable displaying the site name in the h
 
 Sets the primary color of the site, this color applies to the sites header, and main links color. If this value is not set the site will use the default fallback value: **`#003b5c`**
 
-{{<color span="6" name="primary_color" hex="#003b5c">}}
+{{<color name="primary_color" span="6" hex="#003b5c" rgb="" pantone="" cmyk="" mui="">}}
 
 ## secondary_color
 
@@ -87,7 +87,7 @@ Sets the primary color of the site, this color applies to the sites header, and 
 
 Sets the secondary color of the site, this color applies to hover states of links in the content area and the sub-nav items on the navigation menu. If this value is not set the site will use the default fallback value: **`#C9177E`**
 
-{{<color span="6" name="secondary_color" hex="#C9177E">}}
+{{<color name="secondary_color" span="6" hex="#C9177E" rgb="" pantone="" cmyk="" mui="">}}
 
 ## font_family
 
@@ -95,7 +95,7 @@ Sets the secondary color of the site, this color applies to hover states of link
 
 Sets the font family for the site, if this value is not set the site will use the default fallback font-family value: **`Montserrat`**
 
-{{<hint type="info">}}
+{{<hint type="info" span="6">}}
 You can change the font to any [google font](https://fonts.google.com/), just change this value to the font name from google.
 {{</hint>}}
 

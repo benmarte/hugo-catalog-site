@@ -4,7 +4,7 @@ title: Widgets
 
 ## Audio Widget
 
-{{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="6" title="6-second synth melody">}}
+{{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" title="6-second synth melody" span="3">}}
 
 ## Bullet Widget
 
@@ -14,9 +14,9 @@ title: Widgets
 
 ## Color Widget
 
-{{<color span="3" name="Theme Primary Color" hex="#003b5c" rgb="0, 59, 92" pantone="302 C" cmyk="100%, 36%, 0%, 64%" >}}
+{{<color name="Theme Primary Color" span="3" hex="#003b5c" rgb="0, 59, 92" pantone="302 C" cmyk="100%, 36%, 0%, 64%" mui="">}}
 
-{{<color span="3" name="Theme Secondary Color" hex="#C6007E" rgb="198, 0, 126" pantone="233 C" cmyk="0%, 100%, 36%, 22%" >}}
+{{<color name="Theme Secondary Color" span="3" hex="#C6007E" rgb="198, 0, 126" pantone="233 C" cmyk="0%, 100%, 36%, 22%" mui="">}}
 
 ## Column Widget
 
@@ -44,25 +44,25 @@ title: Widgets
 
 ## Divider Title Widget
 
-{{<divider-title text="No alignment set defaults to left">}}
+{{<divider-title title="No alignment set defaults to left">}}
 
-{{<divider-title text="Aligned to center" align="center">}}
+{{<divider-title title="Aligned to center" align="center">}}
 
-{{<divider-title text="Aligned to right" align="right">}}
+{{<divider-title title="Aligned to right" align="right">}}
 
 ## Download Widget
 
-{{<download span="6" title="Hugo Catalog Logos" url="/static/downloads/hugo-catalog-logos.zip">}}
+{{<download title="Hugo Catalog Logos" span="3" url="/static/downloads/hugo-catalog-logos.zip" subtitle="">}}
 
 ## Hint Widget
 
-{{<hint type="info">}}This is an info hint{{</hint>}}
+{{<hint type="info" span="6">}}This is an info hint{{</hint>}}
 
-{{<hint type="danger">}}This is an danger hint{{</hint>}}
+{{<hint type="danger" span="6">}}This is an danger hint{{</hint>}}
 
-{{<hint type="warning">}}This is an warning hint{{</hint>}}
+{{<hint type="warning" span="6">}}This is an warning hint{{</hint>}}
 
-{{<hint type="success">}}This is an success hint{{</hint>}}
+{{<hint type="success" span="6">}}This is an success hint{{</hint>}}
 
 ## Catalog Image Widget
 

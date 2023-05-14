@@ -25,7 +25,7 @@ Go here: [https://github.com/settings/developers](https://github.com/settings/de
 
 ![OAuth App](/images/oauth-app.png)
 
-{{<hint type="info">}}
+{{<hint type="info" span="6">}}
 **Authorization Callback URL** value specifically needs to be: **`https://api.netlify.com/auth/done`**
 {{</hint>}}
 
@@ -33,7 +33,7 @@ Once your OAuth app has been created you will need to get your **Client ID** and
 
 ![OAuth App](/images/client-secret.png)
 
-{{<hint type="warning">}}
+{{<hint type="warning" span="6">}}
 Your client secret will be visible as long as you don't navigate away from this page, so save both your **Client ID** and **Client Secret** because we are going to need them for the next step.
 {{</hint>}}
 
@@ -43,7 +43,7 @@ Click this link: [https://gitlab.com/oauth/applications](https://gitlab.com/oaut
 
 ![Gitlab OAuth](/images/gitlab-oauth.png)
 
-{{<hint type="info">}}
+{{<hint type="info" span="6">}}
 It is important to note that the **Redirect URI** needs to have a trailing `/` in order for it to work properly, ie: **`https://yoursite.com/admin/`**
 {{</hint>}}
 
@@ -79,7 +79,7 @@ If you are using Gitlab pages to host your site you need to insert: **`your_gitl
 
 ![Gitlab Domain](/images/netlify-gitlab-domain.png)
 
-{{<hint type="info">}}If you get a domain is already registered message simply click **Add Domain** to continue.{{</hint>}}
+{{<hint type="info" span="6">}}If you get a domain is already registered message simply click **Add Domain** to continue.{{</hint>}}
 
 ## Configure Decap for Github Pages
 
@@ -217,6 +217,6 @@ Once you login you will see a list of pages if you have any otherwise you can cr
 
 ![Decap Dashboard](/images/decap-dashboard.png)
 
-{{<hint type="info">}}
+{{<hint type="info" span="6">}}
 For more information regarding decaps features please refer to the official documentation: https://decapcms.org/docs/intro/
 {{</hint>}}

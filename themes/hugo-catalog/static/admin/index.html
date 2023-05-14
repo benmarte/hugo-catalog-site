@@ -59,9 +59,8 @@
         //
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<audio src="(.*?)" span="(.*?)" title="(.*?)"\>\}\}/ms,
+        pattern: /\{\{<audio src="(.*?)" title="(.*?)" span="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -80,13 +79,12 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
-          return `{{<audio src="${data.src}" span="${data.span}" title="${data.title}">}}`;
+          return `{{<audio src="${data.src}" title="${data.title}" span="${data.span}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<audio src="${data.src}" span="${data.span}" title="${data.title}">}}`;
+          return `{{<audio src="${data.src}" title="${data.title}" span="${data.span}">}}`;
         },
       };
 
@@ -132,9 +130,8 @@
         //
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<bullet type="(.*?)" leadingText="(.*?)" text="(.*?)"\>\}\}/ms,
+        pattern: /\{\{<bullet leadingText="(.*?)" text="(.*?)" type="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -153,8 +150,7 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
-          return `{{<bullet type="${data.type}" leadingText="${data.leadingText}" text="${data.text}">}}`;
+          return `{{<bullet leadingText="${data.leadingText}" text="${data.text}" type="${data.type}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
@@ -234,9 +230,8 @@
         //
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<color span="(.*?)" name="(.*?)" hex="(.*?)" rgb="(.*?)" pantone="(.*?)" cmyk="(.*?)" mui="(.*?)"\>\}\}/ms,
+        pattern: /\{\{<color name="(.*?)" span="(.*?)" hex="(.*?)" rgb="(.*?)" pantone="(.*?)" cmyk="(.*?)" mui="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -259,12 +254,12 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<color span="${data.span}" name="${data.name}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}">}}`;
+          return `{{<color name="${data.name}" span="${data.span}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<color span="${data.span}" name="${data.name}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}">}}`;
+          return `{{<color name="${data.name}" span="${data.span}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}">}}`;
         },
       };
 
@@ -317,7 +312,6 @@
         //
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
         pattern: /\{\{<column span="(.*?)" color="(.*?)" align="(.*?)"\>\}\}(.*?){\{<\/column>\}\}/ms,
         // Given a RegExp Match object
@@ -360,8 +354,8 @@
         // Fields the user need to fill out when adding an instance of the component
         fields: [
           {
-            name: "text",
-            label: "Text",
+            name: "title",
+            label: "Title",
             widget: "string",
             default: "",
             required: true,
@@ -383,9 +377,8 @@
         //
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<divider-title text="(.*?)" align="(.*?)"\>\}\}/ms,
+        pattern: /\{\{<divider-title title="(.*?)" align="(.*?)"\>\}\}/ms,
           // Given a RegExp Match object
           // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
           // return an object with one property for each field defined in `fields`.
@@ -393,7 +386,7 @@
           // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
-            text: match[1],
+            title: match[1],
             align: match[2],
           };
         },
@@ -403,12 +396,12 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<divider-title text="${data.text}" align="${data.align}">}}`;
+          return `{{<divider-title title="${data.text}" align="${data.align}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<divider-title text="${data.text}" align="${data.align}">}}`;
+          return `{{<divider-title title="${data.text}" align="${data.align}">}}`;
         },
       };
 
@@ -442,6 +435,7 @@
             name: "url",
             label: "File",
             widget: "file",
+            default: "",
             required: true,
             media_library: {
               config: {
@@ -467,9 +461,8 @@
         //
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<download span="(.*?)" title="(.*?)" url="(.*?)" subtitle="(.*?)"\>\}\}/ms,
+        pattern: /\{\{<download title="(.*?)" span="(.*?)" url="(.*?)" subtitle="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -489,12 +482,12 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<download span="${data.span}" title="${data.title}" url="${data.url}" subtitle="${data.subtitle}">}}`;
+          return `{{<download title="${data.title}" span="${data.span}" url="${data.url}" subtitle="${data.subtitle}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<download span="${data.span}" title="${data.title}" url="${data.url}" subtitle="${data.subtitle}">}}`;
+          return `{{<download title="${data.title}" span="${data.span}" url="${data.url}" subtitle="${data.subtitle}">}}`;
         },
       };
 
@@ -541,7 +534,6 @@
         //
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
         pattern: /\{\{<hint type="(.*?)" span="(.*?)"\>\}\}(.*?)}\{\{<\/hint\>\}\}/ms,
         // Given a RegExp Match object
@@ -552,8 +544,8 @@
         fromBlock: function (match) {
           return {
             type: match[1],
-            span: match[1],
-            content: match[1],
+            span: match[2],
+            content: match[3],
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -596,25 +588,20 @@
             },
           },
           {
-            name: "overlay",
-            label: "Overlay",
-            widget: "file",
-            default: "",
-            required: false,
-            media_library: {
-              config: {
-                allow_multiple: false,
-                media_folder: "/static/images",
-              },
-            },
-          },
-          {
             name: "span",
             label: "Span",
             widget: "select",
             required: true,
             options: ["1", "2", "3", "4", "5", "6"],
             default: ["6"],
+          },
+          {
+            name: "text_position",
+            label: "Text Position",
+            widget: "select",
+            options: ["top", "bottom"],
+            default: ["top"],
+            required: true,
           },
           {
             name: "title",
@@ -629,6 +616,19 @@
             widget: "string",
             default: "",
             required: false,
+          },
+          {
+            name: "overlay",
+            label: "Overlay",
+            widget: "file",
+            default: "",
+            required: false,
+            media_library: {
+              config: {
+                allow_multiple: false,
+                media_folder: "/static/images",
+              },
+            },
           },
           {
             name: "light",
@@ -651,14 +651,6 @@
             default: true,
             required: false,
           },
-          {
-            name: "text_position",
-            label: "Text Position",
-            widget: "select",
-            options: ["top", "bottom"],
-            default: ["top"],
-            required: true,
-          },
 
         ],
         // Regex pattern used to search for instances of this block in the markdown document.
@@ -670,7 +662,6 @@
         //
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
         pattern: /\{\{<image src="(.*?)" span="(.*?)" text_position="(.*?)" title="(.*?)" description="(.*?)" overlay="(.*?)" light="(.*?)" dark="(.*?)" scale="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
@@ -681,14 +672,14 @@
         fromBlock: function (match) {
           return {
             src: match[1],
-            overlay: match[2],
-            span: match[3],
+            span: match[2],
+            text_position: match[3],
             title: match[4],
             description: match[5],
-            light: match[6],
-            dark: match[7],
-            scale: match[8],
-            text_position: match[9],
+            overlay: match[6],
+            light: match[7],
+            dark: match[8],
+            scale: match[9],
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -739,14 +730,14 @@
             default: ["6"],
           },
           {
-            name: "muted",
-            label: "Muted",
+            name: "autoplay",
+            label: "Auto Play",
             widget: "boolean",
             default: false,
           },
           {
-            name: "autoplay",
-            label: "Auto Play",
+            name: "muted",
+            label: "Muted",
             widget: "boolean",
             default: false,
           },
@@ -779,7 +770,6 @@
         //
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
         pattern: /\{\{<video src="(.*?)" span="(.*?)" autoplay="(.*?)" muted="(.*?)" loop="(.*?)" poster="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
@@ -791,8 +781,8 @@
           return {
             src: match[1],
             span: match[2],
-            muted: match[3],
-            autoplay: match[4],
+            autoplay: match[3],
+            muted: match[4],
             loop: match[5],
             poster: match[6],
           };
