@@ -8,9 +8,9 @@ title: Widgets
 
 ## Bullet Widget
 
-{{<bullet type="do" leadingText="Do:" text="example bullet text">}}
+{{<bullet leadingText="Do:" text="example bullet text" type="do">}}
 
-{{<bullet type="dont" leadingText="Dont:" text="example bullet text">}}
+{{<bullet leadingText="Dont:" text="example bullet text" type="dont">}}
 
 ## Color Widget
 
@@ -66,9 +66,9 @@ title: Widgets
 
 ## Catalog Image Widget
 
-{{<image src="/images/hugo-catalog-logo.svg" span="6" title="Text Position Top" description="places the images title and description above it." text_position="top">}}
+{{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="Text Position Top" description="places the images title and description above it." >}}
 
-{{<image src="/images/hugo-catalog-logo.svg" span="6" title="Text Position Bottom" description="places the images title and description below it." text_position="bottom">}}
+{{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="bottom" title="Text Position Bottom" description="places the images title and description below it.">}}
 
 ## Video Widget
 
