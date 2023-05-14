@@ -525,6 +525,7 @@
           const subtitle = data.subtitle !== "" ? `<div><b>${data.subtitle}</b></div>` : "";
           const file = data.url.includes('/static/') === true ? data.url.split('/static/')[0] : data.url;
           const fileURL = `${window.location.href.split('/admin/')[0]}${file}`;
+          console.log("Is static in file ", data.url.includes('/static/'))
           console.log({data});
           console.log("File = ", file);
           console.log("File URL = ", fileURL);
