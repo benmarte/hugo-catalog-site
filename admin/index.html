@@ -523,7 +523,7 @@
         // (component gives better render performance)
         toPreview: function (data) {
           const subtitle = data.subtitle !== "" ? `<div><b>${data.subtitle}</b></div>` : "";
-          const file = data.url.includes('/static/') === true ? data.url.split('/static/')[0] : data.url;
+          const file = data.url.includes('/static/') ? data.url.split('/static/')[1] : data.url;
           const fileURL = `${window.location.href.split('/admin/')[0]}${file}`;
           console.log("Is static in file ", data.url.includes('/static/'))
           console.log({data});
@@ -755,9 +755,6 @@
           const isLight = data.light === "true" ? 'light' : "";
           const isDark = data.dark === "true" ? 'dark' : "";
           const scaleImage = data.scale === "false" ? 'no-scale' : "";
-          console.log("Is Dark = ", isDark)
-          console.log("Is Light = ", isLight)
-          console.log("Scale Image = ", scaleImage)
           return `<div
           class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
         >
