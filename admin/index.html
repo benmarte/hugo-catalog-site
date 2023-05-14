@@ -586,6 +586,7 @@
             name: "src",
             label: "File",
             widget: "file",
+            default: "",
             required: true,
             media_library: {
               config: {
@@ -598,6 +599,7 @@
             name: "overlay",
             label: "Overlay",
             widget: "file",
+            default: "",
             required: false,
             media_library: {
               config: {
@@ -653,8 +655,8 @@
             name: "text_position",
             label: "Text Position",
             widget: "select",
-            default: ["top"],
             options: ["top", "bottom"],
+            default: ["top"],
             required: true,
           },
 
@@ -700,16 +702,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<image src="${data.src}"
-          span="${data.span}"
-          text_position="${data.text_position}"
-          ${data.title !== "" && `title="${data.title}"`}
-          ${data.description !== "" && `description="${data.description}"`}
-          ${data.overlay !== "" && `overlay="${data.overlay}"`}
-          ${data.light !== "false" && `light="${data.light}"`}
-          ${data.dark !== "false" && `dark="${data.dark}"`}
-          ${data.scale !== "false" && `scale="${data.scale}"`}
-          >}}`;
+          return `{{<image src="${data.src}" span="${data.span}" text_position="${data.text_position}" title="${data.title}" description="${data.description}" overlay="${data.overlay}" light="${data.light}" dark="${data.dark}" scale="${data.scale}">}}`;
         },
       };
 
@@ -728,6 +721,7 @@
             name: "src",
             label: "File",
             widget: "file",
+            default: "",
             required: true,
             media_library: {
               config: {
@@ -767,6 +761,7 @@
             label: "Poster",
             widget: "image",
             required: false,
+            default: "",
             media_library: {
               config: {
                 media_folder: "/static/images",
