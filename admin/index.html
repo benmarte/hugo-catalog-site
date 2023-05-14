@@ -741,6 +741,9 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          data.light === "true" ? true : "true";
+          data.dark === "true" ? true : "true";
+          data.scale === "true" ? true : "true";
           const title_top = data.text_position === "top" && data.title !=="" ? `<p><b>${data.title}</b></p>` : "";
           const description_top = data.text_position === "top" && data.description !=="" ? `<p>${data.description}</p>` : "";
           const overlay = data.overlay !== "" ? `class="source"` : "";
@@ -901,11 +904,7 @@
 
       const fontawesome = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
 
-      const googleFontsApi = "https://fonts.googleapis.com";
-
-      const googleFonts = "https://fonts.gstatic.com";
-
-      const fonts = "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap";
+      const googleFont = "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap";
 
       // End css files for previews
 
@@ -913,9 +912,7 @@
 
       CMS.registerPreviewStyle(css);
       CMS.registerPreviewStyle(fontawesome);
-      CMS.registerPreviewStyle(googleFontsApi);
-      CMS.registerPreviewStyle(googleFonts);
-      CMS.registerPreviewStyle(fonts);
+      CMS.registerPreviewStyle(googleFont);
 
       // End preview style registration
 
