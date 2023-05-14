@@ -861,12 +861,32 @@
 
       //  End Video Widget ------------------------------------------------------------------- /
 
+      // Start css files for previews
+
       const css = "../main.css";
 
       const fontawesome = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
 
+      const googleFontsApi = "https://fonts.googleapis.com";
+
+      const googleFonts = "https://fonts.gstatic.com";
+
+      const fonts = "https://fonts.googleapis.com/css2?family={{$font_family}}:wght@400;700&display=swap";
+
+      // End css files for previews
+
+      // Start preview style registration
+
       CMS.registerPreviewStyle(css);
       CMS.registerPreviewStyle(fontawesome);
+      CMS.registerPreviewStyle(googleFontsApi);
+      CMS.registerPreviewStyle(googleFonts);
+      CMS.registerPreviewStyle(fonts);
+
+      // End preview style registration
+
+      // Start editor component registration
+
       CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(ColumnWidget);
       CMS.registerEditorComponent(AudioWidget);
@@ -876,6 +896,8 @@
       CMS.registerEditorComponent(HintWidget);
       CMS.registerEditorComponent(VideoWidget);
       CMS.registerEditorComponent(ImageWidget);
+
+      // End editor component registration
     </script>
   </body>
 </html>

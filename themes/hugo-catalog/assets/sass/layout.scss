@@ -17,6 +17,7 @@ body {
 }
 
 .content-body, .frame-content {
+  font-family: $user-default-font-family;
   max-width: 960px;
   padding: 48px 40px;
   display: grid;
