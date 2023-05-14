@@ -525,10 +525,6 @@
           const subtitle = data.subtitle !== "" ? `<div><b>${data.subtitle}</b></div>` : "";
           const file = data.url.includes('/static/') ? data.url.split('/static/')[1] : data.url;
           const fileURL = `${window.location.href.split('/admin/')[0]}/${file}`;
-          console.log("Is static in file ", data.url.includes('/static/'))
-          console.log({data});
-          console.log("File = ", file);
-          console.log("File URL = ", fileURL);
           return `<div class="span-${data.span}">
             <a class="download" href="${fileURL}" target="_blank" rel="no-follow no-referrer">
                 <div class="download-icon">
@@ -873,8 +869,10 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          const posterUrl = data.poster !== "" ? `${window.location.href.split('/admin/')[0]}/${data.poster.split('/static/')[1]}` : "";
-          const videoUrl = data.src !== "" ? `${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}` : "";
+          const posterSrc = data.poster.includes('/static/') ? data.poster.split('/static/')[1] : data.poster;
+          const src = data.src.includes('/static/') ? data.src.split('/static/')[1] : data.src;
+          const posterUrl = data.poster !== "" ? `${window.location.href.split('/admin/')[0]}/${posterSrc}` : "";
+          const videoUrl = data.src !== "" ? `${window.location.href.split('/admin/')[0]}/${src}` : "";
           return `<div class="span-${data.span}">
             <video
             poster="${posterUrl}"
