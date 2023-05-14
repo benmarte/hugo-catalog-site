@@ -108,3 +108,9 @@ body {
     display: none;
   }
 }
+
+.frame-content {
+  .color-shortcode, .download, .hint-shortcode, .image-shortcode, video {
+    margin-top: 32px;
+  }
+}
