@@ -847,8 +847,9 @@
         toPreview: function (data) {
           console.log('Video Data');
           console.log({data});
-          const posterUrl = data.poster !== "undefined" && `${window.location.href.split('/admin/')[0]}/${data.poster.split('/static/')[1]}`;
-          const videoUrl = data.src !== "undefined" && `${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}`;
+          console.log("Poster =", data.poster === "");
+          const posterUrl = data.poster !== "undefined" || data.poster !== "" ? `${window.location.href.split('/admin/')[0]}/${data.poster.split('/static/')[1]}` : "";
+          const videoUrl = data.src !== "undefined" || data.src !== "" ? `${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}` : "";
           console.log(posterUrl);
           console.log(videoUrl);
           return `<div class="span-${data.span}">
