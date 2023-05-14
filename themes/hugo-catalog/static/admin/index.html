@@ -360,7 +360,7 @@
         toPreview: function (data) {
           return `<div
           class="span-${data.span}"
-          style="${data.color !== "" && data.color !== "undefined" && `background: ${data.color}`} text-align: ${data.align};"
+          style="${data.color !== "" && data.color !== "undefined" && `background: ${data.color};`} text-align: ${data.align};"
         >
           ${data.content}
         </div>`;
