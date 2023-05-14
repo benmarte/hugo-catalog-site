@@ -340,7 +340,7 @@ audio {
 video {
   width: 100%;
   height: auto;
-  margin-top: 16px; }
+  margin-bottom: 16px; }
 
 .content-body .span-1, .frame-content .span-1 {
   grid-column: span 1; }
