@@ -682,21 +682,21 @@
             name: "light",
             label: "Light",
             widget: "boolean",
-            default: false,
+            default: "false",
             required: false,
           },
           {
             name: "dark",
             label: "Dark",
             widget: "boolean",
-            default: false,
+            default: "false",
             required: false,
           },
           {
             name: "scale",
             label: "Scale",
             widget: "boolean",
-            default: true,
+            default: "true",
             required: false,
           },
 
@@ -755,7 +755,8 @@
           console.log("Dark = ", data.dark);
           console.log("Scale = ", data.scale);
 
-          console.log(data.light === "true");
+          console.log("Data light string", data.light === "true");
+          console.log("Data light boolean",data.light === true);
           return `<div
           class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
         >
