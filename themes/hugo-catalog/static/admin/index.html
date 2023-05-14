@@ -741,6 +741,9 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          data.light === "true" ? true : "true";
+          data.dark === "true" ? true : "true";
+          data.scale === "true" ? true : "true";
           const title_top = data.text_position === "top" && data.title !=="" ? `<p><b>${data.title}</b></p>` : "";
           const description_top = data.text_position === "top" && data.description !=="" ? `<p>${data.description}</p>` : "";
           const overlay = data.overlay !== "" ? `class="source"` : "";
