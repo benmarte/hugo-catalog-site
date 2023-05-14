@@ -160,6 +160,8 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          console.log('Bullet Data');
+          console.log({data});
           return `<div class="bullet">
             ${data.type === "do" && `<i class="fa-regular fa-circle-check success"></i>`}}
             ${data.type === "dont" && `<i class="far fa-window-close danger"></i>`}
@@ -781,19 +783,19 @@
             name: "autoplay",
             label: "Auto Play",
             widget: "boolean",
-            default: "false",
+            default: false,
           },
           {
             name: "muted",
             label: "Muted",
             widget: "boolean",
-            default: "false",
+            default: false,
           },
           {
             name: "loop",
             label: "Loop",
             widget: "boolean",
-            default: "false",
+            default: false,
           },
           {
             name: "poster",
