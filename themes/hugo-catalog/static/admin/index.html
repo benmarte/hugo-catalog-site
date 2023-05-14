@@ -751,6 +751,9 @@
           const isLight = data.light === "true" ? 'light' : "";
           const isDark = data.dark === "true" ? 'dark' : "";
           const scaleImage = data.dark === "false" ? 'no-scale' : "";
+          console.log("Is Dark = ", isDark)
+          console.log("Is Light = ", isLight)
+          console.log("Scale Image = ", scaleImage)
           return `<div
           class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
         >
