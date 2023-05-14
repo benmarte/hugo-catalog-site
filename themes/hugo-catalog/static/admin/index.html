@@ -50,6 +50,22 @@
             default: ["6"]
           },
         ],
+        // Regex pattern used to search for instances of this block in the markdown document.
+        // Patterns are run in a multline environment (against the entire markdown document),
+        // and so generally should make use of the multiline flag (`m`). If you need to capture
+        // newlines in your capturing groups, you can either use something like
+        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+        // which will cause `(.*)` to match newlines as well.
+        //
+        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+
+        pattern: /\{\{<audio src="\${data\.src}" span="\${data\.span}" \${\s*data\.title\s*!==\s*""\s*&&\s*`title="\${data\.title}"`\s*}>\}\}/ms,
+        // Given a RegExp Match object
+        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+        // return an object with one property for each field defined in `fields`.
+        //
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
@@ -111,6 +127,22 @@
             default: ["do"],
           },
         ],
+        // Regex pattern used to search for instances of this block in the markdown document.
+        // Patterns are run in a multline environment (against the entire markdown document),
+        // and so generally should make use of the multiline flag (`m`). If you need to capture
+        // newlines in your capturing groups, you can either use something like
+        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+        // which will cause `(.*)` to match newlines as well.
+        //
+        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+
+        pattern: /\{\{<bullet type="\${data\.type}" \${\s*data\.leadingText\s*!==\s*""\s*&&\s*`leadingText="\${data\.leadingText}"`\s*} \${\s*data\.text\s*!==\s*""\s*&&\s*`text="\${data\.text}"`\s*}>\}\}/ms,
+        // Given a RegExp Match object
+        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+        // return an object with one property for each field defined in `fields`.
+        //
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
@@ -203,6 +235,22 @@
             required: false,
           },
         ],
+        // Regex pattern used to search for instances of this block in the markdown document.
+        // Patterns are run in a multline environment (against the entire markdown document),
+        // and so generally should make use of the multiline flag (`m`). If you need to capture
+        // newlines in your capturing groups, you can either use something like
+        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+        // which will cause `(.*)` to match newlines as well.
+        //
+        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+
+        pattern: /\{\{<color span="\${data\.span}" name="\${data\.name}" hex="\${data\.hex}" rgb="\${data\.rgb}" pantone="\${data\.pantone}" cmyk="\${data\.cmyk}" mui="\${data\.mui}" >\}\}/ms,
+        // Given a RegExp Match object
+        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+        // return an object with one property for each field defined in `fields`.
+        //
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
@@ -270,6 +318,22 @@
             required: true,
           },
         ],
+        // Regex pattern used to search for instances of this block in the markdown document.
+        // Patterns are run in a multline environment (against the entire markdown document),
+        // and so generally should make use of the multiline flag (`m`). If you need to capture
+        // newlines in your capturing groups, you can either use something like
+        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+        // which will cause `(.*)` to match newlines as well.
+        //
+        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+
+        pattern: /\{\{<column span="\${data\.span}" \${\s*data\.color\s*!==\s*""\s*&&\s*`color="\${data\.color}"`\s*} align="\${data\.align}">\}\}\${data\.content}\{\{<\/column>\}\}/ms,
+        // Given a RegExp Match object
+        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+        // return an object with one property for each field defined in `fields`.
+        //
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
@@ -408,6 +472,22 @@
             required: false,
           },
         ],
+        // Regex pattern used to search for instances of this block in the markdown document.
+        // Patterns are run in a multline environment (against the entire markdown document),
+        // and so generally should make use of the multiline flag (`m`). If you need to capture
+        // newlines in your capturing groups, you can either use something like
+        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+        // which will cause `(.*)` to match newlines as well.
+        //
+        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+
+        pattern: /\{\{<download span="\${data\.span}" title="\${data\.title}" url="\${data\.url}" subtitle="\${data\.subtitle}">\}\}/ms,
+        // Given a RegExp Match object
+        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+        // return an object with one property for each field defined in `fields`.
+        //
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
@@ -466,6 +546,22 @@
           required: true,
         }
         ],
+        // Regex pattern used to search for instances of this block in the markdown document.
+        // Patterns are run in a multline environment (against the entire markdown document),
+        // and so generally should make use of the multiline flag (`m`). If you need to capture
+        // newlines in your capturing groups, you can either use something like
+        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+        // which will cause `(.*)` to match newlines as well.
+        //
+        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+
+        pattern: /\{\{<hint type="\${data\.type}" span="\${data\.span}">\}\}\${data\.content}\{\{<\/hint>\}\}/ms,
+        // Given a RegExp Match object
+        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+        // return an object with one property for each field defined in `fields`.
+        //
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
@@ -577,6 +673,22 @@
           },
 
         ],
+        // Regex pattern used to search for instances of this block in the markdown document.
+        // Patterns are run in a multline environment (against the entire markdown document),
+        // and so generally should make use of the multiline flag (`m`). If you need to capture
+        // newlines in your capturing groups, you can either use something like
+        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+        // which will cause `(.*)` to match newlines as well.
+        //
+        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+
+        pattern: /\{\{<image src="\${data\.src}" span="\${data\.span}" text_position="\${data\.text_position}" \${data\.title\s*!==\s*""\s*&&\s*`title="\${data\.title}"`\s*} \${data\.description\s*!==\s*""\s*&&\s*`description="\${data\.description}"`\s*} \${data\.overlay\s*!==\s*""\s*&&\s*`overlay="\${data\.overlay}"`\s*} \${data\.light\s*!==\s*"false"\s*&&\s*`light="\${data\.light}"`\s*} \${data\.dark\s*!==\s*"false"\s*&&\s*`dark="\${data\.dark}"`\s*} \${data\.scale\s*!==\s*"false"\s*&&\s*`scale="\${data\.scale}"`\s*}\s*\>\}\}/ms,
+        // Given a RegExp Match object
+        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+        // return an object with one property for each field defined in `fields`.
+        //
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
@@ -686,6 +798,22 @@
             },
           },
         ],
+        // Regex pattern used to search for instances of this block in the markdown document.
+        // Patterns are run in a multline environment (against the entire markdown document),
+        // and so generally should make use of the multiline flag (`m`). If you need to capture
+        // newlines in your capturing groups, you can either use something like
+        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+        // which will cause `(.*)` to match newlines as well.
+        //
+        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+        // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
+
+        pattern: /\{\{<video src="\${data\.src}" span="\${data\.span}" autoplay="\${data\.autoplay}" muted="\${data\.muted}" loop="\${data\.loop}" poster="\${data\.poster}"\>\}\}/ms,
+        // Given a RegExp Match object
+        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+        // return an object with one property for each field defined in `fields`.
+        //
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
