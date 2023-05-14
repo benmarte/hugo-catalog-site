@@ -335,7 +335,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /^{{<divider-title text="(.*?)" align="(.*?)" >}}\n$/ms,
+        pattern: /\{\{<divider-title text="\${data\.text}" align="\${data\.align}">\}\}/ms,
           // Given a RegExp Match object
           // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
           // return an object with one property for each field defined in `fields`.
