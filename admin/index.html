@@ -84,9 +84,10 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          const title = data.title !== "" ? <p>${data.title}</p> : "";
           return `<div class="span-${data.span}">
             <div class="audio-shortcode">
-              <p>${data.title}</p>
+              ${title}
               <audio src="${data.src}" controls></audio>
             </div>
           </div>`;
@@ -160,11 +161,14 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          const type = data.type === "do" ? `<i class="fa-regular fa-circle-check success"></i>` : `<i class="far fa-window-close danger"></i>`;
+          const leadingText = data.leadingText !== "" ? `<b>${data.leadingText}</b>` : "";
+          const text = data.text !== "" ? `${data.text}` : "";
           return `<div class="bullet">
-            ${data.type === "do" ? `<i class="fa-regular fa-circle-check success"></i>` : `<i class="far fa-window-close danger"></i>`}
+            ${type}
             <div>
-              ${data.leadingText !== "undefined" && `<b>${data.leadingText}</b>`}
-              ${data.text !== "undefined" && `${data.text}`}
+              ${leadingText}
+              ${text}
             </div>
           </div>`;
         },
@@ -270,14 +274,20 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          const name = data.name !== "" ? `<p><b>${data.name}</b></p>` : "";
+          const rgb = data.rgb !== "" ? `<p><b>RGB:</b> ${data.rgb}</p>` : "";
+          const hex = data.hex !== "" ? `<p><b>HEX:</b> ${data.hex}</p>` : "";
+          const pantone = data.pantone !== "" ? `<p><b>PANTONE:</b> ${data.pantone}</p>` : "";
+          const cmyk = data.cmyk !== "" ? `<p><b>CMYK:</b> ${data.cmyk}</p>` : "";
+          const mui = data.mui !== "" ? `<p><b>MUI:</b> ${data.mui}</p>` : "";
           return `<div class="span-${data.span}">
             <div class="color-shortcode" style="background: ${data.hex}"></div>
-            ${data.name !== "undefined" && `<p><b>${data.name}</b></p>`}
-            ${data.rgb !== "undefined" && `<p><b>RGB:</b> ${data.rgb}</p>`}
-            ${data.hex !== "undefined" && `<p><b>HEX:</b> ${data.hex}</p>`}
-            ${data.pantone !== "undefined" && `<p><b>PANTONE:</b> ${data.pantone}</p>`}
-            ${data.cmyk !== "undefined" && `<p><b>CMYK:</b> ${data.cmyk}</p>`}
-            ${data.mui !== "undefined" && `<p><b>MUI:</b> ${data.mui}</p>`}
+            ${name}
+            ${rgb}
+            ${hex}
+            ${pantone}
+            ${cmyk}
+            ${mui}
           </div>`;
         },
       };
@@ -357,9 +367,10 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          const color = data.color !== "" ? `background: ${data.color};` : "";
           return `<div
           class="span-${data.span}"
-          style="${data.color !== "" && data.color !== "undefined" && `background: ${data.color};`} text-align: ${data.align};"
+          style="${color} text-align: ${data.align};"
         >
           ${data.content}
         </div>`;
@@ -511,6 +522,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          const subtitle = data.subtitle !== "" ? `<div><b>${data.subtitle}</b></div>` : "";
           return `<div class="span-${data.span}">
             <a class="download" href="${data.fileURL}" target="_blank" rel="no-follow no-referrer">
                 <div class="download-icon">
@@ -518,7 +530,7 @@
                 </div>
                 <div class="download-details">
                     <div><b>${data.title}</b></div>
-                    ${data.subtitle !== "" || data.subtitle !== "undefined" && `<div><b>${data.subtitle}</b></div>`}
+                    ${subtitle}
                 </div>
             </a>
         </div>`;
@@ -727,19 +739,26 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          const title_top = data.text_position === "top" && data.title !=="" ? `<p><b>${data.title}</b></p>` : "";
+          const description_top = data.text_position === "top" && data.description !=="" ? `<p>${data.description}</p>` : "";
+          const overlay = data.overlay !== "" ? `class="source"` : "";
+          const imageURL = `${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}`;
+          const overlayURL = data.overlay !== "" ? `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}/${data.overlay.split('/static/')[1]}`}" /></div>` : "";
+          const title_bottom = data.text_position === "bottom" && data.title !=="" ? `<p><b>${data.title}</b></p>` : "";
+          const description_bottom = data.description === "bottom" && data.description !=="" ? `<p>${data.description}</p>` : "";
           return `<div
           class="span-${data.span} image-shortcode ${data.light === true && `light`} ${data.dark === true && `dark`} ${data.scale === false && `no-scale`}"
         >
-        ${data.text_position === "top" && data.title !=="" || data.title !== "undefined" && `<p><b>${data.title}</b></p>`}
-        ${data.text_position === "top" && data.description !=="" || data.description !== "undefined" && `<p>${data.description}</p>`}
+        ${title_top}
+        ${description_top}
 
-        <div ${data.overlay !== "" || data.overlay !== "undefined" && `class="source"`}>
-          <img src="${`${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}`}" />
+        <div ${overlay}>
+          <img src="${imageURL}" />
         </div>
-        ${data.overlay !== "" || data.overlay !== "undefined" && `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}/${data.overlay.split('/static/')[1]}`}" /></div>`}
+        ${overlayURL}
           
-        ${data.text_position === "bottom" && data.title !=="" || data.title !== "undefined" && `<p><b>${data.title}</b></p>`}
-        ${data.text_position === "bottom" && data.description !=="" || data.description !== "undefined" && `<p>${data.description}</p>`}
+        ${title_bottom}
+        ${description_bottom}
         </div>`;
         },
       };
@@ -845,13 +864,8 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          console.log('Video Data');
-          console.log("Poster = ", data.poster);
-          console.log("Has Poster = ", data.poster !== "");
           const posterUrl = data.poster !== "" ? `${window.location.href.split('/admin/')[0]}/${data.poster.split('/static/')[1]}` : "";
-          const videoUrl = data.src !== "undefined" || data.src !== "" ? `${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}` : "";
-          console.log(posterUrl);
-          console.log(videoUrl);
+          const videoUrl = data.src !== "" ? `${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}` : "";
           return `<div class="span-${data.span}">
             <video
             poster="${posterUrl}"
