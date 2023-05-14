@@ -222,6 +222,8 @@ body {
 
 .image-shortcode {
   margin-top: 16px; }
+  .image-shortcode img {
+    margin: 16px 0; }
   .image-shortcode.plain {
     background: transparent; }
   .image-shortcode.light {
