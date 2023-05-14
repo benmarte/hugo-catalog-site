@@ -220,6 +220,9 @@ body {
   .bullet .danger {
     color: #ce3737; }
 
+.frame-content .bullet {
+  margin: 8px 0; }
+
 .image-shortcode {
   margin-top: 16px; }
   .image-shortcode img {
@@ -287,6 +290,9 @@ body {
 .color-shortcode {
   min-height: 120px;
   margin: 0 0 16px 0; }
+
+.content-body p, .frame-content p {
+  margin: 8px 0; }
 
 .content-body .color-name, .frame-content .color-name {
   margin: 16px 0 !important; }
