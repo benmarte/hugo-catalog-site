@@ -110,11 +110,14 @@ body {
 }
 
 .frame-content {
-  .color-shortcode, .download, .hint-shortcode, .image-shortcode, video {
+  .color-shortcode, .download, .hint-shortcode, .image-shortcode {
     margin-top: 32px;
     &::first-child {
       margin-top: 0;
     }
+  }
+  video {
+    margin-bottom: 32px;
   }
   h2,
   h3,
