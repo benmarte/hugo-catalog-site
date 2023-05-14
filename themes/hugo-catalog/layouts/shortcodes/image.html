@@ -1,5 +1,5 @@
 {{$span := .Get "span" | default 6}}
-{{$src := .Get "src"}}
+{{$src := .Get "src" | default ""}}
 {{$title := .Get "title" | default ""}}
 {{$description := .Get "description" | default ""}}
 {{$light := .Get "light" | default "false"}}

@@ -220,13 +220,3 @@ Once you login you will see a list of pages if you have any otherwise you can cr
 {{<hint type="info">}}
 For more information regarding decaps features please refer to the official documentation: https://decapcms.org/docs/intro/
 {{</hint>}}
-
-## Shortcodes in Decap
-
-All shortcodes work in Decap now, simply click on the **Add Component** button in the Decap editor and select the widget you want to insert from the list.
-
-![Decap Add Component](/images/decap-add-component.png)
-
-{{<hint type="warning">}}
-Decap widgets only work on initial insertion, I am still looking into how to get them rendering correctly when editing pages.
-{{</hint>}}

@@ -217,36 +217,36 @@ Images can be used as graphical elements, to document implementation details wit
 
 Image shortcode with a **span** value of 3.
 
-{{<image src="/images/hugo-catalog-logo.svg" span="3">}}
+{{<image src="/images/hugo-catalog-logo.svg" span="3" text_position="top" title="" description="" overlay="" light="false" dark="false" scale="true">}}
 
 {{<divider-title text="Markdown Example">}}
 
 ```html
-{{</*image src="/images/hugo-catalog-logo.svg" span="3"*/>}}
+{{</*image src="/images/hugo-catalog-logo.svg" span="3" text_position="top" title="enable_subnav = false" description="" overlay="" light="false" dark="false" scale="true"*/>}}
 ```
 
 {{<divider-title text="Example Usage">}}
 
 Image shortcode with a **span** value of 6 and **light** = **true** to enable a transparent background.
 
-{{<image src="/images/hugo-catalog-logo.svg" span="6" light="true">}}
+{{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="" description="" overlay="" light="true" dark="false" scale="true">}}
 
 {{<divider-title text="Markdown Example">}}
 
 ```html
-{{</*image src="/images/hugo-catalog-logo.svg" span="6" light="true"*/>}}
+{{</*image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="" description="" overlay="" light="true" dark="false" scale="true"*/>}}
 ```
 
 {{<divider-title text="Example Usage">}}
 
 Image shortcode with a **span** value of 6 and **dark** = **true** to enable a translucent black background.
 
-{{<image src="/images/hugo-catalog-logo.svg" span="6" dark="true">}}
+{{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="" description="" overlay="" light="false" dark="true" scale="true">}}
 
 {{<divider-title text="Markdown Example">}}
 
 ```html
-{{</*image src="/images/hugo-catalog-logo.svg" span="6" dark="true"*/>}}
+{{</*image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="" description="" overlay="" light="false" dark="true" scale="true"*/>}}
 ```
 
 {{<divider-title text="Example Usage">}}
@@ -255,22 +255,22 @@ All images will display as responsive images, if you want to display an image at
 
 This example uses an image shortcode with a **span** value of 6, **title**, **description** with the **text_position** set to the top and a **scale** property set to **false**.
 
-{{<image src="/images/logo-image.png" span="6" title="Title" scale="false" description="This is a sample description" text_position="top">}}
+{{<image src="/images/logo-image.png" span="6" text_position="top" title="Title" description="This is a sample description" overlay="" light="false" dark="false" scale="false">}}
 
 {{<divider-title text="Markdown Example">}}
 
 ```html
-{{</*image src="/images/logo-image.png"  span="6" title="Title" scale="false" description="This is a sample description" text_position="top" */>}}
+{{</*image src="/images/logo-image.png" span="6" text_position="top" title="Title" description="This is a sample description" overlay="" light="false" dark="false" scale="false"*/>}}
 ```
 
-You can control the positioning of the title and description with the **text_position** property. You can either place it to the **top** or **bottom** of the image.
+You can control the positioning of the **title** and **description** with the **text_position** property. You can either place it to the **top** or **bottom** of the image.
 
-{{<image src="/images/logo-image.png" span="6" title="Title" scale="false" description="This is a sample description" text_position="bottom">}}
+{{<image src="/images/logo-image.png" span="6" text_position="bottom" title="Title" description="This is a sample description" overlay="" light="false" dark="false" scale="true">}}
 
 {{<divider-title text="Markdown Example">}}
 
 ```html
-{{</*image src="/images/logo-image.png"  span="6" title="Title" scale="false" description="This is a sample description" text_position="bottom" */>}}
+{{</*image src="/images/logo-image.png" span="6" text_position="bottom" title="Title" description="This is a sample description" overlay="" light="false" dark="false" scale="true"*/>}}
 ```
 
 {{<hint type="info">}}
@@ -281,12 +281,12 @@ In order for the **scale** property to work properly the image needs to be small
 
 The **overlay** property allows you to set an image that you can display on mouse over of the initial image.
 
-{{<image src="/images/subtitle-image.png" overlay="/images/subtitle-image-hover.png" span="6" >}}
+{{<image src="/images/subtitle-image.png" span="6" text_position="top" title="" description="" overlay="/images/subtitle-image-hover.png" light="false" dark="false" scale="true">}}
 
 {{<divider-title text="Markdown Example">}}
 
 ```html
-{{</*image src="/images/subtitle-image.png" overlay="/images/subtitle-image-hover.png" span="6"*/>}}
+{{</*image src="/images/subtitle-image.png" span="6" text_position="top" title="" description="" overlay="/images/subtitle-image-hover.png" light="false" dark="false" scale="true"*/>}}
 ```
 
 ## Color Shortcode
@@ -395,7 +395,7 @@ The Video shortcode can be used to display videos.
 
 {{<divider-title text="Example Usage">}}
 
-{{<video src="/static/images/download-demo.mp4" span="6" autoplay="true" muted="true">}}
+{{<video src="/static/images/download-demo.mp4" span="6" autoplay="true" muted="true" poster="">}}
 
 {{<divider-title text="Markdown Example">}}
 

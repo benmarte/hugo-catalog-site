@@ -1,9 +1,9 @@
-{{$url := .Get "url"}}
+{{$url := .Get "url" | default ""}}
 {{$containsStatic := strings.Contains $url "/static"}}
 {{if ne $containsStatic true}}
 {{$url = printf "/static%s" $url}}
 {{end}}
-{{$title := .Get "title"}}
+{{$title := .Get "title" | default ""}}
 {{$subtitle := .Get "subtitle" | default ""}}
 {{$span := .Get "span" | default 6}}
 {{$bytes := float (os.Stat $url).Size }}
