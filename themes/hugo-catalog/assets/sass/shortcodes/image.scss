@@ -1,5 +1,8 @@
 .image-shortcode {
   margin-top: 16px;
+  img {
+    margin: 16px 0;
+  }
   &.plain {
     background: transparent;
   }
