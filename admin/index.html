@@ -750,7 +750,7 @@
           const description_bottom = data.text_position === "bottom" && data.description !== "" ? `<p>${data.description}</p>` : "";
           const isLight = data.light === "true" ? 'light' : "";
           const isDark = data.dark === "true" ? 'dark' : "";
-          const scaleImage = data.dark === "false" ? 'no-scale' : "";
+          const scaleImage = data.scale === "false" ? 'no-scale' : "";
           console.log("Is Dark = ", isDark)
           console.log("Is Light = ", isLight)
           console.log("Scale Image = ", scaleImage)
