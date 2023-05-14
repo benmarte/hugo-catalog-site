@@ -74,4 +74,4 @@ title: Widgets
 
 {{<video src="/static/images/download-demo.mp4" span="6" autoplay="false" muted="true" loop="false" poster="">}}
 
-{{<video src="/static/images/download-demo.mp4" span="6" autoplay="false" muted="true" loop="false" poster="/static/images/github-decap-login.png">}}
+{{<video src="/static/images/download-demo.mp4" span="6" autoplay="false" muted="false" loop="false" poster="/static/images/github-decap-login.png">}}
