@@ -735,7 +735,7 @@
         ${data.text_position === "top" && data.description !=="" || data.description !== "undefined" && `<p>${data.description}</p>`}
 
         <div ${data.overlay !== "" || data.overlay !== "undefined" && `class="source"`}>
-          <img src="${`${window.location.href.split('/admin/')[0]}/${data.src}`}" />
+          <img src="${`${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}`}" />
         </div>
         ${data.overlay !== "" || data.overlay !== "undefined" && `<div class="overlay"><img src="${data.overlay}" /></div>`}
           
@@ -848,12 +848,12 @@
         toPreview: function (data) {
           return `<div class="span-${data.span}">
             <video
-            poster="${`${window.location.href.split('/admin/')[0]}/${data.poster}`}"
+            poster="${`${window.location.href.split('/admin/')[0]}${data.poster.split('/static/')[1]}`}"
             loop="${data.loop}"
             autoplay="${data.autoplay}"
             muted="${data.muted}"
             controls>
-                <source src="${`${window.location.href.split('/admin/')[0]}/${data.src}`}"></source>
+                <source src="${`${window.location.href.split('/admin/')[0]}${data.src.split('/static/')[1]}`}"></source>
             </video>
         </div>`;
         },
