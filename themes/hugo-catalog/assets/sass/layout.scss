@@ -14,90 +14,90 @@ body {
   min-height: 100vh;
   border-left: 1px solid $gray;
   line-height: 1.5;
+}
 
-  .content-body, .frame-content {
-    max-width: 960px;
-    padding: 48px 40px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: $spacing;
+.content-body, .frame-content {
+  max-width: 960px;
+  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: $spacing;
 
-    * {
-      grid-column: span 6;
+  * {
+    grid-column: span 6;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    width: 100%;
+    margin: 32px 0 0 0;
+  }
+  h2 + h3,
+  h2 + h4,
+  h2 + h5,
+  h2 + h6 {
+    margin: 0;
+  }
+
+  p {
+    color: $body-text;
+    margin: 0;
+    width: 100%;
+  }
+
+  ol {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $primary-color;
+    &:hover {
+      color: $secondary-color;
     }
+  }
 
-    h2:first-child {
-      margin-top: 0;
-    }
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      width: 100%;
-      margin: 32px 0 0 0;
-    }
-    h2 + h3,
-    h2 + h4,
-    h2 + h5,
-    h2 + h6 {
+  ul {
+    margin: 0;
+    li {
       margin: 0;
     }
+  }
 
+  blockquote {
+    width: 100%;
+    border-left: 4px solid $secondary-color;
+    padding-left: 20px;
+    font-size: 1.5rem;
+    margin: 8px 0 0 0;
     p {
-      color: $body-text;
+      color: $secondary-color;
       margin: 0;
-      width: 100%;
     }
+  }
 
-    ol {
-      margin-bottom: 0;
-    }
+  hr {
+    border: none;
+    height: 1px;
+    background: $body-text;
+  }
 
-    a {
-      color: $primary-color;
-      &:hover {
-        color: $secondary-color;
-      }
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    ul {
-      margin: 0;
-      li {
-        margin: 0;
-      }
-    }
-
-    blockquote {
-      width: 100%;
-      border-left: 4px solid $secondary-color;
-      padding-left: 20px;
-      font-size: 1.5rem;
-      margin: 8px 0 0 0;
-      p {
-        color: $secondary-color;
-        margin: 0;
-      }
-    }
-
-    hr {
-      border: none;
-      height: 1px;
-      background: $body-text;
-    }
-
-    .highlight {
-      width: 100%;
-      pre {
-        padding: 20px;
-        overflow: auto;
-      }
+  .highlight {
+    width: 100%;
+    pre {
+      padding: 20px;
+      overflow: auto;
     }
   }
 }
