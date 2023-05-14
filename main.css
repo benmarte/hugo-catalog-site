@@ -114,6 +114,9 @@ body {
 .show-menu #content {
   display: none; }
 
+.frame-content .color-shortcode, .frame-content .download, .frame-content .hint-shortcode, .frame-content .image-shortcode, .frame-content video {
+  margin-top: 32px; }
+
 .brand {
   padding: 40px;
   width: calc(250px - 80px);
