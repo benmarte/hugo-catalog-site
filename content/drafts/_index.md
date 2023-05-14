@@ -1,7 +1,6 @@
 ---
 title: Widgets
 ---
-
 ## Audio Widget
 
 {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" title="6-second synth melody" span="3">}}
@@ -21,34 +20,44 @@ title: Widgets
 ## Column Widget
 
 {{<column span="1" color="#999" align="center">}}Span 1{{</column>}}
+
 {{<column span="1" color="#999" align="center">}}Span 1{{</column>}}
+
 {{<column span="1" color="#999" align="center">}}Span 1{{</column>}}
+
 {{<column span="1" color="#999" align="center">}}Span 1{{</column>}}
+
 {{<column span="1" color="#999" align="center">}}Span 1{{</column>}}
+
 {{<column span="1" color="#999" align="center">}}Span 1{{</column>}}
 
 {{<column span="2" color="#999" align="center">}}Span 2{{</column>}}
+
 {{<column span="2" color="#999" align="center">}}Span 2{{</column>}}
+
 {{<column span="2" color="#999" align="center">}}Span 2{{</column>}}
 
 {{<column span="3" color="#999" align="center">}}Span 3{{</column>}}
+
 {{<column span="3" color="#999" align="center">}}Span 3{{</column>}}
 
 {{<column span="4" color="#999" align="center">}}Span 4{{</column>}}
+
 {{<column span="2" color="#999" align="center">}}Span 2{{</column>}}
 
 {{<column span="5" color="#999" align="center">}}Span 5{{</column>}}
+
 {{<column span="1" color="#999" align="center">}}Span 1{{</column>}}
 
 {{<column span="6" color="#999" align="center">}}Span 6{{</column>}}
 
 ## Divider Title Widget
 
-{{<divider-title title="No alignment set defaults to left" align="left">}}
+{{<divider-title title="undefined" align="left">}}
 
-{{<divider-title title="Aligned to center" align="center">}}
+{{<divider-title title="undefined" align="center">}}
 
-{{<divider-title title="Aligned to right" align="right">}}
+{{<divider-title title="undefined" align="right">}}
 
 ## Download Widget
 
