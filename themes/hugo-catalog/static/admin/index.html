@@ -524,7 +524,7 @@
         toPreview: function (data) {
           console.log({data});
           const subtitle = data.subtitle !== "" ? `<div><b>${data.subtitle}</b></div>` : "";
-          const file = data.url.contains('/static/') ? data.url.split('/static/')[0] : data.url;
+          const file = data.url.includes('/static/') ? data.url.split('/static/')[0] : data.url;
           const fileURL = `${window.location.href.split('/admin/')[0]}${file}`;
           return `<div class="span-${data.span}">
             <a class="download" href="${fileURL}" target="_blank" rel="no-follow no-referrer">
