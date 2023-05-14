@@ -44,7 +44,7 @@ title: Widgets
 
 ## Divider Title Widget
 
-{{<divider-title title="No alignment set defaults to left">}}
+{{<divider-title title="No alignment set defaults to left" align="left">}}
 
 {{<divider-title title="Aligned to center" align="center">}}
 
@@ -66,9 +66,9 @@ title: Widgets
 
 ## Catalog Image Widget
 
-{{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="Text Position Top" description="places the images title and description above it." >}}
+{{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="Text Position Top" description="places the images title and description above it." overlay="" light="false" dark="false" scale="true">}}
 
-{{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="bottom" title="Text Position Bottom" description="places the images title and description below it.">}}
+{{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="bottom" title="Text Position Bottom" description="places the images title and description below it." overlay="" light="false" dark="false" scale="true">}}
 
 ## Video Widget
 
