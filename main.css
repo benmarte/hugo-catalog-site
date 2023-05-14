@@ -286,10 +286,14 @@ body {
 
 .color-shortcode {
   min-height: 120px;
-  margin: 0 0 15px 0; }
+  margin: 0 0 16px 0; }
+
+.content-body .color-name, .frame-content .color-name {
+  margin: 16px 0 !important; }
 
 audio {
-  width: 100%; }
+  width: 100%;
+  margin: 16px 0; }
 
 .hint-shortcode {
   margin: 8px 0 0 0;
