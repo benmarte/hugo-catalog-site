@@ -850,7 +850,7 @@
         toPreview: function (data) {
           return `<div class="span-${data.span}">
             <video
-            poster="${`${window.location.href.split('/admin/')[0]}/${data.poster.split('/static/')[1]}`}"
+            poster="${data.poster !== "undefined" && `${window.location.href.split('/admin/')[0]}/${data.poster.split('/static/')[1]}`}"
             loop="${data.loop}"
             autoplay="${data.autoplay}"
             muted="${data.muted}"
