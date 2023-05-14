@@ -331,22 +331,22 @@ video {
   width: 100%;
   height: auto; }
 
-#content .content-body .span-1 {
+.content-body .span-1, .frame-content .span-1 {
   grid-column: span 1; }
 
-#content .content-body .span-2 {
+.content-body .span-2, .frame-content .span-2 {
   grid-column: span 2; }
 
-#content .content-body .span-3 {
+.content-body .span-3, .frame-content .span-3 {
   grid-column: span 3; }
 
-#content .content-body .span-4 {
+.content-body .span-4, .frame-content .span-4 {
   grid-column: span 4; }
 
-#content .content-body .span-5 {
+.content-body .span-5, .frame-content .span-5 {
   grid-column: span 5; }
 
-#content .content-body .span-6 {
+.content-body .span-6, .frame-content .span-6 {
   grid-column: span 6; }
 
 @media (max-width: 1023px) {
