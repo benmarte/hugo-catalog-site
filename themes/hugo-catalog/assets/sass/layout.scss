@@ -110,14 +110,17 @@ body {
 }
 
 .frame-content {
-  // .color-shortcode, .download, .hint-shortcode, .image-shortcode, video {
-  //   margin-top: 32px;
-  // }
+  .color-shortcode, .download, .hint-shortcode, .image-shortcode, video {
+    margin-top: 32px;
+    &::first-child {
+      margin-top: 0;
+    }
+  }
   h2,
   h3,
   h4,
   h5,
   h6 {
-    margin: 32px 0;
+    margin: 32px 0 !important;
   }
 }
