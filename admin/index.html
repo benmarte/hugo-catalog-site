@@ -163,9 +163,6 @@
           console.log('Bullet Data');
           console.log({data});
           return `<div class="bullet">
-            ${data.type}
-            ${data.leadingText}
-            ${data.text}
             ${data.type === "do" ? `<i class="fa-regular fa-circle-check success"></i>` : `<i class="far fa-window-close danger"></i>`}
             <div>
               ${data.leadingText !== "undefined" && `<b>${data.leadingText}</b>`}
@@ -277,12 +274,12 @@
         toPreview: function (data) {
           return `<div class="span-${data.span}">
             <div class="color-shortcode" style="background: ${data.hex}"></div>
-            ${data.name !== "" || data.name !== "undefined" && `<p><b>${data.name}</b></p>`}
-            ${data.rgb !== "" || data.rgb !== "undefined" && `<p><b>RGB:</b> ${data.rgb}</p>`}
-            ${data.hex !== "" || data.hex !== "undefined" && `<p><b>HEX:</b> ${data.hex}</p>`}
-            ${data.pantone !== "" || data.pantone !== "undefined" && `<p><b>PANTONE:</b> ${data.pantone}</p>`}
-            ${data.cmyk !== "" || data.cmyk !== "undefined" && `<p><b>CMYK:</b> ${data.cmyk}</p>`}
-            ${data.mui !== "" || data.mui !== "undefined" && `<p><b>MUI:</b> ${data.mui}</p>`}
+            ${data.name !== "undefined" && `<p><b>${data.name}</b></p>`}
+            ${data.rgb !== "undefined" && `<p><b>RGB:</b> ${data.rgb}</p>`}
+            ${data.hex !== "undefined" && `<p><b>HEX:</b> ${data.hex}</p>`}
+            ${data.pantone !== "undefined" && `<p><b>PANTONE:</b> ${data.pantone}</p>`}
+            ${data.cmyk !== "undefined" && `<p><b>CMYK:</b> ${data.cmyk}</p>`}
+            ${data.mui !== "undefined" && `<p><b>MUI:</b> ${data.mui}</p>`}
           </div>`;
         },
       };
@@ -852,14 +849,18 @@
         toPreview: function (data) {
           console.log('Video Data');
           console.log({data});
+          const posterUrl = data.poster !== "undefined" && window.location.href.split('/admin/')[0]/data.poster.split('/static/')[1];
+          const videoUrl = data.src !== "undefined" && window.location.href.split('/admin/')[0]/data.src.split('/static/')[1];
+          console.log(posterUrl);
+          console.log(videoUrl);
           return `<div class="span-${data.span}">
             <video
-            poster="${data.poster !== "undefined" && `${window.location.href.split('/admin/')[0]}/${data.poster.split('/static/')[1]}`}"
+            poster="${posterUrl}"
             loop="${data.loop}"
             autoplay="${data.autoplay}"
             muted="${data.muted}"
             controls>
-                <source src="${`${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}`}"></source>
+                <source src="${videoUrl}"></source>
             </video>
         </div>`;
         },
