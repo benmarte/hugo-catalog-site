@@ -849,9 +849,9 @@
           return `<div class="span-${data.span}">
             <video
             ${data.poster !== "" || data.poster !== "undefined" && `poster="${data.poster}"`}
-            ${data.loop === true || data.loop === "true" && `loop`}
-            ${data.autoplay === true || data.autoplay === "true" && `autoplay`}
-            ${data.muted === true || data.muted === "true" && `muted`}
+            ${data.loop === true && `loop`}
+            ${data.autoplay === true && `autoplay`}
+            ${data.muted === true && `muted`}
             controls>
                 <source src="${data.src}"></source>
             </video>
