@@ -206,7 +206,7 @@ body {
     color: #ce3737; }
 
 .image-shortcode {
-  margin-top: 32px; }
+  margin-top: 16px; }
   .image-shortcode.plain {
     background: transparent; }
   .image-shortcode.light {
@@ -239,7 +239,7 @@ body {
   justify-content: flex-start;
   width: 100%;
   color: #003b5c;
-  margin: 16px 0 0 0; }
+  margin: 8px 0 0 0; }
   .download:hover .download-icon,
   .download:hover .download-details {
     color: #C6007E; }
@@ -325,7 +325,7 @@ audio {
 video {
   width: 100%;
   height: auto;
-  margin-top: 32px; }
+  margin-top: 16px; }
 
 .content-body .span-1, .frame-content .span-1 {
   grid-column: span 1; }
