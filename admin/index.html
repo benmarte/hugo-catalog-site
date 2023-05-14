@@ -274,7 +274,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          const name = data.name !== "" ? `<p><b>${data.name}</b></p>` : "";
+          const name = data.name !== "" ? `<p class="color-name"><b>${data.name}</b></p>` : "";
           const rgb = data.rgb !== "" ? `<p><b>RGB:</b> ${data.rgb}</p>` : "";
           const hex = data.hex !== "" ? `<p><b>HEX:</b> ${data.hex}</p>` : "";
           const pantone = data.pantone !== "" ? `<p><b>PANTONE:</b> ${data.pantone}</p>` : "";
