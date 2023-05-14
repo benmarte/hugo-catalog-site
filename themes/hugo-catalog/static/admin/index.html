@@ -401,7 +401,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<divider-title title="${data.text}" align="${data.align}">}}`;
+          return `<div class="divider-title" style="text-align: ${data.align}">${data.title}</div>`;
         },
       };
 
@@ -804,6 +804,9 @@
 
       //  End Video Widget ------------------------------------------------------------------- /
 
+      const css = "../main.css";
+
+      CMS.registerPreviewStyle(css);
       CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(ColumnWidget);
       CMS.registerEditorComponent(AudioWidget);
