@@ -211,6 +211,7 @@ Images can be used as graphical elements, to document implementation details wit
 - **dark:** boolean optional - a dark checkered background
 - **scale:** boolean optional - scale the image down if it’s wider than the container
 - **span:** number required - [1–6] width of the shortcode
+- **text_position:** string optional - can either be **top** to place the title and description above it or **bottom** to place it below it
 
 {{<divider-title text="Example Usage">}}
 
@@ -252,14 +253,24 @@ Image shortcode with a **span** value of 6 and **dark** = **true** to enable a t
 
 All images will display as responsive images, if you want to display an image at its native size simply set the **scale** property to **false** and the image will render at it's native size.
 
-This example uses an image shortcode with a **span** value of 6, **title**, **description** and **scale** property set to **false**.
+This example uses an image shortcode with a **span** value of 6, **title**, **description** with the **text_position** set to the top and a **scale** property set to **false**.
 
-{{<image src="/images/logo-image.png" span="6" title="Title" scale="false" description="This is a sample description">}}
+{{<image src="/images/logo-image.png" span="6" title="Title" scale="false" description="This is a sample description" text_position="top">}}
 
 {{<divider-title text="Markdown Example">}}
 
 ```html
-{{</*image src="/images/logo-image.png"  span="6" title="Title" scale="false" description="This is a sample description"*/>}}
+{{</*image src="/images/logo-image.png"  span="6" title="Title" scale="false" description="This is a sample description" text_position="top" */>}}
+```
+
+You can control the positioning of the title and description with the **text_position** property. You can either place it to the **top** or **bottom** of the image.
+
+{{<image src="/images/logo-image.png" span="6" title="Title" scale="false" description="This is a sample description" text_position="bottom">}}
+
+{{<divider-title text="Markdown Example">}}
+
+```html
+{{</*image src="/images/logo-image.png"  span="6" title="Title" scale="false" description="This is a sample description" text_position="bottom" */>}}
 ```
 
 {{<hint type="info">}}
@@ -384,12 +395,12 @@ The Video shortcode can be used to display videos.
 
 {{<divider-title text="Example Usage">}}
 
-{{<video src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" span="6" autoplay="true" muted="true">}}
+{{<video src="/static/images/download-demo.mp4" span="6" autoplay="true" muted="true">}}
 
 {{<divider-title text="Markdown Example">}}
 
 ```html
-{{</*video src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" span="6" autoplay="true" muted="true"*/>}}
+{{</*video src="/static/images/download-demo.mp4" span="6" autoplay="true" muted="true"*/>}}
 ```
 
 ## Divider Title Shortcode

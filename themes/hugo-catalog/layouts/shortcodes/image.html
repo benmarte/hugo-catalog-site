@@ -6,10 +6,19 @@
 {{$dark := .Get "dark" | default "false"}}
 {{$overlay := .Get "overlay" | default ""}}
 {{$scale := .Get "scale" | default "true"}}
+{{$text_position := .Get "text_position" | default "top"}}
 
 <div
   class="span-{{$span}} image-shortcode {{if eq $light "true"}}light{{end}} {{if eq $dark "true"}}dark{{end}} {{if eq $scale "false"}}no-scale{{end}}"
 >
+  {{if eq $text_position "top"}}
+    {{if ne $title ""}}
+    <p><b>{{$title}}</b></p>
+    {{end}}
+    {{if ne $description ""}}
+    <p>{{$description}}</p>
+    {{end}}
+  {{end}}
   <div {{if ne $overlay ""}}class="source"{{end}}>
     <img src="{{$src}}" />
   </div>
@@ -18,10 +27,12 @@
     <img src="{{$overlay}}" />
   </div>
   {{end}}
-  {{if ne $title ""}}
-  <p><b>{{$title}}</b></p>
-  {{end}}
-  {{if ne $description ""}}
-  <p>{{$description}}</p>
+  {{if eq $text_position "bottom"}}
+    {{if ne $title ""}}
+    <p><b>{{$title}}</b></p>
+    {{end}}
+    {{if ne $description ""}}
+    <p>{{$description}}</p>
+    {{end}}
   {{end}}
 </div>
