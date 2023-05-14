@@ -44,61 +44,68 @@ body {
   min-height: 100vh;
   border-left: 1px solid #ebebeb;
   line-height: 1.5; }
-  #content .content-body {
+  #content .content-body, #content .frame-content {
     max-width: 960px;
     padding: 48px 40px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 24px; }
-    #content .content-body * {
+    #content .content-body *, #content .frame-content * {
       grid-column: span 6; }
-    #content .content-body h2:first-child {
+    #content .content-body h2:first-child, #content .frame-content h2:first-child {
       margin-top: 0; }
     #content .content-body h2,
     #content .content-body h3,
     #content .content-body h4,
     #content .content-body h5,
-    #content .content-body h6 {
+    #content .content-body h6, #content .frame-content h2,
+    #content .frame-content h3,
+    #content .frame-content h4,
+    #content .frame-content h5,
+    #content .frame-content h6 {
       width: 100%;
       margin: 32px 0 0 0; }
     #content .content-body h2 + h3,
     #content .content-body h2 + h4,
     #content .content-body h2 + h5,
-    #content .content-body h2 + h6 {
+    #content .content-body h2 + h6, #content .frame-content h2 + h3,
+    #content .frame-content h2 + h4,
+    #content .frame-content h2 + h5,
+    #content .frame-content h2 + h6 {
       margin: 0; }
-    #content .content-body p {
+    #content .content-body p, #content .frame-content p {
       color: #333333;
       margin: 0;
       width: 100%; }
-    #content .content-body ol {
+    #content .content-body ol, #content .frame-content ol {
       margin-bottom: 0; }
-    #content .content-body a {
+    #content .content-body a, #content .frame-content a {
       color: #003b5c; }
-      #content .content-body a:hover {
+      #content .content-body a:hover, #content .frame-content a:hover {
         color: #C6007E; }
-    #content .content-body img {
+    #content .content-body img, #content .frame-content img {
       width: 100%;
       height: auto; }
-    #content .content-body ul {
+    #content .content-body ul, #content .frame-content ul {
       margin: 0; }
-      #content .content-body ul li {
+      #content .content-body ul li, #content .frame-content ul li {
         margin: 0; }
-    #content .content-body blockquote {
+    #content .content-body blockquote, #content .frame-content blockquote {
       width: 100%;
       border-left: 4px solid #C6007E;
       padding-left: 20px;
       font-size: 1.5rem;
       margin: 8px 0 0 0; }
-      #content .content-body blockquote p {
+      #content .content-body blockquote p, #content .frame-content blockquote p {
         color: #C6007E;
         margin: 0; }
-    #content .content-body hr {
+    #content .content-body hr, #content .frame-content hr {
       border: none;
       height: 1px;
       background: #333333; }
-    #content .content-body .highlight {
+    #content .content-body .highlight, #content .frame-content .highlight {
       width: 100%; }
-      #content .content-body .highlight pre {
+      #content .content-body .highlight pre, #content .frame-content .highlight pre {
         padding: 20px;
         overflow: auto; }
 
