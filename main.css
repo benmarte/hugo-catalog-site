@@ -114,8 +114,12 @@ body {
 .show-menu #content {
   display: none; }
 
-.frame-content .color-shortcode, .frame-content .download, .frame-content .hint-shortcode, .frame-content .image-shortcode, .frame-content video {
-  margin-top: 32px; }
+.frame-content h2,
+.frame-content h3,
+.frame-content h4,
+.frame-content h5,
+.frame-content h6 {
+  margin: 32px 0; }
 
 .brand {
   padding: 40px;
