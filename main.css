@@ -114,10 +114,13 @@ body {
 .show-menu #content {
   display: none; }
 
-.frame-content .color-shortcode, .frame-content .download, .frame-content .hint-shortcode, .frame-content .image-shortcode, .frame-content video {
+.frame-content .color-shortcode, .frame-content .download, .frame-content .hint-shortcode, .frame-content .image-shortcode {
   margin-top: 32px; }
-  .frame-content .color-shortcode::first-child, .frame-content .download::first-child, .frame-content .hint-shortcode::first-child, .frame-content .image-shortcode::first-child, .frame-content video::first-child {
+  .frame-content .color-shortcode::first-child, .frame-content .download::first-child, .frame-content .hint-shortcode::first-child, .frame-content .image-shortcode::first-child {
     margin-top: 0; }
+
+.frame-content video {
+  margin-bottom: 32px; }
 
 .frame-content h2,
 .frame-content h3,
