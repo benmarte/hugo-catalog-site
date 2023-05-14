@@ -53,11 +53,11 @@ title: Widgets
 
 ## Divider Title Widget
 
-{{<divider-title title="undefined" align="left">}}
+{{<divider-title title="Left aligned title" align="left">}}
 
-{{<divider-title title="undefined" align="center">}}
+{{<divider-title title="Center aligned title" align="center">}}
 
-{{<divider-title title="undefined" align="right">}}
+{{<divider-title title="Right aligned title" align="right">}}
 
 ## Download Widget
 
