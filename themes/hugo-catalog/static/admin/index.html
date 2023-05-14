@@ -160,8 +160,6 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          console.log('Bullet Data');
-          console.log({data});
           return `<div class="bullet">
             ${data.type === "do" && `<i class="fa-regular fa-circle-check success"></i>`}
             ${data.type === "dont" && `<i class="far fa-window-close danger"></i>`}
@@ -848,6 +846,8 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
+          console.log('Video Data');
+          console.log({data});
           return `<div class="span-${data.span}">
             <video
             poster="${data.poster !== "undefined" && `${window.location.href.split('/admin/')[0]}/${data.poster.split('/static/')[1]}`}"
