@@ -737,7 +737,7 @@
         <div ${data.overlay !== "" || data.overlay !== "undefined" && `class="source"`}>
           <img src="${`${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}`}" />
         </div>
-        ${data.overlay !== "" || data.overlay !== "undefined" && `<div class="overlay"><img src="${data.overlay}" /></div>`}
+        ${data.overlay !== "" || data.overlay !== "undefined" && `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}/${data.overlay.split('/static/')[1]}`}" /></div>`}
           
         ${data.text_position === "bottom" && data.title !=="" || data.title !== "undefined" && `<p><b>${data.title}</b></p>`}
         ${data.text_position === "bottom" && data.description !=="" || data.description !== "undefined" && `<p>${data.description}</p>`}
@@ -848,12 +848,12 @@
         toPreview: function (data) {
           return `<div class="span-${data.span}">
             <video
-            poster="${`${window.location.href.split('/admin/')[0]}${data.poster.split('/static/')[1]}`}"
+            poster="${`${window.location.href.split('/admin/')[0]}/${data.poster.split('/static/')[1]}`}"
             loop="${data.loop}"
             autoplay="${data.autoplay}"
             muted="${data.muted}"
             controls>
-                <source src="${`${window.location.href.split('/admin/')[0]}${data.src.split('/static/')[1]}`}"></source>
+                <source src="${`${window.location.href.split('/admin/')[0]}/${data.src.split('/static/')[1]}`}"></source>
             </video>
         </div>`;
         },
