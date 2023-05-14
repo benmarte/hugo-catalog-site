@@ -38,11 +38,11 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "Prueba"
+  - name: "drafts"
     # label displayed in decap under collections
-    label: "Prueba"
+    label: "Drafts"
     # directory with markdow files
-    folder: "/content/prueba"
+    folder: "/content/drafts"
     create: true
     # the filename will be used to generate the url to the page
     slug: "{{slug}}"

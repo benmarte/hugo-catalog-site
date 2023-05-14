@@ -551,6 +551,14 @@
             default: true,
             required: false,
           },
+          {
+            name: "text_position",
+            label: "Text Position",
+            widget: "select",
+            default: ["top"],
+            options: ["top", "bottom"],
+            required: true,
+          },
 
         ],
         // This is used to populate the custom widget in the markdown editor in the CMS.
@@ -564,6 +572,7 @@
             light: match[6],
             dark: match[7],
             scale: match[8],
+            text_position: match[9],
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -574,6 +583,7 @@
         toBlock: function (data) {
           return `{{<image src="${data.src}"
           span="${data.span}"
+          text_position="${data.text_position}"
           ${data.title !== "" && `title="${data.title}"`}
           ${data.description !== "" && `description="${data.description}"`}
           ${data.overlay !== "" && `overlay="${data.overlay}"`}
@@ -587,6 +597,7 @@
         toPreview: function (data) {
           return `{{<image src="${data.src}"
           span="${data.span}"
+          text_position="${data.text_position}"
           ${data.title !== "" && `title="${data.title}"`}
           ${data.description !== "" && `description="${data.description}"`}
           ${data.overlay !== "" && `overlay="${data.overlay}"`}
