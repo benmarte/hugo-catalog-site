@@ -281,12 +281,12 @@ In order for the **scale** property to work properly the image needs to be small
 
 The **overlay** property allows you to set an image that you can display on mouse over of the initial image.
 
-{{<image src="/images/subtitle-image.png" span="6" text_position="top" title="" description="" overlay="/images/subtitle-image-hover.png" light="false" dark="false" scale="true">}}
+{{<image src="/images/subtitle-image.png" span="6" text_position="top" title="" description="" overlay="/static/images/subtitle-image-hover.png" light="false" dark="false" scale="true">}}
 
 {{<divider-title title="Markdown Example">}}
 
 ```html
-{{</*image src="/images/subtitle-image.png" span="6" text_position="top" title="" description="" overlay="/images/subtitle-image-hover.png" light="false" dark="false" scale="true"*/>}}
+{{</*image src="/images/subtitle-image.png" span="6" text_position="top" title="" description="" overlay="/static/images/subtitle-image-hover.png" light="false" dark="false" scale="true"*/>}}
 ```
 
 ## Color Shortcode
@@ -393,12 +393,12 @@ The Video shortcode can be used to display videos.
 
 {{<divider-title title="Example Usage">}}
 
-{{<video src="/static/images/download-demo.mp4" span="6" autoplay="true" muted="true" poster="">}}
+{{<video src="/images/download-demo.mp4" span="6" autoplay="true" muted="true" poster="">}}
 
 {{<divider-title title="Markdown Example">}}
 
 ```html
-{{</*video src="/static/images/download-demo.mp4" span="6" autoplay="true" muted="true"*/>}}
+{{</*video src="/images/download-demo.mp4" span="6" autoplay="true" muted="true"*/>}}
 ```
 
 ## Divider Title Shortcode

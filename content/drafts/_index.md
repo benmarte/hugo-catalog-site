@@ -79,8 +79,10 @@ title: Widgets
 
 {{<image src="/images/hugo-catalog-logo.svg" span="6" text_position="bottom" title="Text Position Bottom" description="places the images title and description below it." overlay="" light="false" dark="false" scale="true">}}
 
+{{<image src="/images/subtitle-image.png" span="6" text_position="top" title="Image with overlay" description="Displays alternate image on hover" overlay="/static/images/subtitle-image-hover.png" light="false" dark="false" scale="true">}}
+
 ## Video Widget
 
-{{<video src="/static/images/download-demo.mp4" span="6" autoplay="false" muted="true" loop="false" poster="">}}
+{{<video src="/images/download-demo.mp4" span="6" autoplay="false" muted="true" loop="false" poster="">}}
 
-{{<video src="/static/images/download-demo.mp4" span="6" autoplay="false" muted="false" loop="false" poster="/static/images/github-decap-login.png">}}
+{{<video src="/images/download-demo.mp4" span="6" autoplay="false" muted="false" loop="false" poster="/static/images/github-decap-login.png">}}
