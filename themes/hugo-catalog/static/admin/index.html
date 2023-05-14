@@ -524,7 +524,7 @@
         toPreview: function (data) {
           const subtitle = data.subtitle !== "" ? `<div><b>${data.subtitle}</b></div>` : "";
           const file = data.url.includes('/static/') ? data.url.split('/static/')[1] : data.url;
-          const fileURL = `${window.location.href.split('/admin/')[0]}${file}`;
+          const fileURL = `${window.location.href.split('/admin/')[0]}/${file}`;
           console.log("Is static in file ", data.url.includes('/static/'))
           console.log({data});
           console.log("File = ", file);
