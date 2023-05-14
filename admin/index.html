@@ -163,6 +163,9 @@
           console.log('Bullet Data');
           console.log({data});
           return `<div class="bullet">
+            ${data.type}
+            ${data.leadingText}
+            ${data.text}
             ${data.type === "do" ? `<i class="fa-regular fa-circle-check success"></i>` : `<i class="far fa-window-close danger"></i>`}
             <div>
               ${data.leadingText !== "undefined" && `<b>${data.leadingText}</b>`}
