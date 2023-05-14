@@ -84,7 +84,12 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<audio src="${data.src}" title="${data.title}" span="${data.span}">}}`;
+          return `<div class="span-${data.span}">
+            <div class="audio-shortcode">
+              <p>${data.title}</p>
+              <audio src="${data.src}" controls></audio>
+            </div>
+          </div>`;
         },
       };
 
@@ -155,7 +160,14 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<bullet leadingText="${data.leadingText}" text="${data.text}" type="${data.type}">}}`;
+          return `<div class="bullet">
+            ${data.type === "do" && `<i class="fa-regular fa-circle-check success"></i>`}}
+            ${data.type === "dont" && `<i class="far fa-window-close danger"></i>`}
+            <div>
+              ${data.leadingText !== "" || data.leadingText !== "undefined" && `<b>${data.leadingText}</b>`}
+              ${data.text !== "" || data.text !== "undefined" && `${data.text}`}
+            </div>
+          </div>`;
         },
       };
 
@@ -259,7 +271,15 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<color name="${data.name}" span="${data.span}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}">}}`;
+          return `<div class="span-${data.span}">
+            <div class="color-shortcode" style="background: ${data.hex}"></div>
+            ${data.name !== "" || data.name !== "undefined" && `<p><b>${data.name}</b></p>`}
+            ${data.rgb !== "" || data.rgb !== "undefined" && `<p><b>RGB:</b> ${data.rgb}</p>`}
+            ${data.hex !== "" || data.hex !== "undefined" && `<p><b>HEX:</b> ${data.hex}</p>`}
+            ${data.pantone !== "" || data.pantone !== "undefined" && `<p><b>PANTONE:</b> ${data.pantone}</p>`}
+            ${data.cmyk !== "" || data.cmyk !== "undefined" && `<p><b>CMYK:</b> ${data.cmyk}</p>`}
+            ${data.mui !== "" || data.mui !== "undefined" && `<p><b>MUI:</b> ${data.mui}</p>`}
+          </div>`;
         },
       };
 
@@ -338,7 +358,12 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<column span="${data.span}" color="${data.color}" align="${data.align}">}}${data.content}{{</column>}}`;
+          return `<div
+          class="span-${data.span}"
+          style="${data.color !== "" && data.color !== "undefined" && `background: ${data.color}`} text-align: ${data.align};"
+        >
+          ${data.content}
+        </div>`;
         },
       };
 
@@ -487,7 +512,17 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<download title="${data.title}" span="${data.span}" url="${data.url}" subtitle="${data.subtitle}">}}`;
+          return `<div class="span-${data.span}">
+            <a class="download" href="${data.fileURL}" target="_blank" rel="no-follow no-referrer">
+                <div class="download-icon">
+                    <i class="fa-regular fa-circle-down"></i>
+                </div>
+                <div class="download-details">
+                    <div><b>${data.title}</b></div>
+                    ${data.subtitle !== "" || data.subtitle !== "undefined" && `<div><b>${data.subtitle}</b></div>`}
+                </div>
+            </a>
+        </div>`;
         },
       };
 
@@ -559,7 +594,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<hint type="${data.type}" span="${data.span}">}}${data.content}{{</hint>}}`;
+          return `<div class="span-${data.span} hint-shortcode ${data.type}">${data.content}</div>`;
         },
       };
 
@@ -693,7 +728,20 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<image src="${data.src}" span="${data.span}" text_position="${data.text_position}" title="${data.title}" description="${data.description}" overlay="${data.overlay}" light="${data.light}" dark="${data.dark}" scale="${data.scale}">}}`;
+          return `<div
+          class="span-${data.span} image-shortcode ${data.light === true && `light`} ${data.dark === true && `dark`} ${data.scale === false && `no-scale`}"
+        >
+        ${data.text_position === "top" && data.title !=="" || data.title !== "undefined" && `<p><b>${data.title}</b></p>`}
+        ${data.text_position === "top" && data.description !=="" || data.description !== "undefined" && `<p>${data.description}</p>`}
+
+        <div ${data.overlay !== "" || data.overlay !== "undefined" && `class="source"`}>
+          <img src="${data.src}" />
+        </div>
+        ${data.overlay !== "" || data.overlay !== "undefined" && `<div class="overlay"><img src="${data.overlay}" /></div>`}
+          
+        ${data.text_position === "bottom" && data.title !=="" || data.title !== "undefined" && `<p><b>${data.title}</b></p>`}
+        ${data.text_position === "bottom" && data.description !=="" || data.description !== "undefined" && `<p>${data.description}</p>`}
+        </div>`;
         },
       };
 
@@ -798,7 +846,16 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}" poster="${data.poster}">}}`;
+          return `<div class="span-${data.span}">
+            <video
+            ${data.poster !== "" || data.poster !== "undefined" && `poster="${data.poster}"`}
+            ${data.loop === true || data.loop === "true" && `loop`}
+            ${data.autoplay === true || data.autoplay === "true" && `autoplay`}
+            ${data.muted === true || data.muted === "true" && `muted`}
+            controls>
+                <source src="${data.src}"></source>
+            </video>
+        </div>`;
         },
       };
 
