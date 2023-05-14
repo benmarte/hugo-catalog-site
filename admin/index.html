@@ -61,7 +61,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<audio src="\${data\.src}" span="\${data\.span}" \${\s*data\.title\s*!==\s*""\s*&&\s*`title="\${data\.title}"`\s*}>\}\}/ms,
+        pattern: /\{\{<audio src="(.*?)" span="(.*?)" title="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -81,16 +81,12 @@
         // markdown document
         toBlock: function (data) {
           // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
-          return `{{<audio src="${data.src}" span="${data.span}" ${
-            data.title !== "" && `title="${data.title}"`
-          }>}}`;
+          return `{{<audio src="${data.src}" span="${data.span}" title="${data.title}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<audio src="${data.src}" span="${data.span}" ${
-            data.title !== "" && `title="${data.title}"`
-          }>}}`;
+          return `{{<audio src="${data.src}" span="${data.span}" title="${data.title}">}}`;
         },
       };
 
@@ -138,7 +134,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<bullet type="\${data\.type}" \${\s*data\.leadingText\s*!==\s*""\s*&&\s*`leadingText="\${data\.leadingText}"`\s*} \${\s*data\.text\s*!==\s*""\s*&&\s*`text="\${data\.text}"`\s*}>\}\}/ms,
+        pattern: /\{\{<bullet type="(.*?)" leadingText="(.*?)" text="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -158,18 +154,12 @@
         // markdown document
         toBlock: function (data) {
           // {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" span="3" title="6-second synth melody">}}
-          return `{{<bullet type="${data.type}" ${
-            data.leadingText !== "" &&
-            `leadingText="${data.leadingText}"`
-          } ${data.text !== "" && `text="${data.text}"`}>}}`;
+          return `{{<bullet type="${data.type}" leadingText="${data.leadingText}" text="${data.text}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<bullet type="${data.type}" ${
-            data.leadingText !== "" &&
-            `leadingText="${data.leadingText}"`
-          } ${data.text !== "" && `text="${data.text}"`}>}}`;
+          return `{{<bullet type="${data.type}" leadingText="${data.leadingText}" text="${data.text}">}}`;
         },
       };
 
@@ -246,7 +236,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<color span="\${data\.span}" name="\${data\.name}" hex="\${data\.hex}" rgb="\${data\.rgb}" pantone="\${data\.pantone}" cmyk="\${data\.cmyk}" mui="\${data\.mui}" >\}\}/ms,
+        pattern: /\{\{<color span="(.*?)" name="(.*?)" hex="(.*?)" rgb="(.*?)" pantone="(.*?)" cmyk="(.*?)" mui="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -269,12 +259,12 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<color span="${data.span}" name="${data.name}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}" >}}`;
+          return `{{<color span="${data.span}" name="${data.name}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<color span="${data.span}" name="${data.name}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}" >}}`;
+          return `{{<color span="${data.span}" name="${data.name}" hex="${data.hex}" rgb="${data.rgb}" pantone="${data.pantone}" cmyk="${data.cmyk}" mui="${data.mui}">}}`;
         },
       };
 
@@ -329,7 +319,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<column span="\${data\.span}" \${\s*data\.color\s*!==\s*""\s*&&\s*`color="\${data\.color}"`\s*} align="\${data\.align}">\}\}\${data\.content}\{\{<\/column>\}\}/ms,
+        pattern: /\{\{<column span="(.*?)" color="(.*?)" align="(.*?)"\>\}\}(.*?){\{<\/column>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -349,16 +339,12 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<column span="${data.span}" ${
-            data.color !== "" && `color="${data.color}"`
-          } align="${data.align}">}}${data.content}{{</column>}}`;
+          return `{{<column span="${data.span}" color="${data.color}" align="${data.align}">}}${data.content}{{</column>}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          return `{{<column span="${data.span}" ${
-            data.color !== "" && `color="${data.color}"`
-          } align="${data.align}">}}${data.content}{{</column>}}`;
+          return `{{<column span="${data.span}" color="${data.color}" align="${data.align}">}}${data.content}{{</column>}}`;
         },
       };
 
@@ -399,7 +385,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<divider-title text="\${data\.text}" align="\${data\.align}">\}\}/ms,
+        pattern: /\{\{<divider-title text="(.*?)" align="(.*?)"\>\}\}/ms,
           // Given a RegExp Match object
           // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
           // return an object with one property for each field defined in `fields`.
@@ -483,7 +469,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<download span="\${data\.span}" title="\${data\.title}" url="\${data\.url}" subtitle="\${data\.subtitle}">\}\}/ms,
+        pattern: /\{\{<download span="(.*?)" title="(.*?)" url="(.*?)" subtitle="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -557,7 +543,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<hint type="\${data\.type}" span="\${data\.span}">\}\}\${data\.content}\{\{<\/hint>\}\}/ms,
+        pattern: /\{\{<hint type="(.*?)" span="(.*?)"\>\}\}(.*?)}\{\{<\/hint\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -684,7 +670,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<image src="\${data\.src}" span="\${data\.span}" text_position="\${data\.text_position}" \${data\.title\s*!==\s*""\s*&&\s*`title="\${data\.title}"`\s*} \${data\.description\s*!==\s*""\s*&&\s*`description="\${data\.description}"`\s*} \${data\.overlay\s*!==\s*""\s*&&\s*`overlay="\${data\.overlay}"`\s*} \${data\.light\s*!==\s*"false"\s*&&\s*`light="\${data\.light}"`\s*} \${data\.dark\s*!==\s*"false"\s*&&\s*`dark="\${data\.dark}"`\s*} \${data\.scale\s*!==\s*"false"\s*&&\s*`scale="\${data\.scale}"`\s*}\s*\>\}\}/ms,
+        pattern: /\{\{<image src="(.*?)" span="(.*?)" text_position="(.*?)" title="(.*?)" description="(.*?)" overlay="(.*?)" light="(.*?)" dark="(.*?)" scale="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -709,16 +695,7 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<image src="${data.src}"
-          span="${data.span}"
-          text_position="${data.text_position}"
-          ${data.title !== "" && `title="${data.title}"`}
-          ${data.description !== "" && `description="${data.description}"`}
-          ${data.overlay !== "" && `overlay="${data.overlay}"`}
-          ${data.light !== "false" && `light="${data.light}"`}
-          ${data.dark !== "false" && `dark="${data.dark}"`}
-          ${data.scale !== "false" && `scale="${data.scale}"`}
-          >}}`;
+          return `{{<image src="${data.src}" span="${data.span}" text_position="${data.text_position}" title="${data.title}" description="${data.description}" overlay="${data.overlay}" light="${data.light}" dark="${data.dark}" scale="${data.scale}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
@@ -809,7 +786,7 @@
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
         // pattern: /^<details>$\s*?<summary>(.*?)<\/summary>\n\n(.*?)\n^<\/details>$/ms,
 
-        pattern: /\{\{<video src="\${data\.src}" span="\${data\.span}" autoplay="\${data\.autoplay}" muted="\${data\.muted}" loop="\${data\.loop}" poster="\${data\.poster}"\>\}\}/ms,
+        pattern: /\{\{<video src="(.*?)" span="(.*?)" autoplay="(.*?)" muted="(.*?)" loop="(.*?)" poster="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
