@@ -15,7 +15,7 @@ body {
   border-left: 1px solid $gray;
   line-height: 1.5;
 
-  .content-body {
+  .content-body, .frame-content {
     max-width: 960px;
     padding: 48px 40px;
     display: grid;
