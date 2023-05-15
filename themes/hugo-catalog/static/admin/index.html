@@ -756,8 +756,8 @@
           const title_top = data.text_position === "top" && data.title !=="" ? `<p><b>${data.title}</b></p>` : "";
           const description_top = data.text_position === "top" && data.description !=="" ? `<p>${data.description}</p>` : "";
           const overlay = data.overlay !== "" ? `class="source"` : "";
-          const imageURL = `${window.location.href.split('/admin/')[0]}/${data.src}`;
-          const overlayURL = data.overlay !== "" ? `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}/${data.overlay}`}" /></div>` : "";
+          const imageURL = `${window.location.href.split('/admin/')[0]}${data.src}`;
+          const overlayURL = data.overlay !== "" ? `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}${data.overlay}`}" /></div>` : "";
           const title_bottom = data.text_position === "bottom" && data.title !== "" ? `<p><b>${data.title}</b></p>` : "";
           const description_bottom = data.text_position === "bottom" && data.description !== "" ? `<p>${data.description}</p>` : "";
           const isLight = convertToBool(data.light);
@@ -891,7 +891,7 @@
           const posterSrc = data.poster.includes('/static/') ? data.poster.split('/static/')[1] : data.poster;
           const src = data.src.includes('/static/') ? data.src.split('/static/')[1] : data.src;
           const posterUrl = data.poster !== "" ? `${window.location.href.split('/admin/')[0]}/${posterSrc}` : "";
-          const videoUrl = data.src !== "" ? `${window.location.href.split('/admin/')[0]}/${src}` : "";
+          const videoUrl = data.src !== "" ? `${window.location.href.split('/admin/')[0]}${src}` : "";
           const isLooped = convertToBool(data.loop);
           const isMuted = convertToBool(data.muted);
           const isAutoplayed = convertToBool(data.autoplay);
@@ -911,9 +911,9 @@
           return `<div class="span-${data.span}">
             <video
             poster="${posterUrl}"
-            ${isLooped === true ? 'loop' : ""}
-            ${isAutoplayed === true ? 'autoplay' : ""}
-            ${isMuted === true ? 'muted': ""}
+            ${isLooped === true && "loop"}
+            ${isAutoplayed === true && "autoplay"}
+            ${isMuted === true && "muted"}
             controls>
                 <source src="${videoUrl}"></source>
             </video>
