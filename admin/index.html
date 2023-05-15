@@ -127,9 +127,8 @@
           {
             name: "type",
             label: "Type",
-            widget: "select",
-            options: ["do", "dont"],
-            default: ["do"],
+            widget: "boolean",
+            default: true,
           },
         ],
         // Regex pattern used to search for instances of this block in the markdown document.
@@ -152,7 +151,7 @@
           return {
             leading_text: match[1],
             text: match[2],
-            type: match[3],
+            type: convertBool(match[3]),
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -166,7 +165,7 @@
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
-          const type = data.type === "do" ? `<i class="fa-regular fa-circle-check success"></i>` : `<i class="far fa-window-close danger"></i>`;
+          const type = data.type === true ? `<i class="fa-regular fa-circle-check success"></i>` : `<i class="far fa-window-close danger"></i>`;
           const leading_text = data.leading_text !== "" ? `<b>${data.leading_text}</b>` : "";
           const text = data.text !== "" ? `${data.text}` : "";
           return `<div class="bullet">
