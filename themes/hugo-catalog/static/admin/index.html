@@ -745,17 +745,9 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          console.log('----- Image toBlock -----');
-          console.log({data});
           const isLight = convertToBool(data.light);
           const isDark = convertToBool(data.dark);
           const scaleImage = convertToBool(data.scale);
-          console.log("Is Light = ", isLight);
-          console.log("Is Dark = ", isDark);
-          console.log("Scale Image = ", scaleImage);
-          console.log(typeof isLight);
-          console.log(typeof isDark);
-          console.log(typeof scaleImage);
           return `{{<image src="${data.src}" span="${data.span}" text_position="${data.text_position}" title="${data.title}" description="${data.description}" overlay="${data.overlay}" light="${data.light}" dark="${data.dark}" scale="${data.scale}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
@@ -771,11 +763,6 @@
           const isLight = convertToBool(data.light);
           const isDark = convertToBool(data.dark);
           const scaleImage = convertToBool(data.scale);
-          console.log('----- Image toPreview -----');
-          console.log(typeof data.light);
-          console.log(typeof isLight);
-          console.log("Data light = ", data.light);
-          console.log("Is light = ", isLight);
           return `<div
           class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
         >
@@ -905,12 +892,28 @@
           const src = data.src.includes('/static/') ? data.src.split('/static/')[1] : data.src;
           const posterUrl = data.poster !== "" ? `${window.location.href.split('/admin/')[0]}/${posterSrc}` : "";
           const videoUrl = data.src !== "" ? `${window.location.href.split('/admin/')[0]}/${src}` : "";
+          const isLooped = convertToBool(data.loop);
+          const isMuted = convertToBool(data.muted);
+          const isAutoplayed = convertToBool(data.autoplay);
+          console.log('----- Video toPreview -----');
+          console.log(typeof data.loop);
+          console.log(typeof isLooped);
+          console.log("Data loop = ", data.loop);
+          console.log("Is looped = ", isLooped);
+          console.log(typeof data.muted);
+          console.log(typeof isMuted);
+          console.log("Data muted = ", data.muted);
+          console.log("Is muted = ", isMuted);
+          console.log(typeof data.autoplay);
+          console.log(typeof isAutoplayed);
+          console.log("Data autoplay = ", data.autoplay);
+          console.log("Is autoplay = ", isAutoplayed);
           return `<div class="span-${data.span}">
             <video
             poster="${posterUrl}"
-            ${data.loop === true ? 'loop' : ""}
-            ${data.autoplay === true ? 'autoplay' : ""}
-            ${data.muted === true ? 'muted': ""}
+            ${isLooped === true ? 'loop' : ""}
+            ${isAutoplayed === true ? 'autoplay' : ""}
+            ${isMuted === true ? 'muted': ""}
             controls>
                 <source src="${videoUrl}"></source>
             </video>
