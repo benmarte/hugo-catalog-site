@@ -25,4 +25,8 @@
   [class^="span-"] {
     grid-column: span 6 !important;
   }
+  .image-shortcode.no-scale div > img{
+    width: 100% !important;
+    height: auto !important;
+  }
 }
