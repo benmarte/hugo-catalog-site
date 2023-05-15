@@ -11,13 +11,14 @@ The Audio shortcode can be used to document the audible aspects, for example bac
 
 - **src:** required string - the url pointing to the source file
 - **title:** optional string - a title for the audio clip, otherwise the filename is used
-- **autoplay:** optional boolean - if true, the audio clip plays without interaction
-- **loop:** optional boolean - if true, the audio clip plays repeatedly
 - **span:** required number - [1–6] width of the shortcode
+- **autoplay:** optional boolean - if true, the audio clip plays without interaction defaults to **false**
+- **muted:** optional boolean - if true, the audio file will be muted default to **false**
+- **loop:** optional boolean - if true, the audio clip plays repeatedly defaults to **false**
 
 {{<divider-title title="HTML Example" align="left">}}
 
-{{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" title="6-second synth melody" span="3">}}
+{{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" title="6-second synth melody" span="3" autoplay="false" muted="false" loop="false">}}
 
 {{<divider-title title="Markdown Example" align="left">}}
 

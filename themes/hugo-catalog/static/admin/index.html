@@ -54,6 +54,24 @@
             options: ["1", "2", "3", "4", "5", "6"],
             default: ["6"]
           },
+          {
+            name: "autoplay",
+            label: "Auto Play",
+            widget: "boolean",
+            default: false,
+          },
+          {
+            name: "muted",
+            label: "Muted",
+            widget: "boolean",
+            default: false,
+          },
+          {
+            name: "loop",
+            label: "Loop",
+            widget: "boolean",
+            default: false,
+          },
         ],
         // Regex pattern used to search for instances of this block in the markdown document.
         // Patterns are run in a multline environment (against the entire markdown document),
@@ -65,7 +83,7 @@
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
 
-        pattern: /\{\{<audio src="(.*?)" title="(.*?)" span="(.*?)"\>\}\}/ms,
+        pattern: /\{\{<audio src="(.*?)" title="(.*?)" span="(.*?)" autoplay="(.*?)" muted="(.*?)" loop="(.*?)">}}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -76,6 +94,9 @@
             src: match[1],
             title: match[2],
             span: match[3],
+            autoplay: convertToBool(match[4]), 
+            muted: convertToBool(match[5]),
+            loop: convertToBool(match[6]),
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -90,10 +111,20 @@
         // (component gives better render performance)
         toPreview: function (data) {
           const title = data.title !== "" ? `<p>${data.title}</p>` : "";
+          const autoplay = convertToBool(data.autoplay);
+          const muted = convertToBool(data.muted);
+          const loop = convertToBool(data.loop);
           return `<div class="span-${data.span}">
             <div class="audio-shortcode">
               ${title}
-              <audio src="${data.src}" controls></audio>
+              <audio
+                src="${data.src}"
+                ${isLooped ? "loop" : ""}
+                ${isAutoplayed ? "autoplay" : ""}
+                ${isMuted ? "muted" : ""}
+                controls
+              >
+              </audio>
             </div>
           </div>`;
         },
