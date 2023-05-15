@@ -1,6 +1,7 @@
 ---
-title: Widgets
+title: Decap Widgets
 ---
+
 ## Audio Widget
 
 {{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" title="6-second synth melody" span="3">}}
