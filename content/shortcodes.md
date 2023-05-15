@@ -33,7 +33,7 @@ The Bullet shortcode can be used to display do's and dont's.
 
 **Shortcode Parameters**
 
-- **type:** required string - can be of type **do** or **dont**
+- **type:** required boolean - can be of type **true** or **false**
 - **leading_text:** optional string - the text to display at the beginning of the text, displays in bold
 - **text** - required string - text to display with the bullet line
 
@@ -358,10 +358,10 @@ The Video shortcode can be used to display videos.
 
 {{<divider-title title="HTML Example" align="left">}}
 
-{{<video src="/images/download-demo.mp4" span="6" autoplay="true" muted="true" poster="">}}
+{{<video src="/images/download-demo.mp4" span="6" autoplay="false" muted="true" loop="false" poster="/images/gitlab-decap-login.png">}}
 
 {{<divider-title title="Markdown Example" align="left">}}
 
 ```html
-{{</*video src="/images/download-demo.mp4" span="6" autoplay="true" muted="true"*/>}}
+{{</*video src="/images/download-demo.mp4" span="6" autoplay="true" muted="true" loop="false" poster="/images/gitlab-decap-login.png" */>}}
 ```
