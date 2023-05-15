@@ -718,16 +718,6 @@
         //
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
-          console.log({match});
-          const isLight = match[7] === "true" ? true : false;
-          const isDark = match[8] === "true" ? true : false;
-          const scaleImage = match[9] === "true" ? true : false;
-          console.log("Is Light = ", isLight);
-          console.log("Is Dark = ", isDark);
-          console.log("Scale Image = ", scaleImage);
-          console.log(typeof isLight);
-          console.log(typeof isDark);
-          console.log(typeof scaleImage);
           return {
             src: match[1],
             span: match[2],
@@ -746,6 +736,16 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
+          console.log({data});
+          const isLight = data.light === "true" ? true : false;
+          const isDark = data.dark === "true" ? true : false;
+          const scaleImage = data.scale === "true" ? true : false;
+          console.log("Is Light = ", isLight);
+          console.log("Is Dark = ", isDark);
+          console.log("Scale Image = ", scaleImage);
+          console.log(typeof isLight);
+          console.log(typeof isDark);
+          console.log(typeof scaleImage);
           return `{{<image src="${data.src}" span="${data.span}" text_position="${data.text_position}" title="${data.title}" description="${data.description}" overlay="${data.overlay}" light="${data.light}" dark="${data.dark}" scale="${data.scale}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
