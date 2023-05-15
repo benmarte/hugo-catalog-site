@@ -736,6 +736,7 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
+          console.log('----- Image toBlock -----');
           console.log({data});
           const isLight = data.light === "true" ? true : false;
           const isDark = data.dark === "true" ? true : false;
@@ -761,6 +762,10 @@
           const isLight = data.light === true ? 'light' : "";
           const isDark = data.dark === true ? 'dark' : "";
           const scaleImage = data.scale === false ? 'no-scale' : "";
+          console.log('----- Image toPreview -----');
+          console.log(typeof data.light);
+          console.log("Data light = ", data.light);
+          console.log("Is light = ", isLight);
           return `<div
           class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
         >
@@ -874,6 +879,13 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
+          const autoplay = data.autoplay === "true" ? true : false;
+          const muted = data.autoplay === "true" ? true : false;
+          const loop = data.autoplay === "true" ? true : false;
+          console.log('----- Video toBlock -----');
+          console.log("Autoplay = ", autoplay);
+          console.log("Muted = ", muted);
+          console.log("Loop = ", loop);
           return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}" poster="${data.poster}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
