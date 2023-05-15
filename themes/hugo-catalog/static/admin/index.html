@@ -748,16 +748,16 @@
           const overlayURL = data.overlay !== "" ? `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}/${data.overlay}`}" /></div>` : "";
           const title_bottom = data.text_position === "bottom" && data.title !== "" ? `<p><b>${data.title}</b></p>` : "";
           const description_bottom = data.text_position === "bottom" && data.description !== "" ? `<p>${data.description}</p>` : "";
-          const isLight = data.light === "true" ? 'light' : "";
-          const isDark = data.dark === "true" ? 'dark' : "";
-          const scaleImage = data.scale === "false" ? 'no-scale' : "";
-          console.log("Light = ", data.light);
+          const isLight = data.light === true ? 'light' : "";
+          const isDark = data.dark === true ? 'dark' : "";
+          const scaleImage = data.scale === false ? 'no-scale' : "";
+          console.log("isLight = ", isLight);
           console.log("Dark = ", data.dark);
           console.log("Scale = ", data.scale);
 
-          console.log("Data light string", data.light === "true");
-          console.log("Data light boolean", data.light === true);
-          console.log(typeof data.light);
+          console.log("Is light string", isLight === "true");
+          console.log("Is light boolean", isLight === true);
+          console.log(typeof isLight);
           return `<div
           class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
         >
