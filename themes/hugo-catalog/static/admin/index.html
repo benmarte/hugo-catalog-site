@@ -722,6 +722,12 @@
           const isLight = match[7] === "true" ? true : false;
           const isDark = match[8] === "true" ? true : false;
           const scaleImage = match[9] === "true" ? true : false;
+          console.log("Is Light = ", isLight);
+          console.log("Is Dark = ", isDark);
+          console.log("Scale Image = ", scaleImage);
+          console.log(typeof isLight);
+          console.log(typeof isDark);
+          console.log(typeof scaleImage);
           return {
             src: match[1],
             span: match[2],
@@ -755,11 +761,6 @@
           const isLight = data.light === true ? 'light' : "";
           const isDark = data.dark === true ? 'dark' : "";
           const scaleImage = data.scale === false ? 'no-scale' : "";
-          console.log("scaleImage = ", scaleImage);
-
-          console.log("scaleImage", scaleImage === "true");
-          console.log("scaleImage", scaleImage === true);
-          console.log(typeof scaleImage);
           return `<div
           class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
         >
