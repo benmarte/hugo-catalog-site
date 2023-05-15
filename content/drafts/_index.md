@@ -7,9 +7,9 @@ title: Widgets
 
 ## Bullet Widget
 
-{{<bullet leading_text="Do:" text="example bullet text" type="do">}}
+{{<bullet leading_text="Do:" text="example bullet text" type="true">}}
 
-{{<bullet leading_text="Dont:" text="example bullet text" type="dont">}}
+{{<bullet leading_text="Dont:" text="example bullet text" type="false">}}
 
 ## Color Widget
 

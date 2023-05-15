@@ -436,14 +436,14 @@ The Bullet shortcode can be used to display do's and dont's.
 
 {{<divider-title title="Example Usage">}}
 
-{{<bullet leading_text="Do:" text="example bullet text" type="do">}}
+{{<bullet leading_text="Do:" text="example bullet text" type="true">}}
 
-{{<bullet leading_text="Dont:" text="example bullet text" type="dont">}}
+{{<bullet leading_text="Dont:" text="example bullet text" type="false">}}
 
 {{<divider-title title="Markdown Example">}}
 
 ```html
-{{</*bullet leading_text="Do:" text="example bullet text" type="do"*/>}}
+{{</*bullet leading_text="Do:" text="example bullet text" type="true"*/>}}
 
-{{</*bullet leading_text="Dont:" text="example bullet text" type="dont"*/>}}
+{{</*bullet leading_text="Dont:" text="example bullet text" type="false"*/>}}
 ```

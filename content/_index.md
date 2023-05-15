@@ -13,13 +13,13 @@ It ships with [10 shortcodes](/shortcodes) so your editors can make beautiful St
 
 {{<divider-title title="How does Hugo Catalog help you?">}}
 
-{{<bullet leading_text="Consistency:" text="Provides a cohesive experience across all of your brand touchpoints by providing a single source of truth" type="do">}}
+{{<bullet leading_text="Consistency:" text="Provides a cohesive experience across all of your brand touchpoints by providing a single source of truth" type="true">}}
 
-{{<bullet leading_text="Efficiency:" text="Less time concentrating on details that the design system already accounts for. More time focussing on user experience, flows, iterating, building valuable new features, and improving your products" type="do">}}
+{{<bullet leading_text="Efficiency:" text="Less time concentrating on details that the design system already accounts for. More time focussing on user experience, flows, iterating, building valuable new features, and improving your products" type="true">}}
 
-{{<bullet leading_text="Onboarding:" text="Helps provide an overview of your brand and the expectations of anyone representing it" type="do">}}
+{{<bullet leading_text="Onboarding:" text="Helps provide an overview of your brand and the expectations of anyone representing it" type="true">}}
 
-{{<bullet leading_text="Culture:" text="Promotes and encourages value in design, internally across all teams" type="do">}}
+{{<bullet leading_text="Culture:" text="Promotes and encourages value in design, internally across all teams" type="true">}}
 
 {{<hint type="warning" span="6">}}
 **Warning**
