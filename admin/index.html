@@ -726,9 +726,9 @@
             title: match[4],
             description: match[5],
             overlay: match[6],
-            light: match[7],
-            dark: match[8],
-            scale: match[9],
+            light: match[7] === "true" ? true : false,
+            dark: match[8] === "true" ? true : false,
+            scale: match[9] === "true" ? true : false,
           };
         },
         // Given an object with one property for each field defined in `fields`,
