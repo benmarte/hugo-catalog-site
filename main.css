@@ -129,6 +129,12 @@ body {
 .frame-content h6 {
   margin: 32px 0 !important; }
 
+.frame-content blockquote {
+  margin: 32px 0; }
+
+.frame-content .divider-title {
+  margin: 24px 0; }
+
 .brand {
   padding: 40px;
   width: calc(250px - 80px);
