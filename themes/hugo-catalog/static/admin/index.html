@@ -719,6 +719,9 @@
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           console.log({match});
+          const isLight = match[7] === "true" ? true : false;
+          const isDark = match[8] === "true" ? true : false;
+          const scaleImage = match[9] === "true" ? true : false;
           return {
             src: match[1],
             span: match[2],
@@ -726,9 +729,9 @@
             title: match[4],
             description: match[5],
             overlay: match[6],
-            light: match[7] === "true" ? true : false,
-            dark: match[8] === "true" ? true : false,
-            scale: match[9] === "true" ? true : false,
+            light: isLight,
+            dark: isDark,
+            scale: scaleImage,
           };
         },
         // Given an object with one property for each field defined in `fields`,
