@@ -760,11 +760,15 @@
           const overlayURL = data.overlay !== "" ? `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}${data.overlay}`}" /></div>` : "";
           const title_bottom = data.text_position === "bottom" && data.title !== "" ? `<p><b>${data.title}</b></p>` : "";
           const description_bottom = data.text_position === "bottom" && data.description !== "" ? `<p>${data.description}</p>` : "";
-          const isLight = convertToBool(data.light);
-          const isDark = convertToBool(data.dark);
-          const scaleImage = convertToBool(data.scale);
+          const isLight = convertToBool(data.light) ? "light" : "";
+          const isDark = convertToBool(data.dark) ? "dark" : "";
+          const scaleImage = convertToBool(data.scale) ? "" : "no-scale";
+          console.log('----- Image toPreview -----');
+          console.log("Is Light = ", isLight);
+          console.log("Is Dark = ", isDark);
+          console.log("Scale Image = ", scaleImage);
           return `<div
-          class="span-${data.span} image-shortcode ${isLight ? "light" : ""} ${isDark ? "dark" : ""} ${scaleImage === false ? "no-scale" : ""}"
+          class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
         >
         ${title_top}
         ${description_top}
@@ -879,10 +883,6 @@
           const autoplay = convertToBool(data.autoplay);
           const muted = convertToBool(data.autoplay);
           const loop = convertToBool(data.autoplay);
-          console.log('----- Video toBlock -----');
-          console.log("Autoplay = ", autoplay);
-          console.log("Muted = ", muted);
-          console.log("Loop = ", loop);
           return `{{<video src="${data.src}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}" poster="${data.poster}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
