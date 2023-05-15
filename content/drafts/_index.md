@@ -83,6 +83,6 @@ title: Widgets
 
 ## Video Widget
 
-{{<video src="/images/download-demo.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
+{{<video src="/images/download-demo.mp4" span="6" autoplay="true" muted="true" loop="true" poster="">}}
 
 {{<video src="/images/download-demo.mp4" span="6" autoplay="false" muted="false" loop="false" poster="/static/images/github-decap-login.png">}}
