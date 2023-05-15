@@ -755,8 +755,8 @@
           console.log("Dark = ", data.dark);
           console.log("Scale = ", data.scale);
 
-          console.log("Data light string", data.light == "true");
-          console.log("Data light boolean", data.light == true);
+          console.log("Data light string", data.light === "true");
+          console.log("Data light boolean", data.light === true);
           console.log(typeof data.light);
           return `<div
           class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
