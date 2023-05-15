@@ -1,5 +1,5 @@
 {{$type := .Get "type" | default "do"}}
-{{$leadingText := .Get "leadingText" | default ""}}
+{{$leading_text := .Get "leading_text" | default ""}}
 {{$text := .Get "text" | default ""}}
 
 <div class="bullet">
@@ -9,7 +9,7 @@
   <i class="far fa-window-close danger"></i>
   {{end}}
   <div>
-    {{if ne $leadingText ""}}<b>{{$leadingText}}</b>{{end}}
+    {{if ne $leading_text ""}}<b>{{$leading_text}}</b>{{end}}
     {{if ne $text ""}}{{$text}}{{end}}
   </div>
 </div>

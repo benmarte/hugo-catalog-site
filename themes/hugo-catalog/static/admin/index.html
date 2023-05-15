@@ -111,7 +111,7 @@
         // Fields the user need to fill out when adding an instance of the component
         fields: [
           {
-            name: "leadingText",
+            name: "leading_text",
             label: "Leading Text",
             widget: "string",
             default: "",
@@ -142,7 +142,7 @@
         // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
         // `(.*?)` vs `(.*)`), especially if matching against newline characters.
 
-        pattern: /\{\{<bullet leadingText="(.*?)" text="(.*?)" type="(.*?)"\>\}\}/ms,
+        pattern: /\{\{<bullet leading_text="(.*?)" text="(.*?)" type="(.*?)"\>\}\}/ms,
         // Given a RegExp Match object
         // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
         // return an object with one property for each field defined in `fields`.
@@ -150,7 +150,7 @@
         // This is used to populate the custom widget in the markdown editor in the CMS.
         fromBlock: function (match) {
           return {
-            leadingText: match[1],
+            leading_text: match[1],
             text: match[2],
             type: match[3],
           };
@@ -161,18 +161,18 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<bullet leadingText="${data.leadingText}" text="${data.text}" type="${data.type}">}}`;
+          return `{{<bullet leading_text="${data.leading_text}" text="${data.text}" type="${data.type}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
         toPreview: function (data) {
           const type = data.type === "do" ? `<i class="fa-regular fa-circle-check success"></i>` : `<i class="far fa-window-close danger"></i>`;
-          const leadingText = data.leadingText !== "" ? `<b>${data.leadingText}</b>` : "";
+          const leading_text = data.leading_text !== "" ? `<b>${data.leading_text}</b>` : "";
           const text = data.text !== "" ? `${data.text}` : "";
           return `<div class="bullet">
             ${type}
             <div>
-              ${leadingText}
+              ${leading_text}
               ${text}
             </div>
           </div>`;

@@ -410,14 +410,14 @@ The Divider Title shortcode can be used as a divider.
 - **title:** required string - the text to display above the divider
 - **align:** optional string - controls the text alignment, defaults to **left**
 
-{{<divider-title title="No alignment set defaults to left">}}
+{{<divider-title title="No alignment set defaults to left" align="left">}}
 
 {{<divider-title title="Aligned to center" align="center">}}
 
 {{<divider-title title="Aligned to right" align="right">}}
 
 ```html
-{{</*divider-title title="No alignment set defaults to left"*/>}}
+{{</*divider-title title="No alignment set defaults to left" align="left"*/>}}
 
 {{</*divider-title title="Aligned to center" align="center"*/>}}
 
@@ -431,19 +431,19 @@ The Bullet shortcode can be used to display do's and dont's.
 **Shortcode Parameters**
 
 - **type:** required string - can be of type **do** or **dont**
-- **leadingText:** optional string - the text to display at the beginning of the text, displays in bold
+- **leading_text:** optional string - the text to display at the beginning of the text, displays in bold
 - **text** - required string - text to display with the bullet line
 
 {{<divider-title title="Example Usage">}}
 
-{{<bullet leadingText="Do:" text="example bullet text" type="do">}}
+{{<bullet leading_text="Do:" text="example bullet text" type="do">}}
 
-{{<bullet leadingText="Dont:" text="example bullet text" type="dont">}}
+{{<bullet leading_text="Dont:" text="example bullet text" type="dont">}}
 
 {{<divider-title title="Markdown Example">}}
 
 ```html
-{{</*bullet leadingText="Do:" text="example bullet text" type="do"*/>}}
+{{</*bullet leading_text="Do:" text="example bullet text" type="do"*/>}}
 
-{{</*bullet leadingText="Dont:" text="example bullet text" type="dont"*/>}}
+{{</*bullet leading_text="Dont:" text="example bullet text" type="dont"*/>}}
 ```
