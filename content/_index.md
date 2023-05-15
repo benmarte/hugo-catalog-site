@@ -11,7 +11,7 @@ It ships with [10 shortcodes](/shortcodes) so your editors can make beautiful St
 
 > I made Hugo Catalog because Catalog is abandonware and I needed something my clients could use and edit themselves. - Ben Marte
 
-{{<divider-title title="How does Hugo Catalog help you?">}}
+{{<divider-title title="How does Hugo Catalog help you?" align="left">}}
 
 {{<bullet leading_text="Consistency:" text="Provides a cohesive experience across all of your brand touchpoints by providing a single source of truth" type="true">}}
 

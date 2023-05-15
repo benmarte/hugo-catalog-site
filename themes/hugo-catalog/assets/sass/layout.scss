@@ -109,6 +109,7 @@ body {
   }
 }
 
+// CSS to apply to decap previews
 .frame-content {
   .color-shortcode, .download, .hint-shortcode, .image-shortcode {
     margin-top: 32px;
@@ -125,5 +126,11 @@ body {
   h5,
   h6 {
     margin: 32px 0 !important;
+  }
+  blockquote {
+    margin: 32px 0;
+  }
+  .divider-title {
+    margin: 24px 0;
   }
 }

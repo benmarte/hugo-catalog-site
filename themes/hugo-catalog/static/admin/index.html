@@ -319,7 +319,7 @@
             name: "color",
             label: "Color",
             widget: "color",
-            default: "#000000",
+            default: "#f9f9f9",
             required: false,
           },
           {
@@ -355,7 +355,7 @@
         fromBlock: function (match) {
           return {
             span: match[1],
-            color: match[2],
+            color: match[2] === "#f9f9f9" ? "" : match[2],
             align: match[3],
             content: match[4],
           };
