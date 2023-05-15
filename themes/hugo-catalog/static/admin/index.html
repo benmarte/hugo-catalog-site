@@ -908,9 +908,9 @@
           return `<div class="span-${data.span}">
             <video
             poster="${posterUrl}"
-            loop="${data.loop}"
-            autoplay="${data.autoplay}"
-            muted="${data.muted}"
+            ${data.loop === true ? 'loop' : ""}
+            ${data.autoplay === true ? 'autoplay' : ""}
+            ${data.muted === true ? 'muted': ""}
             controls>
                 <source src="${videoUrl}"></source>
             </video>
