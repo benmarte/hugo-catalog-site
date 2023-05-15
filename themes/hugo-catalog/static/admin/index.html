@@ -764,7 +764,7 @@
           const isDark = convertToBool(data.dark);
           const scaleImage = convertToBool(data.scale);
           return `<div
-          class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
+          class="span-${data.span} image-shortcode ${isLight ? "light" : ""} ${isDark ? "dark" : ""} ${scaleImage ? "" : "no-scale"}"
         >
         ${title_top}
         ${description_top}
@@ -911,9 +911,9 @@
           return `<div class="span-${data.span}">
             <video
             poster="${posterUrl}"
-            ${isLooped === true && "loop"}
-            ${isAutoplayed === true && "autoplay"}
-            ${isMuted === true && "muted"}
+            ${isLooped ? "loop" : ""}
+            ${isAutoplayed ? "autoplay" : ""}
+            ${isMuted ? "muted" : ""}
             controls>
                 <source src="${videoUrl}"></source>
             </video>
