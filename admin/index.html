@@ -751,13 +751,11 @@
           const isLight = data.light === true ? 'light' : "";
           const isDark = data.dark === true ? 'dark' : "";
           const scaleImage = data.scale === false ? 'no-scale' : "";
-          console.log("isLight = ", isLight);
-          console.log("Dark = ", data.dark);
-          console.log("Scale = ", data.scale);
+          console.log("scaleImage = ", isLight);
 
-          console.log("Is light string", isLight === "true");
-          console.log("Is light boolean", isLight === true);
-          console.log(typeof isLight);
+          console.log("scaleImage", scaleImage === "true");
+          console.log("scaleImage", scaleImage === true);
+          console.log(typeof scaleImage);
           return `<div
           class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
         >
