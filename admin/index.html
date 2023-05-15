@@ -19,7 +19,7 @@
     <script>
 
       const convertToBool = (val) => {
-        const booleanValue = val === "true" ? true : false;
+        const booleanValue = val === "true"  || val === true ? true : false;
         console.log(typeof val);
         console.log("Original Value", val);
         console.log(typeof booleanValue);
