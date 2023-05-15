@@ -18,6 +18,15 @@
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <script>
 
+      const convertToBool = (val) => {
+        const booleanValue = val === "true" ? true : false;
+        console.log(typeof val);
+        console.log("Original Value", val);
+        console.log(typeof booleanValue);
+        console.log("Converted Value", booleanValue);
+        return booleanValue
+      };
+
       //  Start Audio Widget ------------------------------------------------------------------- /
 
       const AudioWidget = {
@@ -725,9 +734,9 @@
             title: match[4],
             description: match[5],
             overlay: match[6],
-            light: match[7],
-            dark: match[8],
-            scale: match[9],
+            light: convertToBool(match[7]),
+            dark: convertToBool(match[8]),
+            scale: convertToBool(match[9]),
           };
         },
         // Given an object with one property for each field defined in `fields`,
@@ -738,9 +747,9 @@
         toBlock: function (data) {
           console.log('----- Image toBlock -----');
           console.log({data});
-          const isLight = data.light === "true" ? true : false;
-          const isDark = data.dark === "true" ? true : false;
-          const scaleImage = data.scale === "true" ? true : false;
+          const isLight = convertToBool(data.light);
+          const isDark = convertToBool(data.dark);
+          const scaleImage = convertToBool(data.scale);
           console.log("Is Light = ", isLight);
           console.log("Is Dark = ", isDark);
           console.log("Scale Image = ", scaleImage);
@@ -759,11 +768,12 @@
           const overlayURL = data.overlay !== "" ? `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}/${data.overlay}`}" /></div>` : "";
           const title_bottom = data.text_position === "bottom" && data.title !== "" ? `<p><b>${data.title}</b></p>` : "";
           const description_bottom = data.text_position === "bottom" && data.description !== "" ? `<p>${data.description}</p>` : "";
-          const isLight = data.light === true ? 'light' : "";
-          const isDark = data.dark === true ? 'dark' : "";
-          const scaleImage = data.scale === false ? 'no-scale' : "";
+          const isLight = convertToBool(data.light);
+          const isDark = convertToBool(data.dark);
+          const scaleImage = convertToBool(data.scale);
           console.log('----- Image toPreview -----');
           console.log(typeof data.light);
+          console.log(typeof isLight);
           console.log("Data light = ", data.light);
           console.log("Is light = ", isLight);
           return `<div
@@ -867,9 +877,9 @@
           return {
             src: match[1],
             span: match[2],
-            autoplay: match[3],
-            muted: match[4],
-            loop: match[5],
+            autoplay: convertToBool(match[3]),
+            muted: convertToBool(match[4]),
+            loop: convertToBool(match[5]),
             poster: match[6],
           };
         },
@@ -879,9 +889,9 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          const autoplay = data.autoplay === "true" ? true : false;
-          const muted = data.autoplay === "true" ? true : false;
-          const loop = data.autoplay === "true" ? true : false;
+          const autoplay = convertToBool(data.autoplay);
+          const muted = convertToBool(data.autoplay);
+          const loop = convertToBool(data.autoplay);
           console.log('----- Video toBlock -----');
           console.log("Autoplay = ", autoplay);
           console.log("Muted = ", muted);
