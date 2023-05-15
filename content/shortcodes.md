@@ -417,11 +417,11 @@ The Divider Title shortcode can be used as a divider.
 {{<divider-title title="Aligned to right" align="right">}}
 
 ```html
-{{</*divider-title text="No alignment set defaults to left"*/>}}
+{{</*divider-title title="No alignment set defaults to left"*/>}}
 
-{{</*divider-title text="Aligned to center" align="center"*/>}}
+{{</*divider-title title="Aligned to center" align="center"*/>}}
 
-{{</*divider-title text="Aligned to right" align="right"*/>}}
+{{</*divider-title title="Aligned to right" align="right"*/>}}
 ```
 
 ## Bullet Shortcode
