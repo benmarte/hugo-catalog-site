@@ -1,10 +1,14 @@
 ---
 title: Decap Widgets
 ---
-
+Decap widgets convert Hugo shortcodes into decap compatible widgets so you can insert them into your markdown files via the decap editor.
 ## Audio Widget
 
-{{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" title="6-second synth melody" span="3">}}
+{{<audio src="https://samplelib.com/lib/preview/mp3/sample-6s.mp3" title="6-second synth melody" span="3" autoplay="false" muted="false" loop="false">}}
+
+The audio widget has the same 3 properties the [Audio shortcode](/shortcodes#audio-widget)
+
+{{<video src="/images/audio-widget.mp4" span="6" autoplay="false" muted="false" loop="false" >}}
 
 ## Bullet Widget
 
