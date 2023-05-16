@@ -111,15 +111,26 @@ body {
 
 // CSS to apply to decap previews
 .frame-content {
+  
   .color-shortcode, .download, .hint-shortcode, .image-shortcode {
     margin-top: 32px;
     &::first-child {
       margin-top: 0;
     }
   }
+
   video {
     margin-bottom: 32px;
   }
+  
+  pre {
+    width: calc(100% - 40px);
+    overflow: auto;
+    background: #000;
+    color: $success;
+    padding: 20px;
+  }
+
   h2,
   h3,
   h4,
@@ -127,10 +138,13 @@ body {
   h6 {
     margin: 32px 0 !important;
   }
+
   blockquote {
     margin: 32px 0;
   }
+
   .divider-title {
     margin: 24px 0;
   }
+
 }
