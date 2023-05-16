@@ -2,6 +2,7 @@
 title: Decap Widgets
 ---
 Decap widgets convert Hugo shortcodes into decap compatible widgets so you can insert them into your markdown files via the decap editor.
+
 ## Audio Widget
 
 The **Audio** widget has 6 properties, these are:
