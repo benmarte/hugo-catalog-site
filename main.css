@@ -122,6 +122,13 @@ body {
 .frame-content video {
   margin-bottom: 32px; }
 
+.frame-content pre {
+  width: calc(100% - 40px);
+  overflow: auto;
+  background: #000;
+  color: #8bc34a;
+  padding: 20px; }
+
 .frame-content h2,
 .frame-content h3,
 .frame-content h4,
