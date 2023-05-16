@@ -41,11 +41,47 @@ The **Bullet** widget has 3 properties, these are:
 
 ## Catalog Image Widget
 
-{{<catalog-image src="/images/hugo-catalog-logo.svg" span="6" text_position="top" title="Text Position Top" description="places the images title and description above it." overlay="" light="true" dark="false" scale="true">}}
+The **Catalog Image** widget has 9 properties, these are:
 
-{{<catalog-image src="/images/hugo-catalog-logo.svg" span="6" text_position="bottom" title="Text Position Bottom" description="places the images title and description below it." overlay="" light="false" dark="true" scale="true">}}
+- **src:** string required - path to the image you want to display, can be local file path or CDN based url
+- **overlay:** string optional - path to the image you want to display on hover, can be local file path or CDN based url
+- **title:** string optional - the title
+- **description:** string optional - markdown-formatted text description
+- **light:** boolean optional - a light checkered background
+- **dark:** boolean optional - a dark checkered background
+- **scale:** boolean optional - scale the image down if it’s wider than the container
+- **span:** number required - [1–6] width of the shortcode
+- **text_position:** string optional - can either be **top** to place the title and description above it or **bottom** to place it below it
+
+{{<divider-title title="HTML Example" align="left">}}
+
+{{<catalog-image src="/images/hugo-catalog-logo.svg" span="3" text_position="top" title="Text Position Top" description="places the images title and description above it." overlay="" light="true" dark="false" scale="true">}}
+
+{{<catalog-image src="/images/hugo-catalog-logo.svg" span="3" text_position="bottom" title="Text Position Bottom" description="places the images title and description below it." overlay="" light="false" dark="true" scale="true">}}
 
 {{<catalog-image src="/images/subtitle-image.png" span="6" text_position="top" title="Image with overlay" description="Displays alternate image on hover" overlay="/images/subtitle-image-hover.png" light="false" dark="false" scale="true">}}
+
+{{<divider-title title="Decap Usage" align="left">}}
+
+{{<video src="/images/catalog-image-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
+
+## Code Block Widget
+
+The **Code Block** widget allows you to insert code blocks into your markdown document, you can select the language for your code snippet by clicking the settings icon and selecting the appropriate mode for your code.
+
+{{<divider-title title="HTML Example" align="left">}}
+
+```json
+{
+    "name":"John",
+    "age":30,
+    "car":null,
+}
+```
+
+{{<divider-title title="Decap Usage" align="left">}}
+
+{{<video src="/images/code-block-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Color Widget
 
@@ -190,7 +226,7 @@ The **Image** widget has 3 properties, these are:
 
 {{<divider-title title="Decap Usage" align="left">}}
 
-{{<video src="/images/hint-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
+{{<video src="/images/image-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Video Widget
 
