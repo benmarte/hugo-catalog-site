@@ -111,9 +111,9 @@
         // (component gives better render performance)
         toPreview: function (data) {
           const title = data.title !== "" ? `<p>${data.title}</p>` : "";
-          const autoplay = convertToBool(data.autoplay);
-          const muted = convertToBool(data.muted);
-          const loop = convertToBool(data.loop);
+          const isAutoplayed = convertToBool(data.autoplay);
+          const isMuted = convertToBool(data.muted);
+          const isLooped = convertToBool(data.loop);
           return `<div class="span-${data.span}">
             <div class="audio-shortcode">
               ${title}
