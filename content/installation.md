@@ -51,9 +51,9 @@ title = true
 
 The path to your site logo can be a relative to the site or an image hosted on a CDN.
 
-{{<image src="/images/logo-image.png" span="3" text_position="top" title="Default hugo catalog logo" description="this is a test description" overlay="" light="false" dark="false" scale="true">}}
+{{<catalog-image src="/images/logo-image.png" span="3" text_position="top" title="Default hugo catalog logo" description="this is a test description" overlay="" light="false" dark="false" scale="true">}}
 
-{{<image src="/images/site-name-image.png" span="3" text_position="top" title="Default hugo catalog text logo" description="" overlay="" light="false" dark="false" scale="true">}}
+{{<catalog-image src="/images/site-name-image.png" span="3" text_position="top" title="Default hugo catalog text logo" description="" overlay="" light="false" dark="false" scale="true">}}
 
 {{<hint type="info" span="6">}}
 If you delete or comment out this value in your **`config.toml`** the sites title will be displayed as text in place of the logo.
@@ -65,9 +65,9 @@ If you delete or comment out this value in your **`config.toml`** the sites titl
 
 This controls the display of the site name above the header of the site.
 
-{{<image src="/images/subtitle-image.png" span="3" text_position="top" title="" description="" overlay="" light="false" dark="false" scale="true">}}
+{{<catalog-image src="/images/subtitle-image.png" span="3" text_position="top" title="" description="" overlay="" light="false" dark="false" scale="true">}}
 
-{{<image src="/images/custom-subtitle-image.png" span="3" text_position="top" title="" description="" overlay="" light="false" dark="false" scale="true">}}
+{{<catalog-image src="/images/custom-subtitle-image.png" span="3" text_position="top" title="" description="" overlay="" light="false" dark="false" scale="true">}}
 
 {{<hint type="info" span="6">}}
 If you set this value to true you will disable displaying the site name in the header, if you add a **subtitle** property to your pages front matter it will display regardless of this settings value.
@@ -105,6 +105,6 @@ You can change the font to any [google font](https://fonts.google.com/), just ch
 
 This setting controls if the pages table of contents gets rendered as sub nav items for the page being displayed.
 
-{{<image src="/images/toc.png" span="3" text_position="top" title="enable_subnav = true" description="" overlay="" light="false" dark="false" scale="true">}}
+{{<catalog-image src="/images/toc.png" span="3" text_position="top" title="enable_subnav = true" description="" overlay="" light="false" dark="false" scale="true">}}
 
-{{<image src="/images/toc-disabled.png" span="3" text_position="top" title="enable_subnav = false" description="" overlay="" light="false" dark="false" scale="true">}}
+{{<catalog-image src="/images/toc-disabled.png" span="3" text_position="top" title="enable_subnav = false" description="" overlay="" light="false" dark="false" scale="true">}}
