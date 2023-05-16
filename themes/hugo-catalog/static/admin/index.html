@@ -105,7 +105,7 @@
         // This is used to serialize the data from the custom widget to the
         // markdown document
         toBlock: function (data) {
-          return `{{<audio src="${data.src}" title="${data.title}" span="${data.span}">}}`;
+          return `{{<audio src="${data.src}" title="${data.title}" span="${data.span}" autoplay="${data.autoplay}" muted="${data.muted}" loop="${data.loop}">}}`;
         },
         // Preview output for this component. Can either be a string or a React component
         // (component gives better render performance)
