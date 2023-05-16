@@ -223,7 +223,7 @@ The **Image** widget has 3 properties, these are:
 
 {{<divider-title title="HTML Example" align="left">}}
 
-![Hugo Catalog Logo](/images/hugo-catalog-logo.svg "Hugo Catalog Logo")
+![Hugo Catalog Logo](https://benmarte.github.io/hugo-catalog-site/images/hugo-catalog-logo.svg "Hugo Catalog Logo")
 
 {{<divider-title title="Decap Usage" align="left">}}
 

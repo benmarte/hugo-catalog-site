@@ -20,13 +20,3 @@ It ships with [10 shortcodes](/shortcodes) so your editors can make beautiful St
 {{<bullet leading_text="Onboarding:" text="Helps provide an overview of your brand and the expectations of anyone representing it" type="true">}}
 
 {{<bullet leading_text="Culture:" text="Promotes and encourages value in design, internally across all teams" type="true">}}
-
-{{<hint type="warning" span="6">}}
-**Warning**
-
----
-
-This theme is under active development this means you may encounter bugs.
-
-With that out of the way. We do appreciate feedback, bug issues and PRs. Thanks.
-{{</hint>}}
