@@ -211,6 +211,166 @@
 
       //  End Bullet Widget ------------------------------------------------------------------- /
 
+      //  Start Catalog Image Widget ------------------------------------------------------------------- /
+
+      const CatalogImageWidget = {
+        // Internal id of the component
+        id: "catalog-image-widget",
+        // Visible label
+        label: "Catalog Image",
+        // Fields the user need to fill out when adding an instance of the component
+        fields: [
+          {
+            name: "src",
+            label: "File",
+            widget: "file",
+            default: "",
+            required: true,
+            media_library: {
+              config: {
+                allow_multiple: false,
+                media_folder: "/static/images",
+              },
+            },
+          },
+          {
+            name: "span",
+            label: "Span",
+            widget: "select",
+            required: true,
+            options: ["1", "2", "3", "4", "5", "6"],
+            default: ["6"],
+          },
+          {
+            name: "text_position",
+            label: "Text Position",
+            widget: "select",
+            options: ["top", "bottom"],
+            default: ["top"],
+            required: true,
+          },
+          {
+            name: "title",
+            label: "Title",
+            widget: "string",
+            default: "",
+            required: false,
+          },
+          {
+            name: "description",
+            label: "Description",
+            widget: "string",
+            default: "",
+            required: false,
+          },
+          {
+            name: "overlay",
+            label: "Overlay",
+            widget: "file",
+            default: "",
+            required: false,
+            media_library: {
+              config: {
+                allow_multiple: false,
+                media_folder: "/static/images",
+              },
+            },
+          },
+          {
+            name: "light",
+            label: "Light",
+            widget: "boolean",
+            default: false,
+            required: false,
+          },
+          {
+            name: "dark",
+            label: "Dark",
+            widget: "boolean",
+            default: false,
+            required: false,
+          },
+          {
+            name: "scale",
+            label: "Scale",
+            widget: "boolean",
+            default: true,
+            required: false,
+          },
+
+        ],
+        // Regex pattern used to search for instances of this block in the markdown document.
+        // Patterns are run in a multline environment (against the entire markdown document),
+        // and so generally should make use of the multiline flag (`m`). If you need to capture
+        // newlines in your capturing groups, you can either use something like
+        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+        // which will cause `(.*)` to match newlines as well.
+        //
+        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+
+        pattern: /\{\{<catalog-image src="(.*?)" span="(.*?)" text_position="(.*?)" title="(.*?)" description="(.*?)" overlay="(.*?)" light="(.*?)" dark="(.*?)" scale="(.*?)"\>\}\}/ms,
+        // Given a RegExp Match object
+        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+        // return an object with one property for each field defined in `fields`.
+        //
+        // This is used to populate the custom widget in the markdown editor in the CMS.
+        fromBlock: function (match) {
+          return {
+            src: match[1],
+            span: match[2],
+            text_position: match[3],
+            title: match[4],
+            description: match[5],
+            overlay: match[6],
+            light: convertToBool(match[7]),
+            dark: convertToBool(match[8]),
+            scale: convertToBool(match[9]),
+          };
+        },
+        // Given an object with one property for each field defined in `fields`,
+        // return the string you wish to be inserted into your markdown.
+        //
+        // This is used to serialize the data from the custom widget to the
+        // markdown document
+        toBlock: function (data) {
+          const isLight = convertToBool(data.light);
+          const isDark = convertToBool(data.dark);
+          const scaleImage = convertToBool(data.scale);
+          return `{{<catalog-image src="${data.src}" span="${data.span}" text_position="${data.text_position}" title="${data.title}" description="${data.description}" overlay="${data.overlay}" light="${data.light}" dark="${data.dark}" scale="${data.scale}">}}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          const title_top = data.text_position === "top" && data.title !=="" ? `<p><b>${data.title}</b></p>` : "";
+          const description_top = data.text_position === "top" && data.description !=="" ? `<p>${data.description}</p>` : "";
+          const overlay = data.overlay !== "" ? `class="source"` : "";
+          const imageURL = `${window.location.href.split('/admin/')[0]}${data.src}`;
+          const overlayURL = data.overlay !== "" ? `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}${data.overlay}`}" /></div>` : "";
+          const title_bottom = data.text_position === "bottom" && data.title !== "" ? `<p><b>${data.title}</b></p>` : "";
+          const description_bottom = data.text_position === "bottom" && data.description !== "" ? `<p>${data.description}</p>` : "";
+          const isLight = convertToBool(data.light) ? "light" : "";
+          const isDark = convertToBool(data.dark) ? "dark" : "";
+          const scaleImage = convertToBool(data.scale) ? "" : "no-scale";
+          return `<div
+          class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
+        >
+        ${title_top}
+        ${description_top}
+
+        <div ${overlay}>
+          <img src="${imageURL}" />
+        </div>
+        ${overlayURL}
+          
+        ${title_bottom}
+        ${description_bottom}
+        </div>`;
+        },
+      };
+
+      //  End Catalog Image Widget ------------------------------------------------------------------- /
+
       //  Start Color Widget ------------------------------------------------------------------- /
 
       const ColorWidget = {
@@ -648,166 +808,6 @@
 
       //  End Hint Widget ------------------------------------------------------------------- /
 
-      //  Start Image Widget ------------------------------------------------------------------- /
-
-      const ImageWidget = {
-        // Internal id of the component
-        id: "image-widget",
-        // Visible label
-        label: "Catalog Image",
-        // Fields the user need to fill out when adding an instance of the component
-        fields: [
-          {
-            name: "src",
-            label: "File",
-            widget: "file",
-            default: "",
-            required: true,
-            media_library: {
-              config: {
-                allow_multiple: false,
-                media_folder: "/static/images",
-              },
-            },
-          },
-          {
-            name: "span",
-            label: "Span",
-            widget: "select",
-            required: true,
-            options: ["1", "2", "3", "4", "5", "6"],
-            default: ["6"],
-          },
-          {
-            name: "text_position",
-            label: "Text Position",
-            widget: "select",
-            options: ["top", "bottom"],
-            default: ["top"],
-            required: true,
-          },
-          {
-            name: "title",
-            label: "Title",
-            widget: "string",
-            default: "",
-            required: false,
-          },
-          {
-            name: "description",
-            label: "Description",
-            widget: "string",
-            default: "",
-            required: false,
-          },
-          {
-            name: "overlay",
-            label: "Overlay",
-            widget: "file",
-            default: "",
-            required: false,
-            media_library: {
-              config: {
-                allow_multiple: false,
-                media_folder: "/static/images",
-              },
-            },
-          },
-          {
-            name: "light",
-            label: "Light",
-            widget: "boolean",
-            default: false,
-            required: false,
-          },
-          {
-            name: "dark",
-            label: "Dark",
-            widget: "boolean",
-            default: false,
-            required: false,
-          },
-          {
-            name: "scale",
-            label: "Scale",
-            widget: "boolean",
-            default: true,
-            required: false,
-          },
-
-        ],
-        // Regex pattern used to search for instances of this block in the markdown document.
-        // Patterns are run in a multline environment (against the entire markdown document),
-        // and so generally should make use of the multiline flag (`m`). If you need to capture
-        // newlines in your capturing groups, you can either use something like
-        // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
-        // which will cause `(.*)` to match newlines as well.
-        //
-        // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
-        // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-
-        pattern: /\{\{<image src="(.*?)" span="(.*?)" text_position="(.*?)" title="(.*?)" description="(.*?)" overlay="(.*?)" light="(.*?)" dark="(.*?)" scale="(.*?)"\>\}\}/ms,
-        // Given a RegExp Match object
-        // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
-        // return an object with one property for each field defined in `fields`.
-        //
-        // This is used to populate the custom widget in the markdown editor in the CMS.
-        fromBlock: function (match) {
-          return {
-            src: match[1],
-            span: match[2],
-            text_position: match[3],
-            title: match[4],
-            description: match[5],
-            overlay: match[6],
-            light: convertToBool(match[7]),
-            dark: convertToBool(match[8]),
-            scale: convertToBool(match[9]),
-          };
-        },
-        // Given an object with one property for each field defined in `fields`,
-        // return the string you wish to be inserted into your markdown.
-        //
-        // This is used to serialize the data from the custom widget to the
-        // markdown document
-        toBlock: function (data) {
-          const isLight = convertToBool(data.light);
-          const isDark = convertToBool(data.dark);
-          const scaleImage = convertToBool(data.scale);
-          return `{{<catalog-image src="${data.src}" span="${data.span}" text_position="${data.text_position}" title="${data.title}" description="${data.description}" overlay="${data.overlay}" light="${data.light}" dark="${data.dark}" scale="${data.scale}">}}`;
-        },
-        // Preview output for this component. Can either be a string or a React component
-        // (component gives better render performance)
-        toPreview: function (data) {
-          const title_top = data.text_position === "top" && data.title !=="" ? `<p><b>${data.title}</b></p>` : "";
-          const description_top = data.text_position === "top" && data.description !=="" ? `<p>${data.description}</p>` : "";
-          const overlay = data.overlay !== "" ? `class="source"` : "";
-          const imageURL = `${window.location.href.split('/admin/')[0]}${data.src}`;
-          const overlayURL = data.overlay !== "" ? `<div class="overlay"><img src="${`${window.location.href.split('/admin/')[0]}${data.overlay}`}" /></div>` : "";
-          const title_bottom = data.text_position === "bottom" && data.title !== "" ? `<p><b>${data.title}</b></p>` : "";
-          const description_bottom = data.text_position === "bottom" && data.description !== "" ? `<p>${data.description}</p>` : "";
-          const isLight = convertToBool(data.light) ? "light" : "";
-          const isDark = convertToBool(data.dark) ? "dark" : "";
-          const scaleImage = convertToBool(data.scale) ? "" : "no-scale";
-          return `<div
-          class="span-${data.span} image-shortcode ${isLight} ${isDark} ${scaleImage}"
-        >
-        ${title_top}
-        ${description_top}
-
-        <div ${overlay}>
-          <img src="${imageURL}" />
-        </div>
-        ${overlayURL}
-          
-        ${title_bottom}
-        ${description_bottom}
-        </div>`;
-        },
-      };
-
-      //  End Image Widget ------------------------------------------------------------------- /
-
       //  Start Video Widget ------------------------------------------------------------------- /
 
       const VideoWidget = {
@@ -952,15 +952,15 @@
 
       // Start editor component registration
 
-      CMS.registerEditorComponent(DividerTitleWidget);
-      CMS.registerEditorComponent(ColumnWidget);
       CMS.registerEditorComponent(AudioWidget);
       CMS.registerEditorComponent(BulletWidget);
+      CMS.registerEditorComponent(CatalogImageWidget);
       CMS.registerEditorComponent(ColorWidget);
+      CMS.registerEditorComponent(ColumnWidget);
+      CMS.registerEditorComponent(DividerTitleWidget);
       CMS.registerEditorComponent(DownloadWidget);
       CMS.registerEditorComponent(HintWidget);
       CMS.registerEditorComponent(VideoWidget);
-      CMS.registerEditorComponent(ImageWidget);
 
       // End editor component registration
     </script>
