@@ -19,7 +19,7 @@ The **Audio** widget has 6 properties, these are:
 
 {{<divider-title title="Decap Usage" align="left">}}
 
-{{<video src="/images/audio-widget.mp4" span="6" autoplay="false" muted="false" loop="false" >}}
+{{<video src="/images/audio-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Bullet Widget
 
@@ -37,7 +37,7 @@ The **Bullet** widget has 3 properties, these are:
 
 {{<divider-title title="Decap Usage" align="left">}}
 
-{{<video src="/images/bullet-widget.mp4" span="6" autoplay="false" muted="false" loop="false" >}}
+{{<video src="/images/bullet-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Catalog Image Widget
 
@@ -67,7 +67,7 @@ The **Color** widget has 7 properties, these are:
 
 {{<divider-title title="Decap Usage" align="left">}}
 
-{{<video src="/images/color-widget.mp4" span="6" autoplay="false" muted="false" loop="false" >}}
+{{<video src="/images/color-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Column Widget
 
@@ -113,7 +113,7 @@ The **Column** widget has 3 properties, these are:
 
 {{<divider-title title="Decap Usage" align="left">}}
 
-{{<video src="/images/column-widget.mp4" span="6" autoplay="false" muted="false" loop="false" >}}
+{{<video src="/images/column-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Divider Title Widget
 
@@ -132,7 +132,7 @@ The **Column** widget has 2 properties, these are:
 
 {{<divider-title title="Decap Usage" align="left">}}
 
-{{<video src="/images/divider-title.mp4" span="6" autoplay="false" muted="false" loop="false" >}}
+{{<video src="/images/divider-title.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Download Widget
 
@@ -150,7 +150,7 @@ The **Download** widget has 5 properties, these are:
 
 {{<divider-title title="Decap Usage" align="left">}}
 
-{{<video src="/images/download-widget.mp4" span="6" autoplay="false" muted="false" loop="false" >}}
+{{<video src="/images/download-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Hint Widget
 
@@ -172,7 +172,7 @@ The **Hint** widget has 3 properties, these are:
 
 {{<divider-title title="Decap Usage" align="left">}}
 
-{{<video src="/images/hint-widget.mp4" span="6" autoplay="false" muted="false" loop="false" >}}
+{{<video src="/images/hint-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Image Shortcode
 
@@ -190,7 +190,7 @@ The **Image** widget has 3 properties, these are:
 
 {{<divider-title title="Decap Usage" align="left">}}
 
-{{<video src="/images/hint-widget.mp4" span="6" autoplay="false" muted="false" loop="false" >}}
+{{<video src="/images/hint-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
 ## Video Widget
 
