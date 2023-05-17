@@ -211,7 +211,7 @@ The **Hint** widget has 3 properties, these are:
 
 {{<video src="/images/hint-widget.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
 
-## Image Shortcode
+## Image Widget
 
 In some cases you just need to insert an image without any of the advanced features provided by the [Catalog Image Widget](#catalog-image-widget) it is recommended you use the Image shortcode.
 
