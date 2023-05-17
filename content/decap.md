@@ -193,6 +193,12 @@ On the **Actions secrets and variables** page click on **New repository secret**
 
 ![Github BASE_URL](/images/github-baseurl.png)
 
+Enable read write Github Workflows permissions in order to allow the worklow to be tirggered automatically every time you make changes to your site.
+
+Click on your site **Settings** select **Actions** > **General** in the side navigation, scroll down to **Workflow permissions** and ensure **Read and write permissions** is checked and click **Save**.
+
+![Github Read Write Workflow Permissions](/images/github-workflow-permissions.png)
+
 ## Deployment via Gitlab
 
 We also provide a Gitlab CI template for you to use if you want to host your site on [Gitlab Pages](https://about.gitlab.com/stages-devops-lifecycle/pages/) and use it's CI/CD pipeline to publish your site. Simply move the `.gitlab-ci.yml` file located in: `/themes/hugo-catalog/gitlab` the root directory of your site.
