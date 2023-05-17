@@ -1,4 +1,4 @@
-name: Deploy Styleguide
+name: Deploy Hugo Catalog
 
 on:
   push:

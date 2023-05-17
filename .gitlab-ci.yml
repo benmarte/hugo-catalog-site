@@ -3,30 +3,11 @@ image: registry.gitlab.com/pages/hugo/hugo_extended:latest
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-stages:
-  - test
-  - deploy
-  - flushcache
-
-test:
-  stage: test
-  script:
-    - hugo --minify --baseURL ${{BASE_URL}} && gzip -k -6 $(find public -type f)
-  except:
-    - master
-
 pages:
-  stage: deploy
   script:
-    - hugo --minify --baseURL ${{BASE_URL}} && gzip -k -6 $(find public -type f)
+  - hugo --minify --baseURL $BASE_URL && gzip -k -6 $(find public -type f)
   artifacts:
     paths:
-      - public
-  only:
-    - master
-
-flushcache:
-  image: docker:stable
-  stage: flushcache
-  before_script:
-    - apk add --update curl && rm -rf /var/cache/apk/*
+    - public
+  rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
