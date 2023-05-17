@@ -22,3 +22,9 @@ It ships with [9 shortcodes](/shortcodes) so your editors can make beautiful Sty
 {{<bullet leading_text="Onboarding:" text="Helps provide an overview of your brand and the expectations of anyone representing it" type="true">}}
 
 {{<bullet leading_text="Culture:" text="Promotes and encourages value in design, internally across all teams" type="true">}}
+
+## Want to try it out?
+
+Then head over to our playground you just need a Github account in order to login.
+
+[Try Hugo Catalog](https://playground.hugocatalog.com)
