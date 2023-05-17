@@ -104,7 +104,8 @@ body {
   .content-body hr, .frame-content hr {
     border: none;
     height: 1px;
-    background: #333333; }
+    background: #333333;
+    width: 100%; }
   .content-body .highlight, .frame-content .highlight {
     width: 100%; }
     .content-body .highlight pre, .frame-content .highlight pre {
