@@ -92,6 +92,7 @@ body {
     border: none;
     height: 1px;
     background: $body-text;
+    width: 100%;
   }
 
   .highlight {
@@ -111,7 +112,7 @@ body {
 
 // CSS to apply to decap previews
 .frame-content {
-  
+
   .color-shortcode, .download, .hint-shortcode, .image-shortcode {
     margin-top: 32px;
     &::first-child {
