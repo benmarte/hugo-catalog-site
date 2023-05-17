@@ -3,8 +3,6 @@ title: What is Hugo Catalog?
 weight: 1
 ---
 
-{{<video src="/images/hugo-catalog-intro.mp4" span="6" autoplay="false" muted="false" loop="false" poster="">}}
-
 [Hugo](https://gohugo.io) is a fast and modern static site generator written in Go, and designed to make website creation fun again.
 
 Hugo Catalog is a conversion of the [Catalog](https://catalog.style) framework to a hugo theme, it also includes [Decap](https://decapcms.org) preconfigured out of the box to enabled CMS like editing capabilities to Hugo.
